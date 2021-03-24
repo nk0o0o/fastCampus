@@ -1,0 +1,340 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans");
+@import url("http://fonts.googleapis.com/css?family=Noto+Sans+KR");
+body {
+  all: unset;
+}
+
+ul, li {
+  list-style: none;
+}
+
+/* header */
+header {
+  height: 80px;
+}
+
+/* footer */
+footer {
+  height: 400px;
+}
+
+/*
+- css에서 쓰는 import
+@import url("./assets/css/main.css");
+
+- scss에서 쓰는 import 
+@import "hello.css";
+@import "http://hello.com/hello";
+@import url(hello);
+@import "hello" screen; */
+/*  */
+div.header {
+  background-color: purple;
+  content: "abcxxxd";
+  content: 3;
+  position: "bc";
+}
+
+.item-6 {
+  width: 12px;
+}
+
+.item-4 {
+  width: 8px;
+}
+
+.item-2 {
+  width: 4px;
+}
+
+.box-apple {
+  width: 100px;
+  background: url("images/korea.png");
+}
+
+.box-orange {
+  width: 200px;
+  background: url("images/china.png");
+}
+
+.box-banana {
+  width: 300px;
+  background: url("images/japan.png");
+}
+
+.fruits li:nth-child(1) {
+  left: 50px;
+  background: url("images/apple.png");
+}
+
+.fruits li:nth-child(2) {
+  left: 100px;
+  background: url("images/banana.png");
+}
+
+.fruits li:nth-child(3) {
+  left: 150px;
+  background: url("images/mango.png");
+}
+
+.through:nth-child(1) {
+  width: 20px;
+}
+
+.through:nth-child(2) {
+  width: 40px;
+}
+
+.through:nth-child(4) {
+  width: 80px;
+}
+
+.through:nth-child(5) {
+  width: 100px;
+}
+
+.through:nth-child(6) {
+  width: 120px;
+}
+
+.through:nth-child(7) {
+  width: 140px;
+}
+
+.wrap1 {
+  width: 10px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.wrap2 {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+div {
+  width: 200px;
+  height: 800px;
+}
+
+div {
+  width: 555px;
+}
+
+div {
+  /* width: if($if-w < 100px, $if-w, null); */
+  height: 100px;
+}
+
+div {
+  color: #333;
+}
+
+.col_container {
+  width: 1200px;
+}
+
+.col_container .col-item:nth-child(1) {
+  width: 100px;
+}
+
+.col_container .col-item:nth-child(2) {
+  width: 800px;
+}
+
+.col_container .col-item:nth-child(3) {
+  width: 300px;
+}
+
+.btn, .btn-primary, .btn-danger {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  color: #fff;
+  background-color: blue;
+}
+
+.btn-primary {
+  background-color: orange;
+}
+
+.btn-danger {
+  background-color: red;
+}
+
+.icon1 {
+  /* mixin은 스타일(속성:값;)을 함수는 특정한 값을 재활용  */
+}
+
+.icon1::after {
+  content: "image/icon1.png";
+}
+
+.icon2 {
+  /* mixin은 스타일(속성:값;)을 함수는 특정한 값을 재활용  */
+}
+
+.icon2::after {
+  content: "image/icon2.png";
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.dash-box {
+  border: 4px dashed red;
+}
+
+.dash-box2 {
+  border: 1px dashed blue, orange, red, yellow;
+}
+
+.box_wrap > div {
+  float: left;
+}
+
+.box_wrap::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.box_wrap .box1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.box_wrap .box1::after {
+  content: '!!';
+}
+
+.box_wrap .box1 span {
+  color: yellow;
+}
+
+.box_wrap .box2 {
+  width: 200px;
+  height: 300px;
+  background-color: red;
+  margin: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.box_wrap .box2::after {
+  content: '!!';
+}
+
+.box_wrap .box2 span {
+  color: yellow;
+}
+
+.box_wrap .box3 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.box_wrap .box3::after {
+  content: '!!';
+}
+
+.box_wrap .box3 span {
+  color: yellow;
+}
+
+.box4 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.box4::after {
+  content: '!!';
+}
+
+.box4 span {
+  color: yellow;
+}
+
+.item {
+  display: block;
+  width: 400px;
+  width: 600px;
+}
+
+.opacify {
+  background-color: rgba(255, 0, 0, 0.95);
+}
+
+.transparentize {
+  background-color: rgba(233, 105, 0, 0.8);
+}
+
+.container {
+  background-image: url("/assets/images/bg.jpg");
+  /* url 경로 변수 더하기 이미지이름만 */
+  padding-left: 500px;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  border: 1px solid red;
+}
+
+.container .item {
+  width: 200px;
+  height: 200px;
+  background-color: tomato;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: indianred;
+}
+
+.container .color {
+  background-color: #468ace;
+}
+
+.haha {
+  width: 100px;
+  height: 200px;
+  background-color: #e96900;
+}
+
+.fs-small {
+  font-size: 14px;
+}
+
+.fs-medium {
+  font-size: 16px;
+}
+
+.fs-large {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+}

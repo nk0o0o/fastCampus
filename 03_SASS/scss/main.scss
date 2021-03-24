@@ -1,0 +1,371 @@
+body {
+    all: unset;
+}
+ul, li { list-style: none;}
+
+
+//변수
+$orange:#e96900;
+$color-red:rgba(255, 0, 0, .5);
+$color-primary:$orange; //재할당
+$url-images:"/assets/images";
+$family-Droid:unquote("Droid+Sans"); //unquote() 문자에서 따옴표 제거
+$family-NoteSansKR:unquote("Noto+Sans+KR");
+
+@import url("http://fonts.googleapis.com/css?family=#{$family-Droid}");
+@import url("http://fonts.googleapis.com/css?family=#{$family-NoteSansKR}");
+
+@import "_header.scss", "_footer.scss";
+
+/*
+- css에서 쓰는 import
+@import url("./assets/css/main.css");
+
+- scss에서 쓰는 import 
+@import "hello.css";
+@import "http://hello.com/hello";
+@import url(hello);
+@import "hello" screen; */
+/*  */
+
+//내장함수(built-in function) 1부터 넘버링함
+div.header{
+    $color1 : red;
+    $color2 : blue;
+    background-color: mix($color1,$color2);
+    content: str-insert("abcd", "xxx", 4 );
+    content: str-index("abcd","c");
+    position: str-slice("abcd", 2,3);
+    
+}
+
+
+//반복
+//@while 
+$while-i : 6;
+@while $while-i > 0 { //조건이 false가 될때 까지 반복/ 무한루프 조심!
+    .item-#{$while-i} {
+        width: 2px * $while-i;
+    }
+    $while-i: $while-i - 2;
+}
+//@each 
+$fruits-data :(
+    apple : korea, 
+    orange : china,
+    banana : japan
+);
+
+@each $fruit, $country in $fruits-data {
+    $fruits-data-key-list : map-keys($fruits-data);
+    //map-values(fruits-data);
+    $index : index($fruits-data-key-list, $fruit);
+    .box-#{$fruit}{
+        width: 100px * $index;
+        background: url("images/#{$country}.png");        
+    }
+}
+
+$fruits : apple, banana, mango;
+
+.fruits {
+    @each $fruit in $fruits {
+        $index : index( $fruits, $fruit );
+        li:nth-child( #{$index} ){
+            left: 50px * $index;
+            background: url("images/#{$fruit}.png");
+        }        
+    }
+}
+
+//@for
+@for $i from 1 to 3 {//1부터3 직전까지
+    .through:nth-child(#{$i}){
+        width: 20px * $i;
+    }
+}
+@for $i from 4 through 7 {//4부터 7까지
+    .through:nth-child(#{$i}){
+        width: 20px * $i;
+    }
+}
+
+//조건
+//if
+//삼항 연산
+@mixin positionCenter($w, $h, $p:absolute) {
+    @if(
+        $p == absolute 
+        or $p == fixed 
+        or not $p == relative 
+        or not $p == static
+    ){
+        width: if( unitless($w), #{$w}px, $w );//단위가 있을때 없을때
+        height: if( unitless($h), #{$h}px, $h);
+        position: $p;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+.wrap1{
+    @include positionCenter(10px, 20px)
+}
+.wrap2{
+    @include positionCenter(50, 50, fixed)
+}
+.wrap1{
+    @include positionCenter(10, 20, static)
+}
+
+@function limitSize($size){
+    @if($size >= 0 and $size < 200px){//0~200px
+        @return 200px;
+    } @else {
+        @return 800px;
+    }
+}
+div{
+    width: limitSize(180px);
+    height: limitSize(340px);
+}
+
+
+$if-w:555px;
+div{
+    width: if($if-w > 300px, $if-w, null);
+}
+div{
+    width: if($if-w < 100px, $if-w, null);
+    /* width: if($if-w < 100px, $if-w, null); */
+    height: 100px;
+}
+$color:orange;
+div {
+    @if $color == strawberry {
+        color: red;
+    } @else if $color == orange {
+        color: #333;
+    } @else {
+        color: orange;
+    }
+}
+
+
+
+//함수
+//내장함수도 있기 때문에(ex : red(); 함수 이름 잘주기)
+@function columns($num:1, $columns:12, $width:1200px) {
+    /* 함수는 특정한 값(return)을, mixin은 스타일(속성:값;)을 재활용  */
+    @return $width *($num / $columns);
+}
+
+.col_container {
+    $width:1200px;
+    width: $width;
+
+    .col-item:nth-child(1) {
+        width: columns();//함수니깐 ()괄호 필요
+    }
+
+    .col-item:nth-child(2) {
+        width: columns(8);
+    }
+
+    .col-item:nth-child(3) {
+        width: columns(3);
+    }
+}
+
+
+.btn {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    color: #fff;
+    background-color: blue;
+}
+
+.btn-primary {
+    @extend .btn; //상위 선택자까지 불러오기 때문에 css가 길어질 수 있어서 비추, mixin을 쓰는게 낫다
+    background-color: orange;
+}
+
+.btn-danger {
+    @extend .btn;
+    background-color: red;
+}
+
+@mixin icon ($url) {
+    /* mixin은 스타일(속성:값;)을 함수는 특정한 값을 재활용  */
+    &::after {
+        content: $url;
+        @content; //css 더 넣을 수 있다!
+    }
+}
+
+.icon1 {
+    @include icon("image/icon1.png")
+}
+
+.icon2 {
+    @include icon("image/icon2.png") {
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@mixin dash-line ($border-w, $border-color...) {
+    //가변인수: 더 써서 넣으면 ...쓴 인수에 속성으로 들어감
+    border: $border-w dashed $border-color;
+}
+
+.dash-box {
+    @include dash-line(4px, red);
+}
+
+.dash-box2 {
+    @include dash-line(1px, blue, orange, red, yellow);
+}
+
+
+@mixin clearfix {
+    >div {
+        float: left;
+    }
+
+    &::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+
+@mixin box_style ($box-w:100px, $box-h:100px, $margin:10px) {
+    //앞에 변수 설정 안했으면 새로설정//앞에 변수 설정 되어있으면()쓸필요 없음
+    width: $box-w;
+    height: $box-h;
+    background-color: red;
+    margin: $margin;
+    color: #fff;
+    text-align: center;
+
+    &::after {
+        content: '!!';
+    }
+
+    span {
+        color: yellow;
+    }
+}
+
+.box_wrap {
+    @include clearfix;
+
+    .box1 {
+        @include box_style; //고대로 적용하기
+    }
+
+    .box2 {
+        @include box_style(200px, 300px); //순서대로 적용하기
+    }
+
+    .box3 {
+        @include box_style($margin: 40px); //콕찝어서 변수 달리 적용하기
+    }
+}
+
+.box4 {
+    @include box_style;
+}
+
+//if, 논리 연산자
+$w:100px;
+
+.item {
+    display: block;
+
+    @if($w > 50px or $w < 90px) {
+        width: 400px;
+    }
+
+    ;
+
+    @if not ($w < 90px) {
+        width: 600px;
+    }
+
+    ;
+}
+
+
+.opacify {
+    background-color: opacify($color-red, .45); //더 불투명 하게 0.5 + 0.45
+}
+
+.transparentize {
+    background-color: transparentize($color-primary, 0.2); //더 투명하게 1 - 0.2
+}
+
+.container {
+    background-image: url($url-images + "/bg.jpg");
+    /* url 경로 변수 더하기 이미지이름만 */
+    $size: 200px !global; //전역변수
+
+    padding : {
+        left: 500px;
+        top: 50px;
+        right: 30px;
+        bottom: 50px;
+    }
+
+    border: 1px solid red;
+
+    .item {
+        width: $size;
+        height: $size;
+        background-color: tomato;
+    }
+
+    @at-root .box {
+        $size: 100px; //변수 덮어짐
+        width: $size;
+        height: $size;
+        background-color: indianred;
+    }
+
+    .color {
+        background-color: #123456 + #345678;
+        //R: 12+34
+        //G: 34+56
+        //B: 56+78
+    }
+}
+
+.haha {
+    width: $size/2;
+    //100px/2 하면 안되는데 변수면 됨
+    height: 200px;
+    $color-primary: red !default; //빨간색으로 하고 싶지만 이전 변수 설정이있었으면 그전걸로 하겠어!
+    background-color: $color-primary;
+}
+
+.fs {
+    &-small {
+        font-size: 14px;
+    }
+
+    &-medium {
+        font-size: 16px;
+    }
+
+    &-large {
+        font-family: 'Noto Sans KR', sans-serif;
+        ;
+        font-size: 18px;
+    }
+}

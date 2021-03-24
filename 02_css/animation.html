@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {width: 100px;height: 100px; background-color: tomato; animation: first-animation 1s 2 alternate;}
+        .box::after {content: 'running';text-align: center;}
+        .box:hover {animation-play-state: paused;}
+        .box:hover::after {content: 'paused';}
+        @keyframes first-animation{
+            0% {
+                width: 100px;
+            }
+            100%{
+                width: 100px;
+                background-color: red;
+                transform: translateX(400px);
+                border-radius: 50%;
+                
+            }
+        }
+        article {columns:120px 5; column-gap: 20px; column-rule:1px solid red;}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <article>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quas. Excepturi alias consequuntur 
+        officiis ipsa placeat at dicta eos neque aperiam corrupti? Nemo, cum exercitationem? Amet maiores eveniet exercitationem odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quas. Excepturi alias consequuntur of
+        ficiis ipsa placeat at dicta eos neque aperiam corrupti? Nemo, cum exercitationem? Amet maiores eveniet exercitationem odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quas. Excepturi alias consequuntur officiis ip
+        sa placeat at dicta eos neque aperiam corrupti? Nemo, cum exercitationem? Amet maiores eveniet exercitationem odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quas. Excepturi alias consequuntur officiis ipsa placeat at
+         dicta eos neque aperiam corrupti? Nemo, cum exercitationem? Amet maiores eveniet exercitationem odio.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quas. Excepturi alias consequuntur officiis ipsa placeat at dic
+        ta eos neque aperiam corrupti? Nemo, cum exercitationem? Amet maiores eveniet exercitationem odio.
+    </article>
+</body>
+</html>

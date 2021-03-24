@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body > * {
+            /* all: unset; */
+        }
+        kbd {
+            padding: 0 3px;
+            border-radius: 3px;
+            border-top: 2px solid rgb(240, 240, 240);
+            border-bottom: 2px solid rgb(205, 205, 205);
+            border-left: 2px solid rgb(240, 240, 240);
+            border-right: 2px solid rgb(225, 225, 225);
+        }
+        .focus_style {
+            width: 20px;
+            outline: none;
+            border:none;
+            background-color: bisque;
+            transition: all 300ms ease;
+        }
+        .focus_style:focus {
+            border: 1px solid red;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="global_attr">
+    <!--hidden display-none 됨
+         양식속성에서 hidden 사용해서 보이지 않아도 전송할수 있음 -->
+    
+    <form id="hidden-form" action="/form-action" hidden>
+        <input type="text" name="id" value="Heropy">
+    </form>
+    <button form="hidden-form" type="submit">전송</button>
+
+    
+    </div>
+
+    <dl> 용어 설명 리스트
+        <dt>Coffee</dt>
+        <dd>Coffe is drink</dd>   
+        <dt>Milk</dt>
+        <dd>Milk is drink</dd>
+    </dl>
+
+    <div>
+        <dfn>하하하 용어설명</dfn>
+    </div>
+
+    <div>
+        <pre> <!-- db에서 불러올때 활용 -->      
+Lorem, ipsum dolor sit amet conse         ctetur adipisicing elit. 
+Esse autem ut aspernatur culpa dolorem quam quia voluptate 
+adipisci et sapiente ducimus cupiditate aut neque 
+modi nemo doloremque, molestiae cum nihil?
+        </pre>
+    </div>
+
+     <blockquote cite="www.naver.com">긴 인용문 ipsum dolor sit amet consectetur adipisicing elit. 
+        Esse autem ut aspernatur culpa dolorem quam quia voluptate 
+        adipisci et sapiente ducimus cupiditate aut neque 
+        modi nemo doloremque, molestiae cum nihil?</blockquote>
+
+    <a href="#" download="naver.com">누르면 바로 다운로드 됨</a>
+
+    <code style="background-color: #333; color:#fff; padding:2px;">Document.getElementById('gjgjjg')</code> 코드 표시하기
+
+    <div class="keybord_tag">
+        <kbd>Ctrl</kbd>
+        <kbd>Alt</kbd>
+    </div>
+
+    <p>X<sup>4</sup> + Y<sup>5</sup> = 25, H<sub>2</sub>O </p>
+
+<pre>
+    <time>11:30 ie 지원 안됨 </time>
+    <del>하하하</del> - 지우는 내용
+    <ins cite="naver.com" datetime="11:30">하하하</ins> - 새로 추가된 내용
+    <q>짧은 인용문 설정</q>
+    
+    <u>글자에 밑줄 주기 css 추천</u>
+    <b>찐하게 보이게 하기</b>
+    <i>기울여서 표시</i>
+    <em>강조하기</em>
+    <strong>강조하기</strong>
+
+    <abbr title="HyperText Text Markup Language">HTML</abbr>
+
+    data-
+    <div id="me" data-my-name="gkgk" data-my-age="10">내정보</div>
+    숫자만 입력가능    
+    <form action="get">
+        <input type="text" name="patternValue" pattern="\d*">
+        <input type="text" name="patternValue" pattern="^[0-9]+$">
+    </form>
+
+    draggable
+    <div style="width: 300px;height:300px; background-color:bisque;" draggable="true"></div>
+
+    <input type="text" class="focus_style">
+</pre>
+<script>
+    const me = document.querySelector('#me');
+    me.dataset.myName;
+    document.write(me.dataset.myName)
+    document.write(me.dataset.myAge)    
+</script>
+</body>
+</html>

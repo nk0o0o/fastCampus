@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canva" width="300" height="300"></canvas>    
+    
+    
+<pre>
+script의 속성
+- async 비동기 실행여부 
+- defer html 다 읽어지면 스크립트 실행 
+
+
+</pre>
+<pre>
+안녕하세요
+    <noscript>
+        자바스크립트를 지원하지 않는 경우 보임
+        <div style="border: 1px solid red; border-radius:50%; width: 30px; height: 30px;margin: 40px;"></div>
+    </noscript>
+
+IFRAME이 들어옴
+    <iframe src="#" 
+            frameborder="1"
+            width="200"
+            height="200"
+            name="자기페이지"
+            allowfullscreen
+            sandbox>
+            
+        </iframe>
+    sandbox는 모든 제한 사항을 적용(allow-어쩌구 하면 어쩌구만 허용함)
+    iframe 보안문제 신경쓰기
+    allowfullscreen 전체화면
+</pre>
+
+
+<script>
+    //Canvas 스크립트
+    const canvas = document.querySelector('#canva');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 100, 100); //왼쪽/위쪽 사각형크기 가로/세로
+    var ctx2 = canvas.getContext('2d');
+    ctx2.fillStyle = 'rgba(255, 0, 0, 0.5)';
+    ctx2.fillRect(60, 60, 100, 100); 
+</script>
+</body>
+</html>
