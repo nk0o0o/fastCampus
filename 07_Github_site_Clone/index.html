@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub</title>
+    <!-- Meta Tag -->
+    <meta name="author" content="NK0o">
+    <meta name="description" content="GitHub clone coding / GitHub is where people build software. More than 31 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no,maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- 익스 렌더링과 관련된 코드 -->
+    <!-- Open Graph 태그 : 주로 페이스북 (http://ogp.me/)-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GitHub">
+    <meta property="og:title" content="Build software better, together">
+    <meta property="og:description" content="GitHub clone coding / GitHub is where people build software. More than 31 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
+    <meta property="og:image" content="img/logo__github.png">
+    <meta property="og:url" content="https://github.com">
+    <!-- Twitter Card : 주로 트위터 (https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html)-->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:site" content="GitHub">
+    <meta property="twitter:title" content="Build software better, together">
+    <meta property="twitter:description" content="GitHub clone coding / GitHub is where people build software. More than 31 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
+    <meta property="twitter:image" content="img/logo__github.png">
+    <meta property="twitter:url" content="https://github.com">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> <!-- 익스에서는 ico 파일을 사용하는 것이 좋음 : 루트 경로에 ico 있다면 경로 생략가능 이름 유지가 좋음 -->
+    <link rel="icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png"> <!-- 스마트폰 파비콘 적용 -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="body__container">
+        <!-- HEADER -->
+        <header class="section">
+            <div class="inner clearfix">
+                <div class="menu-group float--left">
+                    <div class="logo">
+                        <a href="#">GitHub</a>
+                    </div>
+                    <ul class="main-menu">
+                        <li><a href="#">Personal</a></li>
+                        <li><a href="#">Open Source</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Explore</a></li>
+                    </ul>
+                </div>
+                <!-- 반응형일때 쌓이는 순서대로 -->
+                <div class="sign-group float--right"> 
+                    <div class="btn-group">
+                        <a href="#" class="btn sign-in">Sign in</a>
+                        <a href="#" class="btn btn--primary sign-up">Sign up</a>
+                    </div>
+                    <form id="searchForm" action="#" method="POST">
+                        <input id="searchInput" type="text" class="input--text" placeholder="Search GitHub">
+                        <input type="submit" value="submit">
+                    </form>
+                    <ul class="sub-menu">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- VISUAL SECTION -->
+        <section class="section section--visual">
+            <div class="inner">
+                <div class="summary">
+                    <div class="summary__title">How people build&nbsp;software
+                        <!-- 한단어 처럼 붙어서 줄바꿈 되도록 하는 방법 : &nbsp; 반응형일때 자연스러움-->
+                    </div>
+                    <div class="summary__description">Millions of developers use GitHub to build personal projects, support their businesses, and&nbsp;work together on open source technologies.</div>
+                </div>
+                <form action="#" id="sign-form">
+                    <ul>
+                        <li><input type="text" class="input--text" placeholder="Pick a username"></li>
+                        <li><input type="email" class="input--text" placeholder="Your email address"></li>
+                        <li>
+                            <input type="password" class="input--text" placeholder="Creat a password">
+                            <p class="caption">Use at least one letter, one numeral, and seven characters.</p>
+                        </li>
+                        <li>
+                            <button type="submit" class="btn btn--primary">Sign up for GitHub</button>
+                            <p class="caption">By clicking "Sign up for GitHub", you agree to our terms of service and privacy policy. We'll occasionally send you account related emails.</p>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+        <!-- FEATURE -->
+        <section class="section section--feature">
+            <div class="summary">
+                <div class="summary__title">Welcome home, developers</div>
+                <div class="summary__description">GitHub fosters a fast, flexible, and collaborative development process that lets you work on your own or with others.</div>
+                <div class="video">
+                    <div class="video-ratio">
+                        <iframe width="640" height="360" src="https://www.youtube.com/embed/afvT1c1ii0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="tiles"></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
