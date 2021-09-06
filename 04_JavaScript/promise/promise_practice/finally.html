@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //fulfilled, rejected 된후에 최종 실행할 것이있으면, finally() 설정, 함수를 인자로 넣음
+        function p(){
+            return new Promise((resolve, reject)=>{
+                // pending
+                setTimeout(()=>{
+                    //resolve('hello');
+                    reject( new Error('bad'));
+                },1000)
+            })
+        }
+        p()
+        .then((message)=>{
+            //fulfilled
+            console.log('1000ms 후에 fulfilled 됨, promise 객체가 가져온 인자 ==>', message)
+        }).catch((reason)=>{
+            //rejected
+            console.log('1000ms 후에 rejected 됨, promise 객체가 가져온 인자 ==>', reason)
+        }).finally(()=>{
+            console.log('end')
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <script>
+        //클래스 만드는 방식
+        //1. 선언적 방식
+        class A {};
+        console.log(new A());
+        //2. 클래스 표현식을 변수에 할당
+        const B = class {};
+        console.log(new B());
+        //선언적 방식이지만 호이스팅은 일어나지 않는다.
+        // new C();
+        // class C{};
+        //오류 남
+
+        // 생성자 constructor : 받은 인자 정의하는 기능
+        class C {};
+        console.log(new C());
+
+        //멤버 변수
+        class ACls {
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+        }
+        console.log(new ACls('Marck', 37));
+        
+        class BCls {
+            //class field에 바로 적기
+            name; //=this.name 문법 안되는 경우 : 런타임 바꿔보기 (중간단계 babel이나 런타임 환경 확인)
+            age; //=this.age
+        }
+        console.log(new BCls());
+        
+        class CCls{
+            //초기값 설정
+            name = 'no name';
+            age = 0;
+            constructor(name, age){
+                //constructor 에서 재할당됨
+                this.name = name;
+                this.age = age;
+            }
+        }
+        console.log(new CCls('Mark', 37));
+
+        //멤버 함수 만들기
+        class DCls{
+            hello1(){
+                console.log('hello1', this)// this는 DCls안의 객체를 의미
+            }
+            hello2(){
+                console.log('hello2', this)
+            }
+        }
+        new DCls().hello1();
+        new DCls().hello2();
+
+        class ECls{
+            name = 'Mark';
+            hello(){
+                console.log('hello', this.name)//클래스 내의 자원 활용해서 로직 만들수 있음
+            }
+        }
+        new ECls().hello();
+    </script>
+</body>
+</html>

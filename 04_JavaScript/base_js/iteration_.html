@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <link rel="stylesheet" href="../js_main.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        //반복문 
+        console.log('=========for of 문======');
+        const arr = [1, 2, 3, 4, 5];
+        for (const item of arr){
+            console.log("item", item);
+        }
+        
+        for ( const i of [1, 2, 3]){
+            console.log(i);
+        }
+        console.log('=========for in 문======');//사용 주의
+        Object.prototype.test = function(){};
+        for ( const i in {a:1, b: 2, c:3 }){
+            console.log(i);
+        }
+        
+
+
+        console.log('=========do while문======');
+        //do while문 : 무조건 한번 실행
+        do{
+            console.log('안녕')
+        } while (Math.random() * 100 <= 90);
+
+        console.log('=======while문========');
+        
+        //while문
+        while(true){
+            console.log('안녕하세요');
+            if(Math.random() * 100 > 90){
+                break;
+            }
+        }
+        console.log('========for문=======');
+        //for문
+        for(;;){ //무한루프인데 랜덤할때 브레이크 거는 식일때 사용
+            console.log('안녕하세요');
+            if(Math.random() * 100 > 90){
+                break;
+            }
+        }
+        
+        console.log('===============');
+        
+        for ( let i = 0; i < 5; i++ ){
+            console.log(i);
+            if(i < 2){
+                continue; // 나갔다가 다음에 다시 들어옴
+            }
+            console.log('hi', i)
+        }
+
+        console.log('===============');
+
+        for ( let i = 0; i < 5; i++ ){
+            console.log(i);
+            if(i > 2){
+                break;
+            }
+            console.log('hi', i)
+        }
+
+        console.log('===============');
+
+        for ( let i = 0; i < 5; i++ ){
+            console.log('HI!', i);
+        }
+
+        console.log('===============');
+
+        for ( let i = 0, j = 2; i < 5; i++ ){
+            console.log('HI!', i, j);
+        }
+
+        console.log('===============');
+
+        for ( let i = 0, j = 2; i < 5; i++, j = j * j ){
+            console.log('HI!', i, j);
+        }
+        
+    </script>
+</body>
+</html>

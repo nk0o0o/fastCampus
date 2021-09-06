@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES6 부터 표준 내장 객체
+        console.log(Promise)
+        //생성자로 프로미스 객체 만듦
+        //생성자의 인자로 excutor 함수 사용
+       // new Promise(/* 함수자리 excutor = resolve(), reject() */)
+        
+        new Promise((resolve, reject)=>{});
+        //생성자로 프로미스 객체 만드는 순간 pending(대기) 상태됨
+        //resolve 함수 실행 하면 fulfilled(이행)상태가 됨
+        new Promise((resolve, reject)=>{
+            //...
+            //...
+            resolve();//이행 상태
+        });
+        //reject 함수 실행 하면 rejected(거부)상태가 됨
+        
+        new Promise((resolve, reject)=>{
+            //...
+            //...
+            reject();//거부 상태
+        }); 
+       
+        //p 라는 프로미스 객체는 1000ms 후에 fulfilled 됨
+        new Promise((resolve, reject)=>{
+            /* pending */
+            setTimeout(()=>{
+                resolve();/* fulfilled */
+            },1000)
+        })
+
+
+    </script>
+</body>
+</html>

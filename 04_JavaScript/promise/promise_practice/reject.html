@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function p(){
+            return new Promise((resolve, reject)=>{
+                // pending
+                setTimeout(()=>{
+                   reject();//rejected 상태
+                },1000)
+            })
+        }
+        p().then(()=>{
+            //비동기 함수가 정상 작동 된 경우
+            console.log('1000ms 후에 fulfilled 됨')
+        }).catch(()=>{
+            //비동기 함수가 정상 작동 되지 않았을 경우
+            console.log('1000ms 후에 rejected 됨')
+        })
+
+    </script>
+</body>
+</html>

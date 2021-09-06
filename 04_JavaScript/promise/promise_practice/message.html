@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //resolve 함수 실행시 인자 넣으면, then의 callback 함수 인자로 사용가능
+        function p(){
+            return new Promise((resolve, reject)=>{
+                // pending
+                setTimeout(()=>{
+                    //resolve('hello');
+                    reject('error');
+                },1000)
+            })
+        }
+        p().then((message)=>{
+            //fulfilled
+            console.log('1000ms 후에 fulfilled 됨, promise 객체가 가져온 인자 ==>', message)
+        }).catch((reason)=>{
+            //rejected
+            console.log('1000ms 후에 rejected 됨, promise 객체가 가져온 인자 ==>', reason)
+        })
+
+    </script>
+</body>
+</html>

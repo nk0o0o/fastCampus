@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //비동기 작업 할때, callback ㅎ마수를 인자로 넣어 로직이 끝나면 callback 함수 호출함
+        //함수 아래로 진행이 아닌 callvack 함수 안으로 진행
+        //callback 을 이용한 비동기 작업 ===> 안으로 진행 되기때문에 코드관리에 문제가 생김 (콜백헬)
+        function c(callback){
+            setTimeout(()=>{
+                callback();
+            },1000)
+        }
+        c(()=>{
+            console.log('1초 후에 callback 함수 실행')
+        })        
+        c(()=>{
+                c(()=>{
+                console.log('2초 후에 callback 함수 실행')
+            })
+        })
+
+        //promise 활용한 비동기 작업
+        //then 함수에서 다시 프로미스 객체를 리턴하는 방식의 체이닝을 하면,
+        //비동기 작업을 순차적으로 아래로 표현 가능하다 === 보기에 편함
+        function p (){
+            return new Promise((resolve, reject)=>{
+                setTimeout(()=>{
+                    resolve();
+                },1000);
+            });
+        }
+        p()
+        .then(()=>{
+            return p();
+        })
+        .then(()=>p())//위에꺼 줄인 것 
+        .then(p)//위에꺼 줄인 것 
+        .then(()=>{
+            console.log('4초 후에 fulfilled 됨')
+        })
+    </script>
+</body>
+</html>

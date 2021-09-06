@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //=== 상속 기본 ===
+        class Parent {
+            name = 'Lee';
+            hello(){
+                console.log('hello', this.name);
+            }
+        }
+        class Child extends Parent {}//부모의 멤버 변수 가져옴
+        const p = new Parent();
+        const c = new Child();
+        console.log(p, c)
+        c.hello(); //부모의 멤버 함수도 가져옴
+        c.name = 'Anna'
+        c.hello();//자식에서 바꿀 수 있음
+        
+        //=== OVERRIDE === 
+        //자식의 변수나 함수가 부모의 것을 덮거나 추가할 수 있음
+        class Parent2 {
+            name = 'Lee';
+
+            hello(){
+                console.log('hello', this.name)
+            }
+        }
+        class Child2 extends Parent2 {
+            age = 37;
+
+            hello(){
+                console.log('hello', this.name);
+            }
+        }
+        const p2 = new Parent2();
+        const c2 = new Child2();
+        console.log(p2, c2)
+        p2.hello();
+        c2.hello();
+        c2.name = 'Anna'
+        c2.hello()
+
+        //=== SUPER ===
+        class Parent3 {
+            name;            
+            constructor(name){
+                this.name = name;
+            }
+            hello(){
+                console.log('hello', this.name);
+            }
+        }
+
+        class Child3 extends Parent3 {
+            age = 37;
+            constructor(name, age){
+                super(name);//자식이 this를 사용하기 전에 부모constructor 받아옴 super가 부모의 constructor라는 의미
+                this.age = age;//자식에서 할것들
+            }
+            hello(){
+                console.log('hello', this.name, this.age);
+            }
+        }        
+        const p3 = new Parent3('Mark');
+        const c3 = new Child3('Mark', 37);
+        console.log(p3, c3)
+        c3.hello();
+        p3.hello();
+
+    </script>
+</body>
+</html>

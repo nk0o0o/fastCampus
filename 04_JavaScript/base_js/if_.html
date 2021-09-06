@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../js_main.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        //조건문 : 표현식이 참일때 실행되는 문장의 모음
+        // Switch
+        let m = 5;
+        switch (m){
+            default: //default 뒤에 있는 문장은 항상 참
+                console.log(m);
+        }
+        
+        
+        switch (m % 5){
+            case 0 :{
+                console.log(m + '의 배수입니다.111');
+            }
+            default: //default 뒤에 있는 문장은 항상 참
+                console.log(m);
+        }
+
+        switch (m % 5){
+            case 0 :{
+                console.log(m + '의 배수입니다.222');
+                break;
+            }
+            case 1 :
+            case 2:
+            case 3 :
+            case 4 :
+                console.log(m + '의 배수가 아닙니다.123123');
+                
+            default: //default 뒤에 있는 문장은 항상 참
+                console.log(m);
+        }
+        
+        //삼항 연산
+        let numnum = 5;
+        console.log(numnum % 5 === 0 ? '5의 배수입니다.' : '5의 배수가 아닙니다.')
+        numnum = 6;
+        console.log(numnum % 5 === 0 ? '5의 배수입니다.' : '5의 배수가 아닙니다.')
+        
+        //삼항연산 결과 변수에 담기
+        const message = numnum % 5 === 0 ? '5의 배수입니다.' : '5의 배수가 아닙니다.';
+        console.log(message);
+
+        //★★★★논리 조건문 (코드 간단하게 쓸수 있으니깐 기억해두기)
+        //&&
+        //둘다 참이어야 참
+        let nnn = 5;
+        nnn % 5 === 0 && console.log('5로 나눠 떨어질때만 실행')// && 앞에서 참일때 뒤에꺼가 실행됨 참 - 기회옴
+        nnn = 6;
+        nnn % 5 === 0 && console.log('5로 나눠 떨어질때만 실행')// 거짓 - 기회 x(하나라도 틀리면 끝!)
+        // ||
+        // 둘 중에 하나만 참이면 참
+        let nnnn = 5;
+        nnnn % 5 === 0 || console.log('5로 나눠 떨어지지 않을때만 실행'); // 참 - 기회 x (하나라도 걸리면 끝!)
+        nnnn = 6;
+        nnnn % 5 === 0 || console.log('5로 나눠 떨어지지 않을때만 실행');// 거짓 - 기회옴 (하나라도 걸리게)
+
+        
+        // && 표현식
+        if(true && true){
+            console.log('두개 모두 참이면 참');            
+        }
+        if(true && false){
+            console.log('한개만 참이면 거짓');            
+        }
+        if(false && true){
+            console.log('한개만 참이면 거짓');            
+        }
+        if(false && false){
+            console.log('두개 모두 거짓이면 거짓');            
+        }
+
+        // || 표현식
+        if(true || true){
+            console.log('한개만 참이면 참');            
+        }
+        if(true || false){
+            console.log('한개만 참이면 참');            
+        }
+        if(false || true){
+            console.log('한개만 참이면 참');            
+        }
+        if(false || false){
+            console.log('두개 모두 거짓이면 거짓');            
+        }
+        //! 표현식
+        if(!true){
+            console.log('참이면 거짓')
+        }
+        if(!false){
+            console.log('거짓이면 참')
+        }
+
+
+
+        const num = 15;
+
+        if(num % 3 === 0){
+            console.log('num은 3의 배수');
+        }else if(num % 5 === 0 ){
+            console.log('num은 5의 배수');            
+        }else {
+            console.log('num은 3, 5의 배수가 아님');                        
+        }
+
+        if(num % 3 === 0 && num % 5 === 0){
+            console.log('num은 15의 배수');            
+        } else if(num % 3 === 0){
+            console.log('num은 3의 배수');
+        } else if(num % 5 === 0){
+            console.log('num은 5의 배수');                        
+        } else {
+            console.log('num은 3, 5의 배수가 아님');           
+        }
+
+        const multipleOfThree = num % 3 === 0 ;// boolean식
+        const multipleOfFive = num % 5 === 0 ;// boolean식
+
+        if(multipleOfThree && multipleOfFive){
+            console.log('num은 15의 배수');            
+        } else {
+            if(multipleOfThree){
+                console.log('num은 3의 배수');
+            } else if(multipleOfFive){
+                console.log('num은 5의 배수');                        
+            } else {
+                console.log('num은 3, 5의 배수가 아님');           
+            }
+        }
+        
+        
+
+        let n = 37;
+        if(n > 0 ){
+            console.log('n 이 0보다 큰 경우')
+        }else{
+            console.log('n 이 0보다 크지 않은 경우')
+        }
+        //결과가 false 인 조건문
+        if(false);
+        if(0);
+        if('');
+        if(null);
+        if(undefined);
+        if(NaN);
+
+        //결과가 true 인 조건문
+        if(true) console.log('true');
+        if(37) console.log('true');
+        if(-37) console.log('true');
+        if('Mark') console.log('true');
+        if({}) console.log('true');
+        if([]) console.log('true');
+
+        if(true){
+            console.log('항상실행');
+        }
+        
+        if(true) console.log('항상실행');//줄임 표현
+
+        if(false){
+            console.log('항상실행되지 않음');
+        }
+    </script>
+</body>
+</html>

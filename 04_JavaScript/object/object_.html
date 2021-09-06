@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../js_main.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        div {border: 1px solid red;}
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-auto-rows: minmax(50px, auto);
+            grid-template-areas:
+            "hd hd hd hd   hd   hd   hd   hd   hd"
+            "sd sd sd main main main main main main"
+            "ft ft ft ft   ft   ft   ft   ft   ft";
+        }
+        .header {
+            grid-area: hd;
+        }
+        .footer {
+            grid-area: ft;
+        }
+        .content {
+            grid-area: main;
+        }
+        .sidebar {
+            grid-area: sd;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+    </div>
+
+    <p id="example">
+        클릭시 시작
+    </p>
+    
+    <script>
+        $("#example").click(function(){
+            var inputNum = prompt("숫자 입력");
+            switch(inputNum){
+                case "1" :
+                    alert(inputNum +'입력 받았다');
+                    break;
+                case "2" :
+                    alert(inputNum +'입력 받았다');
+                    break;
+                default :
+                    alert('입력');
+                    break;
+            }
+        })
+        console.log(document.URL)
+        //함수를 속성으로 넣기
+        function fnc2(){
+            this.hello = function(){
+                console.log('hello')
+            };
+        }
+        (new fnc2()).hello();
+
+        //값을 속성으로 넣기
+        function  fnc1(){
+            this.name = 'Mark'; //name 이라는 property
+        }
+        const fuc1 = new fnc1(); //{name: 'Mark'} 
+        console.log(fuc1);
+
+        //생성하면서 데이터 넣기
+        function B(name, age){ 
+            console.log(name, age);
+        }
+        const b = new B();//undefined undefined (인자가 없어서 둘다뜸)
+        const c = new B('Mark', 37);//Mark 37
+        console.log(B());//undefined (리턴값만 없어서)
+        
+        //생성자 함수
+        function A(){};//생성자 함수만듦
+        const a = new A();// a라는 변수에 할당됨 = 객체 생성
+        console.log(a, typeof a); //A, object
+        console.log(A());//undefined A라는 함수의 return 값을 보여줌
+    </script>
+</body>
+</html>

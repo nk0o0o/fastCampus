@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //static 변수, 함수 : 객체가 아니고 클래스의 변수와 함수
+
+        class A {
+            static age = 37; //클래스내부의 static 변수
+            static hello(){
+                console.log(A.age);//클래스의 변수를 사용하는거라,,this를 쓰지 않음(?)
+            }
+        }
+        console.log(A, A.age);
+        A.hello();
+
+        class B { //말이 안되는 문법
+            age= 37;//멤버 변수
+            static hello(){
+                console.log(this.age);//
+            }
+        }
+        console.log(B, B.age)//static age 변수가 없어서 undefined
+        B.hello();
+        //new B().hello(); static 함수는 객체에 속한 함수가 아니여서 오류남
+
+
+        class C {
+            static name = '이 클래스의 이름은 C가 아니다'
+        }
+        console.log(C);
+        class Parent{
+            static age = 37;
+        }
+        class Child extends Parent{}
+        console.log(Parent.age, Child.age);
+        
+    </script>
+    
+</body>
+</html>

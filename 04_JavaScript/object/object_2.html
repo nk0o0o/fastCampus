@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        div {border: 1px solid red;}
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-auto-rows: minmax(50px, auto);
+            grid-template-areas:
+            "hd hd hd hd   hd   hd   hd   hd   hd"
+            "sd sd sd main main main main main main"
+            "ft ft ft ft   ft   ft   ft   ft   ft";
+        }
+        .header {
+            grid-area: hd;
+        }
+        .footer {
+            grid-area: ft;
+        }
+        .content {
+            grid-area: main;
+        }
+        .sidebar {
+            grid-area: sd;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const a = new Object();
+        console.log(a, typeof a);
+        
+        const b = new Object(true);
+        console.log(b, typeof b);
+        
+        const c = new Object({name: 'Mark'});
+        console.log(c, typeof c);
+        
+        //프로토타입 체인 : 객체를 연결
+
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+           /*  this.hello = function(){
+                console.log('hello', this.name, this.age);
+            }; */
+        }
+        Person.prototype.hello = function(){
+            console.log('hello', this.name, this.age);
+        }
+        const p = new Person('mark', 37)
+        p.hello();
+        console.log(p.toString());
+        console.log(Person.prototype);
+        console.log(Person.prototype.toString);//호출 아니고 있는지 확인
+        console.log(Person.prototype.constructor);// Person이라는 함수 자체
+        console.log(Person.hello);//undefined 객체로 생성되어야지 그안에 함수 사용이 가능함!
+        console.log(Person.prototype.hello);//undefined
+        console.log(Object.prototype);
+        console.log(Object.prototype.toString);
+        console.log(Object.prototype.constructor);
+        console.log(p instanceof Person); //p가 어떤 생성자 함수에서 나온 인스턴스 체크
+        console.log(p instanceof Object); //p가 어떤 생성자 함수에서 나온 인스턴스 체크
+       
+    </script>
+</body>
+</html>

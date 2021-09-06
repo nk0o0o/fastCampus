@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../js_main.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        //Symbol
+        const aSym = Symbol();
+        const bSym = Symbol(37);
+        const cSym = Symbol('Mark');
+        const dSym = Symbol('Mark');
+
+        console.log('aSym', aSym, typeof aSym)
+        console.log(cSym === dSym);
+
+        //symbol 은 고유한것,,, new Symbol()로 만들지못함
+
+        //String
+        const aStr = 'Mark';
+        console.log('aStr', aStr, typeof aStr);
+
+        const bStr = 'Mark' + 'Lee';
+        console.log('bStr', bStr, typeof bStr);
+        
+        const cStr = aStr + 'Lee';
+        console.log('cStr', cStr, typeof cStr);
+        
+        const dStr = `${aStr}Lee`;
+        console.log('dStr', dStr, typeof dStr);
+
+
+        //Number
+
+        const aNum = 38;
+        console.log('aNum',aNum, typeof aNum); //type : number
+        
+        const bNum = 96.7;
+        console.log('bNum', bNum, typeof bNum); //type : number
+        
+        const cNum = NaN; // NaN : Not A Number
+        console.log('cNum',cNum, typeof cNum); //type : number
+        
+        const dNum = Number('mark');
+        console.log('dNum', dNum, typeof dNum); //type : number
+        
+        const eNum = Number('37'); //문자를 숫자형으로 형 변환 해주기
+        console.log('eNum', eNum, typeof eNum); //type : number
+
+
+
+        const pageUrl = document.URL.split("/");
+        console.log(pageUrl);
+        console.log(pageUrl.indexOf("js_index.html"));
+
+
+        const isTrue = true;
+        const isFalse = false;
+
+        console.log(isTrue, typeof isTrue);
+        console.log(isFalse, typeof isFalse);
+        
+        const a = new Boolean (false);//a 는 객체
+        console.log(a, typeof a);
+        if(a){
+            console.log('false?')
+        }
+        
+        const b = Boolean(false);
+        console.log(b, typeof b)
+        if(b){
+            console.log('gkgk false?')
+        }
+
+        // 호이스팅 현상(하단에 있지만 위에서 변수 정의한 것 같은 오류) var를 let으로 해결
+        function hello1(){
+            console.log('hello1');
+        }
+        hello1();
+        
+        hello2(); 
+        function hello2(){
+            console.log('hello2');
+        }
+
+    </script>
+</body>
+</html>

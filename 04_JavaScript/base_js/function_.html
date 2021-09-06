@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../js_main.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        //함수를 인자로 하여 함수를 호출
+        function hello111(f){
+            console.log('hello111');
+            f();
+        }
+        hello111(function(){console.log('콜백')})
+
+
+        //함수 안에서 함수 리턴
+        function plus(base){
+            return function(num){
+                return base + num;
+            }
+        }
+        const plus5 = plus(5);
+        console.log(plus5(10));
+
+        const plus7 = plus(7);
+        console.log(plus7(20));
+
+
+        //생성자 함수를 이용하여 새로운 객체를 만들어 내는 방법
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        const p = new Person('Mark', 37);
+        console.log(p, p.name, p.age);
+
+        const a = new Person('Anna', 26);
+        console.log(a, a.name, a.age);
+
+        const Cat = (name, age) => {
+            this.name = name;
+            this.age = age;
+        }
+        //const c = new Cat('냥이', 1); //오류 선언적 함수만 가능
+
+
+
+        //arrow 함수는 익명 함수만
+        const hello11 = name => `hello11 ${name}`; //줄인 표현
+        const hello10 = name => {
+            return `hello10 ${name}`;
+        }
+        const hello9 = (name, age) =>{
+            console.log('hello9', name, age)
+        }
+        const hello8 = name =>{
+            console.log('hello8', name)
+        }
+        const hello7 = ()=>{
+            console.log('hello')
+        }
+
+        // function은 객체이다.. 생성자 함수
+        const sum = new Function('a', 'b', 'c', 'return a + b + c'); 
+        //인자, 인자, 인자,,, 함수의 바디
+        console.log(sum(3, 4, 5))//12
+
+        //익명 함수 : const으로 호이스팅 현상 막기
+        const hello6 = function(name){
+           return `hello6, ${name}`
+        }
+        console.log(hello6);
+
+        const hello5 = function(name){
+            console.log('hello5', name)
+        }
+        console.log(hello5);
+
+        const hello4 = function(){
+            console.log('hello4')
+        }
+        console.log(hello4)
+        
+        //선언적 함수 : 호이스팅 현상
+        function hello3(name){
+            return `hello3 ${name}`;
+        }
+        console.log(hello3('Mark'));
+        
+        function hello2(name){
+            console.log('hello2',name);
+        }
+        hello2('Mike');
+
+        function hello1(){
+            console.log('hello1');
+        }
+        console.log(hello1, typeof hello1);// type이 'function' ==> 내장객체라는 말이다
+        hello1();
+    </script>
+</body>
+</html>

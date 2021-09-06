@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <script>
+     function Person(){}
+
+    Person.prototype.hello = function(){
+        console.log('hello');
+    }
+    function Korean(region){
+        this.region = region;
+        this.where = function(){
+            console.log('where', this.region)
+        }
+    }
+    Korean.prototype = Person.prototype;
+
+    const k = new Korean('Seoul');
+
+    k.hello();
+    k.where();
+    
+    console.log(k instanceof Korean);
+    console.log(k instanceof Person);
+    console.log(k instanceof Object);
+    console.log(k.region);
+
+    //객체 리터럴
+    const a = {};
+    console.log(a, typeof a);
+    const b = {name : 'Mark'}
+    console.log(b, typeof b);
+    const c = {
+        name : 'Mark',
+        hello1(){
+            console.log('hello1', this.name);
+        },
+            hello2: function(){
+            console.log('hello2', this.name);
+        },
+            hello3: () => { 
+            console.log('hello3', this);//화살표 함수는 this 바인드가 되지 않음
+        }
+    }
+    c.hello1();
+    c.hello2();
+    c.hello3();
+    //표준 내장 객체 : Array(사용할 일 많으니깐 알아두기)
+
+    const aAry = new Array('red', 'black', 'white')
+    console.log(aAry, typeof aAry);//대괄호지만 객체임
+    console.log(aAry instanceof Array);
+    console.log(aAry instanceof Object);
+    
+    const bAry = ['red', 'green', 'yellow'];
+    console.log(bAry, typeof bAry);
+    console.log(bAry instanceof Array);
+    console.log(bAry instanceof Object);
+
+    console.log(bAry.slice(0,1))
+    console.log(Array.prototype.slice(0,1))
+
+
+
+    </script>
+</body>
+</html>

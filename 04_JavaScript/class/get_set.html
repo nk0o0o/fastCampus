@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class A{
+            _name = 'no name';
+            get name(){
+                return this._name + '@@@';
+            }
+            set name(value){
+                this._name = value + '!!!';
+            }
+        }
+        const a = new A();
+        console.log(a);
+        a.name = 'Mark'; //외부에서 name에 값 넣어주면 set함수로 값 넣어줌(뭔가 붙일 수 있음)
+        console.log(a);
+        console.log(a.name);//외부에서 name 값 불러오면 get 함수로 값 넘겨줌(뭔가 붙일 수 있음)
+        console.log(a._name);//set으로 넣어준 값만 확인 가능 
+        //직접 값을 지정하지 않고, get/set 함수로 값 지정
+        //readOnly
+        class B {
+            _name = 'no name'; //외부에서 값을 바꾸지 말자고 약속한 상태에서 의미가 생김
+            get name(){
+                return this._name + '@@@';
+            }
+        }
+        const b = new B();
+        console.log(b)
+        b.name = 'Mark'; //set이 없어서 값 못 넣어줌
+        console.log(b); //set이 없어서 값 못 넣어줌 (--- read only 처럼 동작)
+        console.log(b._name)
+    </script>
+</body>
+</html>
