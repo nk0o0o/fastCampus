@@ -231,6 +231,7 @@ header .sub-menu li a:hover{
     font-size: 20px;
     justify-content: center;
 }
+/* SECTION FEATURE */
 .section--feature {
     background-color: #f5f5f5;
     padding-top: 66px;
@@ -243,18 +244,140 @@ header .sub-menu li a:hover{
 .section--feature .summary__title {}
 .section--feature .summary__description {}
 .section--feature .video {
-    width: 700px;
-    margin: 0 auto;
+    max-width: 650px;
+    margin: 50px auto;    
 }
-.section--feature .video iframe {
+.section--feature .video .video-ratio {
+    height: 0;
+    padding-top:56.25%; /* 16:9 비율 - 반응형 퍼센트 */
+    position: relative;
+}
+.section--feature .video .video-ratio iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
-.section--feature .video-ratio {
-    height: 0;
-    padding-top:56.25%;
-    position: relative;
+.section--feature .tiles {
+    border: 1px solid #e5e5e5;
+    border-left: 0;
+    border-right: 0;
+    padding-bottom: 30px;
+}
+.section--feature .tiles .inner{
+    max-width: 1200px;
+}
+.section--feature .tiles ul {
+
+   /* 구형 브라우저는 사용 불가
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); */ /* 반응형에서는 넣구 싶은 갯수만 바꿔주면 됨 */
+}
+.section--feature .tiles ul li {
+    padding: 34px 24px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+}
+.section--feature .tiles ul li + li {
+    border-left: 1px solid #dadada;    
+}
+.section--feature .tiles ul li img {
+    max-width: 100%;
+    padding: 14px 10% 24px;
+    box-sizing: border-box; /* padding때문에 박스에서 나기지 않도록 */
+}
+.section--feature .tiles .tile__title{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.section--feature .tiles .tile__description{
+    font-size: 14px;
+    color: #767676;
+}
+/* SECTION WHERE IS */
+.section--where-is .inner{
+    padding-top: 80px;;
+}
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 40px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+}
+/* SECTION PRICING */
+.section--pricing {
+    background: linear-gradient(#f5f5f5, #fff);
+    background-color: #f5f5f5;
+}
+.section--pricing .inner{
+    padding:80px 0;
+}
+.section--pricing .card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(136, 127, 127, 0.2);
+    box-sizing: border-box;
+}
+.section--pricing .card .cell {
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+}
+.section--pricing .card .cell1 .btn {  
+    height: 50px;
+    font-size: 16px;
+}
+.section--pricing .card .cell2 {
+    flex: 1;
+    border-left: 1px solid #e5e5e5;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+/* FOOTER */
+footer {
+    background-color: #fefefe;
+}
+footer .inner{
+    justify-content: space-between;
+    padding: 50px 0;
+    border-top: 1px solid #eee;
+}
+footer .site_links {
+    display: flex;
+}
+footer .site_links li + li {
+    margin-left: 10px;
+}
+footer .site_links li {
+    font-size: 12px;
+    color: #767676;
+}
+footer .site_links li a{
+    color: #4078c0;    
+}
+footer .site_links li a:hover {
+    text-decoration: underline;
+}
+footer .logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+}
+footer .logo:hover svg {
+    fill: #4078c0;
 }
