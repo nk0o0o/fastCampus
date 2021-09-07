@@ -1,0 +1,28 @@
+@media screen and (min-width : 1024px){
+    /* desktop */    
+}
+@media screen and (max-width : 1024px){
+    /* tablet */
+    header .inner {
+        height: auto;
+        padding: 10px 20px;
+    }
+    header .inner .menu-group {
+        float: none;
+    }
+    header .inner .menu-group .main-menu {
+        display: block;
+        width: 100%;
+    }
+    header .inner .sign-group {
+        float: none;
+    }
+    header .inner .sign-group > div {}
+    header .inner .sign-group .btn-group {
+
+    }
+
+}
+@media screen and (max-width : 768px){
+    /* phone */
+}
