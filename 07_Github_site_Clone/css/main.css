@@ -168,6 +168,9 @@ header .sub-menu li a {
 header .sub-menu li a:hover{
     color: #4078c0;
 }
+header #toggle-btn {
+    display: none;
+}
 /* VISUAL */
 .section--visual {
     background-image: url('../img/bg.jpg');
