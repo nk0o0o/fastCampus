@@ -1,4 +1,4 @@
-import add from './util.js';
+import add from './util';
 const value = add(1,2);
 console.log(value);
 //--module commonjs --showConfig 
