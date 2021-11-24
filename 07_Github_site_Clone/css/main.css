@@ -170,8 +170,16 @@ header .sub-menu li a:hover{
 }
 header #toggle-btn {
     display: none;
+    background: url(../img/toggle-btn.svg);
+    width: 18px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    text-indent: -9999px;
+    cursor: pointer;
 }
-/* VISUAL */
+/* SECTION VISUAL */
 .section--visual {
     background-image: url('../img/bg.jpg');
     background-repeat: no-repeat;
@@ -244,8 +252,6 @@ header #toggle-btn {
     margin: 0 auto;
     text-align: center;
 }
-.section--feature .summary__title {}
-.section--feature .summary__description {}
 .section--feature .video {
     max-width: 650px;
     margin: 50px auto;    
@@ -283,9 +289,10 @@ header #toggle-btn {
     box-sizing: border-box;
     float: left;
     width: 25%;
+    border-right: 1px solid #dadada;    
 }
-.section--feature .tiles ul li + li {
-    border-left: 1px solid #dadada;    
+.section--feature .tiles ul li:last-child {
+    border-right: 0;
 }
 .section--feature .tiles ul li img {
     max-width: 100%;

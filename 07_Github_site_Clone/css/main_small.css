@@ -1,0 +1,38 @@
+/*** phone ***/
+.summary__title {
+    font-size: 34px !important;
+}
+.summary__description{
+    font-size: 22px;
+}
+/* SECTION FEATURE */
+.section--feature .tiles ul li{
+    width: 100%;
+    border-right: 0;
+}
+/* SECTION WHERE IS */
+#map {
+    margin: 40px -20px 0 -20px;
+    width: auto;
+    border-left: none;
+    border-right: none;
+}
+/* SECTION PRICING */
+.section--pricing .card{
+    display: block;
+    text-align: center;
+}
+.section--pricing .card .cell2{
+    border-left: 0;
+    border-top: 1px solid #e5e5e5;
+}
+/* FOOTER */
+footer .site_links{
+    float: none;
+    text-align: center;
+    display: block;
+}
+footer .site_links li {
+    display: inline;
+}
+footer .site_links + .site_links {margin-top: 20px;}dddddddd

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB1 - Welcome</title>
+  <meta charset="utf-8">
+</head>
+<body>
+ 
+  <p>The World Wide Web (abbreviated WWW or the Web) is an information space where documents and other web resources are identified by Uniform Resource Locators (URLs), interlinked by hypertext links, and can be accessed via the Internet.[1] English scientist Tim Berners-Lee invented the World Wide Web in 1989. He wrote the first web browser computer program in 1990 while employed at CERN in Switzerland.[2][3] The Web browser was released outside of CERN in 1991, first to other research institutions starting in January 1991 and to the general public on the Internet in August 1991.
+  </p>
+  <input type="button" value="hi" onclick="alert('hi')">
+  <input type="text" onchange="alert('change')">
+  <input type="text" onkeydown="alert('key down!')">
+
+  <script>
+    //document.write('hello world')
+    //console.log(document.getElementsByTagName('p'));
+    console.log('gkgkkgk'.toUpperCase());
+    console.log('gkgkkgk'.indexOf('o'));
+    console.log('gkgkkgk'.indexOf('k'));
+    console.log('gkgkkgk'.indexOf('K'));
+
+
+    //STRING 문자열 METHOD
+    //01. String.charAt(index); index번째 자리에 무슨 문자 있는가
+    const sentence = 'The quick brown fox jumps over the lazy dog.';
+    const index = 4;
+    console.log(`The character at index ${index} is ${sentence.charAt(index)}`);  // expected output: "The character at index 4 is q"
+    
+    //02. String.concat('',String); 문자열 합치기
+    const str1 = 'Hello';
+    const str2 = 'World';
+    console.log(str1.concat(' ', str2));   // expected output: "Hello World"
+    console.log(str2.concat(', ', str1));  // expected output: "World, Hello"
+
+    //03. String.includes(word); 대소문자 구별
+    const sentence2 = 'The quick brown fox jumps over the lazy dog.';
+    const word = 'fox';
+    console.log(`The word "${word}" ${sentence.includes(word) ? 'is' : 'is not'} in the sentence`);  // expected output: "The word "fox" is in the sentence"
+
+    //04. String.match(something); 문자열, 정규식 매치
+    var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var regexp = /[A-E]/gi;
+    var matches_array = str.match(regexp);
+
+    console.log(matches_array);  // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
+
+
+
+
+
+
+    
+  </script>
+</body>
+</html>
+ 

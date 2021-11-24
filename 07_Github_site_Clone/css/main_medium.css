@@ -1,0 +1,120 @@
+/**** tablet ***/
+header.section .inner {
+    height: auto;
+    padding: 0 15px;
+}
+header .menu-group,
+header .sign-group {
+    float: none;
+    display: block;
+}      
+header .logo {
+    padding: 12px 0 15px;
+}
+header .main-menu {
+    display: block;
+}    
+header .menu-group .main-menu li {
+    border-top: 1px solid #e5e5e5;
+}
+header .main-menu li a {
+    padding: 16px 0;
+}
+header .sign-group .btn-group {
+    display: block;
+}
+header .sign-group .btn-group a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .btn-group .sign-in {
+    margin-right: 0;
+}
+header .sign-group .btn-group a + a {
+    margin-top: 15px;
+}
+header #searchForm {
+    margin-top: 15px;
+    margin-right: 0;
+}
+header #searchForm #searchInput {
+    width: 100%;
+    text-align: center;
+}
+header #searchInput::placeholder,
+header #searchInput::-moz-placeholder,
+header #searchInput::-webkit-input-placeholder {
+    color: #ddd;
+}
+header .sub-menu {
+    justify-content: center;
+    margin: 15px 0;
+}
+header .toggle {
+    display: none;
+}  
+header .toggle.on {
+    display: block;
+}  
+header #toggle-btn {
+    display: block;
+}    
+/* SECTION VISUAL */
+.section--visual {
+    background-image: url('../img/bg-small.jpg');
+}
+.section--visual .inner {
+    padding:80px 20px;
+    display: block;
+    max-width: none;
+}
+.section--visual .summary {
+    margin-right: 0;
+    text-align: center;
+}
+.section--visual .summary__description{
+    padding-bottom: 50px;
+}
+#sign-form {
+    width: auto;
+    max-width: 500px;
+    margin: 0 auto;
+}
+/* SECTION FEATURE */
+.section--feature .summary {
+    padding: 66px 20px 0 20px;
+}
+.section--feature .tiles {
+    padding-bottom: 0;
+}
+.section--feature .tiles ul li{
+    width: 50%;
+}
+.section--feature .tiles ul li:nth-child(2n) {
+    border-right: none;
+}
+.section--feature .tiles ul li img {
+    padding: 14px 30% 24px;
+}
+/* SECTION WHERE IS */
+.section--where-is .inner{
+    max-width: none;
+    padding: 80px 20px 0 20px;
+}
+/* SECTION PRICING */
+.section--pricing .inner{
+    max-width: none;
+    padding: 80px 20px;
+}
+.section--pricing .card .cell2 {
+    font-size: 20px;
+}
+/* FOOTER */
+footer .inner {
+    padding: 50px 20px;
+}
+footer .logo {
+    display: none;
+}
+

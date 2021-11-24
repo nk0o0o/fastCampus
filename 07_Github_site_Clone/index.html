@@ -33,7 +33,8 @@
     <!-- Style Sheet -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" media="(max-width: 1024px)" href="css/main_medium.css">
+    <link rel="stylesheet" media="(max-width: 768px)" href="css/main_small.css">
 </head>
 <body>
     <div class="body__container">
@@ -211,12 +212,36 @@
             })
         }
 
-        const toggleBtn = document.querySelector('#toggle-btn');
-        toggleBtn.addEventListener('click', function(){
-            document.querySelector('.sign-group.toggle').classList.toggle('on');
-            document.querySelector('.main-menu.toggle').classList.toggle('on')
-        });
+        (function (window, document){
+            'use strict';            
+            
+            //헤더 토글 메뉴
+            const $toggles = document.querySelectorAll('.toggle'); //NdoeList
+            const $toggleBtn = document.querySelector('#toggle-btn');
+            $toggleBtn.addEventListener('click', function(){
+                toggleElements();
+            });
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 1024){
+                    //Off toggle element
+                    offElements();
+                }
+            })
+            function toggleElements(){
+                //.toggle의 클래스를 가진 모든 요소에 함수를 적용하고 싶을때
+                [].forEach.call($toggles, function (toggle){
+                    toggle.classList.toggle('on');
 
+                })
+            }
+            function offElements(){
+                [].forEach.call($toggles, function (toggle){
+                    toggle.classList.remove('on');
+
+                })
+            }
+
+        })(window, document)
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg
