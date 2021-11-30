@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var util_1 = require("./util");
-var value = (0, util_1.default)(1, 2);
+import add from './util';
+const value = add(1, 2);
 console.log(value);
 //# sourceMappingURL=hello.js.map

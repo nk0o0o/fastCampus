@@ -5,3 +5,4 @@ export default function add(a,b){
 export function minus(a,b){
     return a - b;
 }
+//타입적지않으면 any타입이라 에러뜰수있음
