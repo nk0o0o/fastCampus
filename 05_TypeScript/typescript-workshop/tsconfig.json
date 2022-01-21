@@ -12,7 +12,7 @@
         "rootDir": "src", //모듈의 루트가 되는
         "outDir" : "dist", //컴파일된 파일들이 설치되는 폴더
         "target": "es6",
-        "sourceMap":  true,
+        "sourceMap":  false,
         "removeComments": true, // 주석제거
         "noImplicitAny":false, // 매개변수에 타입값 주지 않으면 any로 설정되는 걸 막음
     }

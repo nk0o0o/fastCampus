@@ -12,4 +12,3 @@ function outer() {
     }
 }
 outer();
-//# sourceMappingURL=variables.js.map
