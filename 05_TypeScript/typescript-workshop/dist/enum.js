@@ -1,7 +1,7 @@
 var StarbuksGrade;
 (function (StarbuksGrade) {
     StarbuksGrade[StarbuksGrade["WELCOME"] = 0] = "WELCOME";
-    StarbuksGrade["GREEN"] = "Grren";
+    StarbuksGrade[StarbuksGrade["GREEN"] = 1] = "GREEN";
     StarbuksGrade[StarbuksGrade["GOLD"] = 2] = "GOLD";
 })(StarbuksGrade || (StarbuksGrade = {}));
 function getDiscound(v) {

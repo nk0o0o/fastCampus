@@ -17,8 +17,8 @@ class Cart {
     //생성자 함수 : constructor 
     //생성자 함수 변수 설정할 때 접근제한자 바로 설정할 수 있음
     constructor( protected user:User, private store:object ={} ) {
-        this.user = user;
-        this.store = {};
+        // this.user = user;
+        // this.store = {};
     }
     //메소드
     put(id: string, product: Product){

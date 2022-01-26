@@ -1,7 +1,7 @@
 //열거형 
 enum StarbuksGrade {
     WELCOME = 0,
-    GREEN = "Grren",
+    GREEN = 1,
     GOLD = 2
 }
 
@@ -12,7 +12,7 @@ function getDiscound(v:StarbuksGrade):number {
         case StarbuksGrade.GREEN:
             return 5;
         case StarbuksGrade.GOLD:
-            return 10;        
+            return 10;
     }
 }
 console.log(getDiscound(StarbuksGrade.GREEN)) // 1이 찍힘 0,1,2

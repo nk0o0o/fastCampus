@@ -1,16 +1,28 @@
+class D {
+    add(v) {
+        throw new Error("method not implemented");
+    }
+    get() {
+        throw new Error("method not implemented");
+    }
+}
 class LocalDB {
     constructor(localStorageKey) {
         this.localStorageKey = localStorageKey;
     }
     add(v) {
-        localStorage.setItem(this.localStorageKey, JSON.stringify(v));
+        localStorage.setItem(this.localStorageKey, v.serialize());
     }
     get() {
         const v = localStorage.getItem(this.localStorageKey);
         return (v) ? JSON.parse(v) : null;
     }
 }
-const userDb = new LocalDB('user');
-userDb.add({ name: 'jay' });
-const userA = userDb.get();
-userA.name;
+const cart1 = {
+    getItem() {
+        return {
+            v: ''
+        };
+    }
+};
+cart1.getItem();

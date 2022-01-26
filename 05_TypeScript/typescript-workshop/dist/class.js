@@ -2,8 +2,6 @@ class Cart {
     constructor(user, store = {}) {
         this.user = user;
         this.store = store;
-        this.user = user;
-        this.store = {};
     }
     put(id, product) {
         this.store[id] = product;
