@@ -7,14 +7,10 @@ import { Cell, Position } from './Board';
 import { Player, PlayerType } from './Player';
 
 export class MoveResult {
-    constructor(private killedPiece:Piece){    
-        //말 변수 생성 
-        //말의 주인(UPPER, LOWER)
-        //말의 움직임
-        //말
+    constructor(private killedPiece:Piece){      
     }
     getKilled(){
-        return this.killedPiece;
+      return this.killedPiece;
     }
 }
 
@@ -22,15 +18,20 @@ export interface Piece {
     ownerType: PlayerType;
     currentPosition: Position;
     move(from: Cell, to: Cell) : MoveResult;
+    //move의 변수들은 셀이어야하고, 반환값은 MoveResult에서 정의한 타입과 같아야한다.
     render():string;    
+    //render의 반환값은 문자열 -> 이미지 태그로 추가하기 위해서
 }
+
 /* 모든 말 공통된 움직임 */
 //abstract ===== 하위에서 정의해라
 abstract class DefaultPiece implements Piece {
     constructor(
         public readonly ownerType : PlayerType, 
         public currentPosition: Position
-    ) {}
+    ) {
+      //this.owner = 
+    }
 
     move(from: Cell, to: Cell) {
         //움직인거에 대한 내용
@@ -69,6 +70,9 @@ export class Lion extends DefaultPiece {
   
     render(): string {
       return `<img class="piece ${this.ownerType}" src="${lionImage}" width="90%" height="90%"/>`;
+      //return `<img class="piece " src="${lionImage}" width="90%" height="90%"/>`;
+      //this.ownerType은 PlayerType
+    
     }
   }
 

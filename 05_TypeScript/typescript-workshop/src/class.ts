@@ -10,7 +10,7 @@ class Cart {
     //protected user: User; 생성자 함수에서 접근제한자설정하면서 변수 사용하면 속성쓸때 생략할 수 있음
     //private store: object; 
     //접근제한자 속성, 메소드의 범위를 제한 할 수 있음
-    //접근제한자 private : class 안에서만 사용 인스턴스 레벨에서 사용할 수없음
+    //접근제한자 private : class 안에서만 사용 인스턴스 레벨에서 사용할 수 없음
     //접근제한자 protected : 사용 인스턴스 레벨에서 사용할 수 없지만, 상속받은 클래스에서는 사용할 수 있음
     //접근제한자 아닌 디폴트 public
 
