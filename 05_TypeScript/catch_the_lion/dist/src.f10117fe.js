@@ -130,43 +130,51 @@ var Cell =
 function () {
   function Cell(position, piece) {
     this.position = position;
-    this.piece = piece;
-    this.isActive = false;
-    this._el = document.createElement('div'); //this.position = Position
+    this.piece = piece; //셀이라는 네모하나 <div class="cell"><img class="piece UPPER" src=""></div> 
+    //말이 있을 수도 없을 수도
+    //활성화일수도 비활성화 일수도
+
+    this.isActive = false; //액티브되어있나 기본값 아니오
+
+    this._el = document.createElement('div'); //셀의 개체 만들기
+    //셀에는 위치(인스턴스)와 말(클래스)이 필요함 
+    //this.position = Position
     //this.piece = piece.필요한거~~~
 
-    this._el.classList.add('cell');
-  } //말 놓기
+    this._el.classList.add('cell'); //셀의 개체에 클래스 붙여주기
+
+  } //말 놓기 (셀의 말자리에 가져온 말 대입)
 
 
   Cell.prototype.put = function (piece) {
     this.piece = piece;
-  }; //놓여진 말 가져오기
+  }; //셀의 놓여진 말 꺼내주기
 
 
   Cell.prototype.getPiece = function () {
     return this.piece;
-  }; //활성화 시키기
+  }; //셀 활성화 시키기
 
 
   Cell.prototype.active = function () {
     this.isActive = true;
-  }; //비활성화 시키기
+  }; //셀 비활성화 시키기
 
 
   Cell.prototype.deactive = function () {
     this.isActive = false;
-  }; //뿌려주기
+  }; //셀 뿌려주기
 
 
   Cell.prototype.render = function () {
     if (this.isActive) {
-      this._el.classList.add('active');
+      this._el.classList.add('active'); //액티브 상태는 파란 outline
+
     } else {
       this._el.classList.remove('active');
     }
 
-    this._el.innerHTML = this.piece ? this.piece.render() : '';
+    this._el.innerHTML = this.piece ? this.piece.render() : ''; //말이 있으면 말도 뿌려주기
   };
 
   return Cell;
@@ -177,9 +185,15 @@ exports.Cell = Cell;
 var Board =
 /** @class */
 function () {
+  //es6의 맵 사용
+  //weakmap은 약한 참조를 가진 배열 
+  //let john = { name: "John" };의 john을 null로 덮으면 name: "John" 이라는 객체가 삭제됨
+  //맵의 장점은 키(htmlelment)를 객체로 줌
+  //키가 사라지면 밸류도 사라짐
   function Board(upperPlayer, lowerPlayer) {
     this.cells = [];
-    this._el = document.createElement('div'); //this.upperPlayer = Player.UPPER;
+    this._el = document.createElement('div');
+    this.map = new WeakMap(); //this.upperPlayer = Player.UPPER;
     //this.lowerPlayer = Player.LOWER;
 
     this._el.className = 'board';
@@ -208,6 +222,7 @@ function () {
           row: row,
           col: col
         }, piece);
+        this_1.map.set(cell._el, cell);
         this_1.cells.push(cell);
         rowEl.appendChild(cell._el);
       };
@@ -227,7 +242,7 @@ function () {
   Board.prototype.render = function () {
     this.cells.forEach(function (v) {
       return v.render();
-    });
+    }); //보드의 셀배열의 요소갯수 만큼 셀배열의 요소의 render하기 (말이나 공백)
   };
 
   return Board;
@@ -238,34 +253,44 @@ exports.Board = Board;
 var DeadZone =
 /** @class */
 function () {
+  //데드존의 타입가져와서 html개체 만들기 
   function DeadZone(type) {
     this.type = type;
-    this.cells = [];
-    this.deadzoneEl = document.getElementById("".concat(this.type, "_deadzone")).querySelector('.card-body');
-    var row = 0;
+    this.cells = []; //데드존의 셀들의 배열
+
+    this.deadzoneEl = document.getElementById("".concat(this.type, "_deadzone")).querySelector('.card-body'); //this.type : 위/아래
+
+    var row = 0; //데드존 1행 만들기
 
     for (var col = 0; col < 4; col++) {
+      //데드존 4열 만들기
       var cell = new Cell({
         row: row,
         col: col
-      }, null);
-      this.cells.push(cell);
-      this.deadzoneEl.appendChild(cell._el);
+      }, null); //데드존의 칸에 셀과 말 넣기(겜시작할때는 말 없음)
+
+      this.cells.push(cell); //데드존 셀 배열에 말없는 빈셀들 넣기
+
+      this.deadzoneEl.appendChild(cell._el); //데드존 개체에 셀 개체(div) 추가하기
     }
   }
 
   DeadZone.prototype.put = function (piece) {
     var emptyCell = this.cells.find(function (v) {
       return v.getPiece() == null;
-    });
-    emptyCell.put(piece);
-    emptyCell.render();
+    }); //빈셀은 데드존의 셀 중 null인 말을 가진 셀중 첫째
+    //배열.find(function(el)=>{return el > 0 ;}): 배열중에 0보다 큰값 중 첫번째 요소 찾기
+
+    emptyCell.put(piece); //빈셀 배열에 받아온 말 넣기
+
+    emptyCell.render(); // 첨에 말없는 빈셀이나 말 받아온 셀을 그려주기
   };
 
   DeadZone.prototype.render = function () {
     this.cells.forEach(function (v) {
       return v.render();
-    });
+    }); //데드존의 셀배열의 갯수, 4 만큼 셀배열의 요소를 render하기 (-> 셀의 render 말있으면 -> 말의 render : 말의 이미지 태그/말없으면 공백)
+
     /*
      this.cells.forEach(function(v){
          v.render();
@@ -284,7 +309,72 @@ module.exports = "/elophant.66e48f21.png";
 module.exports = "/griff.78de84a7.png";
 },{}],"src/images/chicken.png":[function(require,module,exports) {
 module.exports = "/chicken.3d0d4a2d.png";
-},{}],"src/Piece.ts":[function(require,module,exports) {
+},{}],"src/Player.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Player = exports.PlayerType = void 0;
+
+var Piece_1 = require("./Piece"); //열거형 타입 
+
+
+var PlayerType;
+
+(function (PlayerType) {
+  PlayerType["UPPER"] = "UPPER";
+  PlayerType["LOWER"] = "LOWER";
+})(PlayerType = exports.PlayerType || (exports.PlayerType = {}));
+
+var Player =
+/** @class */
+function () {
+  function Player(type) {
+    this.type = type; // 초기 플레이어에 해당되는 피스 갖고 있게하기
+
+    if (type == PlayerType.UPPER) {
+      this.pieces = [new Piece_1.Griff(PlayerType.UPPER, {
+        row: 0,
+        col: 0
+      }), new Piece_1.Lion(PlayerType.UPPER, {
+        row: 0,
+        col: 1
+      }), new Piece_1.Elephant(PlayerType.UPPER, {
+        row: 0,
+        col: 2
+      }), new Piece_1.Chick(PlayerType.UPPER, {
+        row: 1,
+        col: 1
+      })]; //위타입의 플레이어 일때, 각 동물들의 주인과 위치 전달해서 플레이어 말 배열로 가져옴
+    } else {
+      this.pieces = [new Piece_1.Elephant(PlayerType.LOWER, {
+        row: 3,
+        col: 0
+      }), new Piece_1.Lion(PlayerType.LOWER, {
+        row: 3,
+        col: 1
+      }), new Piece_1.Griff(PlayerType.LOWER, {
+        row: 3,
+        col: 2
+      }), new Piece_1.Chick(PlayerType.LOWER, {
+        row: 2,
+        col: 1
+      })];
+    }
+  }
+
+  Player.prototype.getPieces = function () {
+    //플레이어의 말배열을 반환
+    //콘솔 결과 pieces[] = [Griff, Lion, Elephant, Chick]
+    return this.pieces;
+  };
+
+  return Player;
+}();
+
+exports.Player = Player;
+},{"./Piece":"src/Piece.ts"}],"src/Piece.ts":[function(require,module,exports) {
 "use strict";
 
 var __extends = this && this.__extends || function () {
@@ -340,7 +430,7 @@ var MoveResult =
 /** @class */
 function () {
   function MoveResult(killedPiece) {
-    this.killedPiece = killedPiece;
+    this.killedPiece = killedPiece; //this.killedPiece : Piece
   }
 
   MoveResult.prototype.getKilled = function () {
@@ -357,28 +447,35 @@ exports.MoveResult = MoveResult;
 var DefaultPiece =
 /** @class */
 function () {
-  function DefaultPiece(ownerType, currentPosition) {
+  function DefaultPiece( // 모든 말들은 타입이 다른 주인이 있고, 행렬로 현재위치가 있음
+  ownerType, currentPosition) {
     this.ownerType = ownerType;
-    this.currentPosition = currentPosition; //this.owner = 
-  }
+    this.currentPosition = currentPosition;
+  } //모든 말은 셀에서 셀로 이동함
+
 
   DefaultPiece.prototype.move = function (from, to) {
-    //움직인거에 대한 내용
-    //특정 포지셔닝 전달해야함
     if (!this.canMove(to.position)) {
+      //이동하고자하는 셀로 가지 못할 경우 에러뜸
       throw new Error('can no move!');
     }
 
-    var moveResult = new MoveResult(to.getPiece() != null ? to.getPiece() : null);
-    to.put(this);
-    from.put(null);
-    this.currentPosition = to.position;
-    return moveResult;
+    var moveResult = new MoveResult(to.getPiece() != null ? to.getPiece() : null //이동하고자하는 셀이 null이 아니면, 이동하고자하는 셀의 말을 MoveResult로 반환 null이면 null을 반환
+    );
+    to.put(this); //이동하고자하는 셀의 말자리에 말 넣기
+
+    from.put(null); //있던 자리는 null로 
+
+    this.currentPosition = to.position; //옮기고자 하는 셀의 위치를 말의 현재위치로 대입
+
+    return moveResult; //반환값은 이동하고자하는 셀의 말 또는 null
   };
 
   return DefaultPiece;
 }();
-/* 사자 말의 움직임 */
+/* 동물들 말 */
+
+/* 사자 말 */
 
 
 var Lion =
@@ -391,20 +488,20 @@ function (_super) {
   }
 
   Lion.prototype.canMove = function (pos) {
+    //this는 말 (상속받음)
     var canMove = pos.row === this.currentPosition.row + 1 && pos.col === this.currentPosition.col || pos.row === this.currentPosition.row - 1 && pos.col === this.currentPosition.col || pos.col === this.currentPosition.col + 1 && pos.row === this.currentPosition.row || pos.col === this.currentPosition.col - 1 && pos.row === this.currentPosition.row || pos.row === this.currentPosition.row + 1 && pos.col === this.currentPosition.col + 1 || pos.row === this.currentPosition.row + 1 && pos.col === this.currentPosition.col - 1 || pos.row === this.currentPosition.row - 1 && pos.col === this.currentPosition.col + 1 || pos.row === this.currentPosition.row - 1 && pos.col === this.currentPosition.col - 1;
-    return canMove;
+    return canMove; // 변수를 참거짓으로 만들고 넘길때!!
   };
 
   Lion.prototype.render = function () {
-    return "<img class=\"piece ".concat(this.ownerType, "\" src=\"").concat(lion_png_1.default, "\" width=\"90%\" height=\"90%\"/>"); //return `<img class="piece " src="${lionImage}" width="90%" height="90%"/>`;
-    //this.ownerType은 PlayerType
+    return "<img class=\"piece ".concat(this.ownerType, "\" src=\"").concat(lion_png_1.default, "\" width=\"90%\" height=\"90%\"/>");
   };
 
   return Lion;
 }(DefaultPiece);
 
 exports.Lion = Lion;
-/* 코끼리 말의 움직임 */
+/* 코끼리 말 */
 
 var Elephant =
 /** @class */
@@ -427,7 +524,7 @@ function (_super) {
 }(DefaultPiece);
 
 exports.Elephant = Elephant;
-/* 기린 말의 움직임 */
+/* 기린 말 */
 
 var Griff =
 /** @class */
@@ -450,7 +547,7 @@ function (_super) {
 }(DefaultPiece);
 
 exports.Griff = Griff;
-/* 닭 말의 움직임 */
+/* 닭 말 */
 
 var Chick =
 /** @class */
@@ -473,72 +570,7 @@ function (_super) {
 }(DefaultPiece);
 
 exports.Chick = Chick;
-},{"./images/lion.png":"src/images/lion.png","./images/elophant.png":"src/images/elophant.png","./images/griff.png":"src/images/griff.png","./images/chicken.png":"src/images/chicken.png","./Player":"src/Player.ts"}],"src/Player.ts":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Player = exports.PlayerType = void 0;
-
-var Piece_1 = require("./Piece"); //열거형 타입 
-
-
-var PlayerType;
-
-(function (PlayerType) {
-  PlayerType["UPPER"] = "UPPER";
-  PlayerType["LOWER"] = "LOWER";
-})(PlayerType = exports.PlayerType || (exports.PlayerType = {}));
-
-var Player =
-/** @class */
-function () {
-  function Player(type) {
-    this.type = type; // 초기 플레이어에 해당되는 피스 갖고 있게하기
-
-    if (type == PlayerType.UPPER) {
-      this.pieces = [new Piece_1.Griff(PlayerType.UPPER, {
-        row: 0,
-        col: 0
-      }), new Piece_1.Lion(PlayerType.UPPER, {
-        row: 0,
-        col: 1
-      }), new Piece_1.Elephant(PlayerType.UPPER, {
-        row: 0,
-        col: 2
-      }), new Piece_1.Chick(PlayerType.UPPER, {
-        row: 1,
-        col: 1
-      })];
-    } else {
-      this.pieces = [new Piece_1.Elephant(PlayerType.LOWER, {
-        row: 3,
-        col: 0
-      }), new Piece_1.Lion(PlayerType.LOWER, {
-        row: 3,
-        col: 1
-      }), new Piece_1.Griff(PlayerType.LOWER, {
-        row: 3,
-        col: 2
-      }), new Piece_1.Chick(PlayerType.LOWER, {
-        row: 2,
-        col: 1
-      })];
-    }
-  }
-
-  Player.prototype.getPieces = function () {
-    //console.log(this.pieces)
-    //콘솔 결과 pieces[] = [Griff, Lion, Elephant, Chick]
-    return this.pieces;
-  };
-
-  return Player;
-}();
-
-exports.Player = Player;
-},{"./Piece":"src/Piece.ts"}],"src/Game.ts":[function(require,module,exports) {
+},{"./images/lion.png":"src/images/lion.png","./images/elophant.png":"src/images/elophant.png","./images/griff.png":"src/images/griff.png","./images/chicken.png":"src/images/chicken.png","./Player":"src/Player.ts"}],"src/Game.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -548,46 +580,170 @@ exports.Game = void 0;
 
 var Board_1 = require("./Board");
 
+var Piece_1 = require("./Piece");
+
 var Player_1 = require("./Player");
 
 var Game =
 /** @class */
 function () {
   function Game() {
-    this.turn = 0;
-    this.gameInforEl = document.querySelector('.alert');
-    this.state = 'STARTED'; // 둘중하나, 기본값 스타트
+    var _this = this;
 
-    this.upperPlayer = new Player_1.Player(Player_1.PlayerType.UPPER);
-    this.lowerPlayer = new Player_1.Player(Player_1.PlayerType.LOWER);
-    this.board = new Board_1.Board(this.upperPlayer, this.lowerPlayer); //생성자 함수 안에 쓰면 영역 안에서만,,, 여기에 쓰면 필드로 사용....
+    this.turn = 0; // 차례
 
-    this.upperDeadZone = new Board_1.DeadZone('UPPER');
-    this.lowerDeadZone = new Board_1.DeadZone('LOWER');
-    var boardContainer = document.querySelector('.board-container');
-    boardContainer.firstChild.remove(); //뭐있으면 지우기
+    this.gameInforEl = document.querySelector('.alert'); //게임상황 개체
 
-    boardContainer.appendChild(this.board._el);
-    this.board.render();
-    this.renderInfo();
+    this.state = 'STARTED'; //게임 상황 둘중하나, 기본값 스타트
+
+    this.upperPlayer = new Player_1.Player(Player_1.PlayerType.UPPER); //게임의 위 플레이어 정의!
+
+    this.lowerPlayer = new Player_1.Player(Player_1.PlayerType.LOWER); //게임의 아래 플레이어 정의!
+
+    this.board = new Board_1.Board(this.upperPlayer, this.lowerPlayer); //생성자 함수 안에 쓰면 영역 안에서만,,, 여기에 쓰면 필드로 사용....이 무슨 말이지/................
+
+    this.upperDeadZone = new Board_1.DeadZone('UPPER'); //게임의 데드존 위
+
+    this.lowerDeadZone = new Board_1.DeadZone('LOWER'); //게임의 데드존 아래
+
+    var boardContainer = document.querySelector('.board-container'); //게임보드판
+
+    boardContainer.firstChild.remove(); //게임보드판에 뭐있으면 지우기
+
+    boardContainer.appendChild(this.board._el); //게임보드판에 보드 개체 추가
+
+    this.currentPlayer = this.upperPlayer; //처음 플레이어는 위플레이어
+
+    this.board.render(); // 게임 보드의 셀그리기 
+
+    this.renderInfo(); //게임 보드의 상황 개체에 상황설명하는 글 그리기
+
+    this.board._el.addEventListener('click', function (e) {
+      if (_this.state === 'END') {
+        //게임의 상황이 엔드면 클릭해도 무반응
+        return false;
+      } //이벤트 위임처리
+
+
+      if (e.target instanceof HTMLElement) {
+        //무조건 e.target은 HTMLElement
+        var cellEl = void 0; //셀을 클릭하고 싶음!
+
+        if (e.target.classList.contains('cell')) {
+          //셀이라는 클래스를 가진 타겟이라면 그 타겟을클릭셀에 대입
+          cellEl = e.target;
+        } else if (e.target.classList.contains('piece')) {
+          //말이라는 클래스를 가진 타겟이라면 타겟의 부모를 클릭셀에 대입
+          cellEl = e.target.parentElement;
+        } else {
+          // 셀, 말 클래스 없으면 무반응
+          return false;
+        }
+
+        var cell = _this.board.map.get(cellEl); // 게임의 맵은 위크맵, 클릭셀이 키가 됨
+
+
+        if (_this.isCurrentUserPiece(cell)) {
+          //플레이어가 자기 말을 제대로 누른경우
+          _this.select(cell); // 클릭한 셀 선택된 셀로 보내기 -> 액티브, 그리기
+
+
+          return false;
+        }
+
+        if (_this.selectedCell) {
+          //이미 선택된 셀이 있다면
+          _this.move(cell); //클릭된 셀을 셀움직이기로 보내기 -> 비활성화, 죽이거나
+
+
+          _this.changeTurn(); // 턴 바꾸기
+
+        }
+      }
+    });
   }
 
-  Game.prototype.renderInfo = function () {
-    this.gameInforEl.innerHTML = "#".concat(this.turn, "\uD134 ").concat(this.currentPlayer.type, " \uCC28\uB840 ");
+  Game.prototype.isCurrentUserPiece = function (cell) {
+    //받아온 셀이 공백이 아니고, 셀의 말이 공백이 아니고, 셀의 말의 주인의 타입과 게임의 현재플레이어의 타입이 같을때 
+    return cell != null && cell.getPiece() != null && cell.getPiece().ownerType === this.currentPlayer.type; //ture / false
+  };
+
+  Game.prototype.select = function (cell) {
+    if (cell.getPiece() == null) {
+      // 말이 없는 셀 선택시 무반응
+      return;
+    }
+
+    if (cell.getPiece().ownerType !== this.currentPlayer.type) {
+      //본인의 말이 아닌 말이있는 셀을 선택시 무반응
+      return;
+    }
+
+    if (this.selectedCell) {
+      //선택된말이 있다면
+      this.selectedCell.deactive(); // 선택된 말 선택못하게 해주고
+
+      this.selectedCell.render(); // active된거 없애기
+    }
+
+    this.selectedCell = cell; //선택된 셀에 받아온 셀 넣기
+
+    cell.active(); //셀 활성화
+
+    cell.render(); //셀 그리기
+  };
+
+  Game.prototype.move = function (cell) {
+    this.selectedCell.deactive(); //게임의 이미 선택된 셀은 비활성화 하기
+
+    var killed = this.selectedCell.getPiece().move(this.selectedCell, cell).getKilled(); //죽은 피스는 선택된셀의 말을 선택된셀의 위치에서 새로 선택된 셀의 위치로 이동시키고 killedPiece에 대입시킨 말 받아오기
+    //죽은 말이 있다면 데드존으로 자리 이동시키기
+
+    if (killed) {
+      //killed가 있으면
+      if (killed.ownerType === Player_1.PlayerType.UPPER) {
+        //해당 말의 주인의 타입에 따라 데드존에 위치시키기
+        this.lowerDeadZone.put(killed);
+      } else {
+        this.upperDeadZone.put(killed);
+      }
+
+      if (killed instanceof Piece_1.Lion) {
+        //사자가 죽은 거면 
+        this.state = 'END'; //게임 종료 
+      }
+    }
+  };
+
+  Game.prototype.renderInfo = function (extraMessage) {
+    this.gameInforEl.innerHTML = "#".concat(this.turn, "\uD134 ").concat(this.currentPlayer.type, " \uCC28\uB840 ").concat(extraMessage ? '| ' + extraMessage : ''); //게임의 상황 개체에 게임의 턴, 차례, 메세지(메세지나 공백) 쓰기
   };
 
   Game.prototype.changeTurn = function () {
-    this.selectedCell.deactive();
-    this.selectedCell = null;
+    this.selectedCell.deactive(); // 선택된 셀은 비활성화하기
 
-    if (this.state === 'END') {}
+    this.selectedCell = null; // 선택된 셀 비우기
+
+    if (this.state === 'END') {
+      // 게임 상황이 엔드면 
+      this.renderInfo('END!'); //게임의 상황에 엔드 적기
+    } else {
+      //게임 종료 아니면
+      this.turn += 1; //게임의 턴 수 증가
+
+      this.currentPlayer = this.currentPlayer === this.lowerPlayer ? this.upperPlayer : this.lowerPlayer; //현재 플레이어어 교체
+
+      this.renderInfo(); //게임 상황 그리기
+    }
+
+    this.board.render(); //게임 보드 그리기
   };
 
   return Game;
 }();
 
 exports.Game = Game;
-},{"./Board":"src/Board.ts","./Player":"src/Player.ts"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./Board":"src/Board.ts","./Piece":"src/Piece.ts","./Player":"src/Player.ts"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -707,7 +863,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55692" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63127" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

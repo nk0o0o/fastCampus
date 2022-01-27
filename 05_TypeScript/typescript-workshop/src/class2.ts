@@ -46,7 +46,7 @@ class KoreanProgrammer extends Korean implements Programmer {//다중 인터페�
 
 const jay = new KoreanProgrammer('jay', 32132);
 const nkLee = new KoreanProgrammer('nk', 301013);
-
+jay.juminNum = 8484;
 console.log(jay.name)
 console.log(jay.juminNum)
 console.log(jay.lovekimchi())
