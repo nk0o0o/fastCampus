@@ -7,6 +7,7 @@ export enum PlayerType {
 }
 
 export class Player {
+    
     private pieces:Piece[] //플레이어의 말은 동물말들 배열
     
     getPieces(){

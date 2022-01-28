@@ -2,14 +2,20 @@
   "name": "practice",
   "version": "1.0.0",
   "main": "index.js",
+  "description": "",
   "scripts": {
+    "dev": "parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "map": false,
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "keywords": [],
-  "description": "",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
   }
 }
