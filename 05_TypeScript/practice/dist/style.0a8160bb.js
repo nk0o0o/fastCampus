@@ -117,116 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/Player.ts":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Player = exports.PlayerType = void 0;
-var PlayerType;
-
-(function (PlayerType) {
-  PlayerType["NPC"] = "NPC";
-  PlayerType["USER"] = "USER";
-})(PlayerType = exports.PlayerType || (exports.PlayerType = {}));
-
-var Player =
-/** @class */
-function () {
-  function Player(type) {
-    this.type = type; // 초기 플레이어에 해당되는 피스 갖고 있게하기
-
-    if (type == PlayerType.NPC) {
-      this.hands = [// new Rock (PlayerType.NPC, { row: 0, col: 0 }),
-        // new Paper (PlayerType.NPC, { row: 0, col: 0  }),
-        // new scissor(PlayerType.NPC, { row: 0, col: 0  }),
-      ]; //위타입의 플레이어 일때, 각 동물들의 주인과 위치 전달해서 플레이어 말 배열로 가져옴
-    } else {
-      this.hands = [// new Rock (PlayerType.USER, { row: 0, col: 0 }),
-        // new Paper (PlayerType.USER, { row: 0, col: 1  }),
-        // new scissor(PlayerType.USER, { row: 0, col: 2  }),
-      ];
-    }
-  }
-
-  return Player;
-}();
-
-exports.Player = Player;
-},{}],"src/Game.ts":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Game = void 0;
-
-var Player_1 = require("./Player");
-
-var Game =
-/** @class */
-function () {
-  //readonly board = new Board(this.npcPlayer, this.userPlayer);         
-  //readonly npcZone = new handZone('NPC');
-  //readonly userZone = new handZone('USER');
-  function Game() {
-    this.turn = 0; // 차례
-
-    this.gameInforEl = document.querySelector('.alert'); //게임상황 개체
-
-    this.state = 'STARTED'; //게임 상황 둘중하나, 기본값 스타트
-
-    this.npcPlayer = new Player_1.Player(Player_1.PlayerType.NPC);
-    this.userPlayer = new Player_1.Player(Player_1.PlayerType.USER);
-    var boardContainer = document.querySelector('.board-container'); //게임보드판
-
-    document.querySelector('#user_zone').addEventListener('click', function (e) {
-      if (this.state === 'END') {
-        //게임의 상황이 엔드면 클릭해도 무반응
-        return false;
-      } //이벤트 위임처리
-
-
-      if (e.target instanceof HTMLElement) {
-        //무조건 e.target은 HTMLElement
-        var cellEl = void 0; //셀을 클릭하고 싶음!
-
-        if (e.target.classList.contains('cell')) {
-          //셀이라는 클래스를 가진 타겟이라면 그 타겟을클릭셀에 대입
-          cellEl = e.target;
-        } else if (e.target.classList.contains('hands')) {
-          //손이라는 클래스를 가진 타겟이라면 타겟의 부모를 클릭셀에 대입
-          cellEl = e.target.parentElement;
-        } else {
-          // 셀, 손 클래스 없으면 무반응
-          return false;
-        }
-
-        var cell = this.board.map.get(cellEl); // 게임의 맵은 위크맵, 클릭셀이 키가 됨
-
-        if (this.isCurrentUserPiece(cell)) {
-          //플레이어가 자기 말을 제대로 누른경우
-          this.select(cell); // 클릭한 셀 선택된 셀로 보내기 -> 액티브, 그리기
-
-          return false;
-        }
-
-        if (this.selectedCell) {
-          //이미 선택된 셀이 있다면
-          this.move(cell); //클릭된 셀을 셀움직이기로 보내기 -> 비활성화, 죽이거나
-
-          this.changeTurn(); // 턴 바꾸기
-        }
-      }
-    });
-  }
-
-  return Game;
-}();
-
-exports.Game = Game;
-},{"./Player":"src/Player.ts"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -293,32 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/styles/style.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles/style.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/index.ts":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var Game_1 = require("./Game");
-
-require("bootstrap/dist/css/bootstrap");
-
-require("./styles/style.css");
-
-new Game_1.Game();
-},{"./Game":"src/Game.ts","bootstrap/dist/css/bootstrap":"node_modules/bootstrap/dist/css/bootstrap.css","./styles/style.css":"src/styles/style.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -522,5 +393,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.ts"], null)
-//# sourceMappingURL=/src.f10117fe.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/style.0a8160bb.js.map
