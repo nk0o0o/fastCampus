@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+@import "../scss/_font.scss";
+
+html {
+    font-size: 100%;
+    font-family: 'nuckle';
+    font-weight: 400;
+}
+//GNB
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px;    
+    > ul {
+        height: 100%;
+    }
+    li {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 1.5rem;
+    }  
+    .logo{
+        width: 315px;
+        text-align: center;
+        img {
+            display: inline-block;
+            max-width: 200px;
+        }
+    }
+    .gnb {
+        display: flex;
+        justify-content: space-around;            
+    }
+    .nav__ect {
+        margin-left: auto;
+        display: flex;
+        justify-content: space-around;
+        li {
+            padding: 0 2.75rem;
+        }
+    }    
+    &.white {
+        border-bottom: 1px solid #e7e7e7;
+        li {
+            border-right: 1px solid #e7e7e7;
+        }
+        .gnb {
+            li {
+                &:first-child {
+                    border-left:1px solid #e7e7e7;
+                }
+            }
+        }
+        .nav__ect {
+            li {
+                &:first-child {
+                    border-left:1px solid #e7e7e7;
+                }
+                &:last-child {
+                    border-right:none;
+                }
+            }
+        }
+        color: #333;
+    }
+}
+//더보기 버튼
+.btn-more {
+    cursor: pointer;
+    width: 565px; height: 160px;
+    border-radius: 2rem;
+    display: flex;
+    &.white {
+        background-color: #fff;
+        .btn-more__text {
+            color: #333;
+        }
+    }
+    &.gray-dark {
+        background-color: #333;
+        .btn-more__text {
+            color: #fff;
+        }
+    }
+    .btn-more__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 450px;
+        border-right: 1px solid #eee;
+        padding:0 0 0 55px;
+        span {
+            font-size: 1rem;
+            color: #a1a2a1;
+        }
+        p{
+            font-size: 1.75rem;
+            margin-top: 0.75rem;
+        }
+    }
+    .btn-more__icon {
+        width:calc(100% - 450px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            svg{
+                width: 1.25rem;
+            }
+        }
+    }
+}
+
+//

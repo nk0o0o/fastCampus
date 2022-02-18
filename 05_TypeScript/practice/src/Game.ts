@@ -1,12 +1,12 @@
-import { Board } from './Board' ;
+import { Board, Cell } from './Board' ;
 import { Player, PlayerType } from './Player';
 
 export class Game {
     
-    private turn = 0; // 차례
+    private turn = 0; // 차례 - 몇번째 하고 있는지
     private gameInforEl = document.querySelector('.alert'); //게임상황 개체
     private state: 'STARTED' | 'END' = 'STARTED';//게임 상황 둘중하나, 기본값 스타트
-
+    private selectedCell:Cell;//선택된 셀
     readonly npcPlayer = new Player(PlayerType.NPC);
     readonly userPlayer = new Player(PlayerType.USER);
 
@@ -49,6 +49,27 @@ export class Game {
                 }
             }
         })
+    }
+    isCurrentUserPiece(cell:Cell){
+        //받아온 셀이 공백이 아니고, 셀의 hand가 공백이 아니고
+        return cell != null && cell.hand! != null && cell;
+    }
+
+    renderInfo(extraMessage?: string){
+        this.gameInforEl.innerHTML = `#${this.turn}번째 게임 ${(extraMessage)? '| ' + extraMessage : ''}`;
+        //게임의 상황 개체에 게임의 턴, 차례, 메세지(메세지나 공백) 쓰기
+    }
+    changeTurn(){
+        //this.selectedCell = null;// 선택된 셀 비우기
+
+        if( this.state === 'END' ){ // 게임 상황이 엔드면 
+            this.renderInfo('END!') //게임의 상황에 엔드 적기
+        } else { //게임 종료 아니면
+            this.turn += 1; //게임의 턴 수 증가
+            this.renderInfo();//게임 상황 그리기
+        }
+
+        //this.board.render();//게임 보드 그리기
     }
     
 

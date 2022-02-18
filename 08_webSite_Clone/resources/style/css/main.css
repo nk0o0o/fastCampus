@@ -1,0 +1,53 @@
+@font-face { font-family: "nuckle"; font-style: normal; font-weight: 300; src: url("./../../fonts/Nuckle-Regular.woff2") format("woff2"); }
+
+@font-face { font-family: "nuckle"; font-style: normal; font-weight: 400; src: url("./../../fonts/Nuckle-Medium.woff2") format("woff2"); }
+
+@font-face { font-family: "nuckle"; font-style: normal; font-weight: 700; src: url("./../../fonts/Nuckle-Bold.woff2") format("woff2"); }
+
+html { font-size: 100%; font-family: 'nuckle'; font-weight: 400; }
+
+nav { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; height: 100px; }
+
+nav > ul { height: 100%; }
+
+nav li { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; padding: 0 1.5rem; }
+
+nav .logo { width: 315px; text-align: center; }
+
+nav .logo img { display: inline-block; max-width: 200px; }
+
+nav .gnb { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; }
+
+nav .nav__ect { margin-left: auto; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; }
+
+nav .nav__ect li { padding: 0 2.75rem; }
+
+nav.white { border-bottom: 1px solid #e7e7e7; color: #333; }
+
+nav.white li { border-right: 1px solid #e7e7e7; }
+
+nav.white .gnb li:first-child { border-left: 1px solid #e7e7e7; }
+
+nav.white .nav__ect li:first-child { border-left: 1px solid #e7e7e7; }
+
+nav.white .nav__ect li:last-child { border-right: none; }
+
+.btn-more { cursor: pointer; width: 565px; height: 160px; border-radius: 2rem; display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.btn-more.white { background-color: #fff; }
+
+.btn-more.white .btn-more__text { color: #333; }
+
+.btn-more.gray-dark { background-color: #333; }
+
+.btn-more.gray-dark .btn-more__text { color: #fff; }
+
+.btn-more .btn-more__text { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; width: 450px; border-right: 1px solid #eee; padding: 0 0 0 55px; }
+
+.btn-more .btn-more__text span { font-size: 1rem; color: #a1a2a1; }
+
+.btn-more .btn-more__text p { font-size: 1.75rem; margin-top: 0.75rem; }
+
+.btn-more .btn-more__icon { width: calc(100% - 450px); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.btn-more .btn-more__icon span svg { width: 1.25rem; }
