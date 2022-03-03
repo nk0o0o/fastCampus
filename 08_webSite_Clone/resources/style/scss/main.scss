@@ -68,6 +68,14 @@ nav {
         color: #333;
     }
 }
+/* FLOAT CLEARFIX  */
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.float--left {float: left;}
+.float--right {float: right;}
 //더보기 버튼
 .btn-more {
     cursor: pointer;
@@ -114,5 +122,88 @@ nav {
         }
     }
 }
-
-//
+//섹션 공통
+.section {
+    width: 100%;
+    .inner {
+        width:1810px;
+        padding: 0 60px;
+        margin: 0 auto;
+        position: relative;
+        @media all and (max-width:1810px) {
+            width: 100%;            
+        }
+    }
+    .wording {
+        font-size: 5rem;
+    }
+}
+//section__for
+.section__for {
+    .title {
+        &--sm {
+            font-size: 1.2rem;
+        }
+        &--lg {
+            font-size: 6rem;
+        }
+    }
+    .collect_wrap {
+        .collect_item {
+            float: left;
+            width: calc(100%/2 - 35px);
+            height: auto;
+            overflow: hidden;            
+            border: 0px solid #fff;
+            .item_wrap {       
+                display: block;
+                height: 100%; 
+                position: relative;
+                overflow: hidden;
+                transition: transform 300ms linear;
+                .item_txt {
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    align-items: center;            
+                    display: flex;
+                    color: #fff;
+                    > p {
+                        transition: transform 500ms linear;
+                        opacity: 0;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        flex-grow: 1;
+                        z-index: 10;
+                    }
+                }
+                .img_wrap {
+                    transition: all 300ms linear;                    
+                    width: 100%;
+                    background:transparent center no-repeat; 
+                    background-size: contain;
+                    padding-top:128.8%;
+                }
+            }
+            &:first-child {
+                margin-right: 70px;
+            }
+            &:last-child {
+                width: 100%;
+            }
+            &:hover {
+                .item_wrap {       
+                    transform: scale(0.9);                    
+                    .item_txt {
+                        > p {
+                            opacity: 1;
+                        }
+                    }   
+                    .img_wrap {
+                        transform: scale(1.2);
+                    }
+                }
+            }            
+        }
+    }
+}
