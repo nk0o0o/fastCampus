@@ -39,7 +39,7 @@ nav.white .nav__ect li:last-child { border-right: none; }
 
 .float--right { float: right; }
 
-.btn-more { cursor: pointer; width: 565px; height: 160px; border-radius: 1rem; display: -webkit-box; display: -ms-flexbox; display: flex; overflow: hidden; }
+.btn-more { cursor: pointer; width: 565px; height: 160px; border-radius: 2rem; display: -webkit-box; display: -ms-flexbox; display: flex; overflow: hidden; }
 
 .btn-more__text { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; width: 450px; border-right: 1px solid #eee; padding: 0 0 0 55px; overflow: hidden; z-index: 1; }
 

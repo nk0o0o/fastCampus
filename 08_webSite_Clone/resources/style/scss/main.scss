@@ -80,27 +80,18 @@ nav {
 .btn-more {
     cursor: pointer;
     width: 565px; height: 160px;
-    border-radius: 2rem;
+    border-radius: 1rem;
     display: flex;
-    &.white {
-        background-color: #fff;
-        .btn-more__text {
-            color: #333;
-        }
-    }
-    &.gray-dark {
-        background-color: #333;
-        .btn-more__text {
-            color: #fff;
-        }
-    }
-    .btn-more__text {
+    overflow: hidden;   
+    &__text {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 450px;
         border-right: 1px solid #eee;
         padding:0 0 0 55px;
+        overflow: hidden;
+        z-index: 1;
         span {
             font-size: 1rem;
             color: #a1a2a1;
@@ -110,18 +101,84 @@ nav {
             margin-top: 0.75rem;
         }
     }
-    .btn-more__icon {
+    &__icon {
         width:calc(100% - 450px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        span {
-            svg{
-                width: 1.25rem;
+        position: relative;
+        .ic_wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;            
+            span {
+                svg{
+                    width: 1.25rem;
+                }
+            }
+            &.hv {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                right: 2px;                
+                border-radius:0 1rem 1rem 0;
+                transform: translateX(-100%);
+                transition: all 300ms ease-in-out;
+                .path__arrow-right{
+                    fill: #fff;
+                }
+            }
+        }        
+    }    
+    &:hover {
+        .ic_wrap.hv {
+            right: 0px;      
+            transform: translateX(0%);
+        }
+    }
+    &.white {
+        background-color: #fff;
+        .btn-more__text {
+            color: #333;
+            background-color: #fff;
+        }
+        .btn-more__icon {
+            .ic_wrap {
+                .path__arrow-right{
+                    fill: #000;
+                }
+                &.hv {
+                    background-color: #000;
+                    .path__arrow-right{
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+    &.gray-dark {
+        background-color: #333;
+        .btn-more__text {
+            color: #fff;
+            background-color: #333;
+        }
+        .btn-more__icon {    
+            .ic_wrap {
+                .path__arrow-right{
+                    fill: #fff;
+                }
+                &.hv {
+                    background-color: #000;
+                    opacity: 0.5;
+                }
             }
         }
     }
 }
+@media all and (max-width:1810px) {
+           
+}
+
 //섹션 공통
 .section {
     width: 100%;
@@ -155,34 +212,51 @@ nav {
             height: auto;
             overflow: hidden;            
             border: 0px solid #fff;
-            .item_wrap {       
+            .item {       
                 display: block;
-                height: 100%; 
+                height: 100%;
                 position: relative;
                 overflow: hidden;
-                transition: transform 300ms linear;
-                .item_txt {
-                    height: 100%;
+                transition: transform 800ms cubic-bezier(0.34,1.02,0.68,1);
+                &__txt {
+                    display: flex;
+                    align-items: center;            
                     width: 100%;
                     position: absolute;
-                    align-items: center;            
-                    display: flex;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
                     color: #fff;
+                    z-index: 1;
                     > p {
-                        transition: transform 500ms linear;
                         opacity: 0;
+                        transition: all 500ms cubic-bezier(0.34,1.02,0.68,1);
+                        //transition-delay: 100ms;
                         font-size: 1.5rem;
                         text-align: center;
                         flex-grow: 1;
-                        z-index: 10;
                     }
                 }
-                .img_wrap {
-                    transition: all 300ms linear;                    
+                &__img_wrap {
+                    transition: all 800ms cubic-bezier(0.34,1.02,0.68,1);                    
                     width: 100%;
                     background:transparent center no-repeat; 
-                    background-size: contain;
+                    background-size: cover;
                     padding-top:128.8%;
+                }
+                &__btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;                    
+                    width: 100%;
+                    position: absolute;
+                    bottom: 65px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    overflow: hidden;
+                    .btn-more{
+                        transition: transform 300ms cubic-bezier(0.34,1.02,0.68,1);                        
+                    }
                 }
             }
             &:first-child {
@@ -192,15 +266,20 @@ nav {
                 width: 100%;
             }
             &:hover {
-                .item_wrap {       
-                    transform: scale(0.9);                    
-                    .item_txt {
+                .item {       
+                   transform: scale(0.9);                    
+                    &__txt {
                         > p {
                             opacity: 1;
                         }
                     }   
-                    .img_wrap {
+                    &__img_wrap {
                         transform: scale(1.2);
+                    }
+                    &__btn {
+                        .btn-more{
+                            transform:translate(0, 101%)
+                        }
                     }
                 }
             }            
