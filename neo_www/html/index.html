@@ -8,9 +8,10 @@
 	<meta name="keywords" contents="임플란트, 네오임플란트, 치과, 치과치료, 편안함" />
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery.js"></script>
 </head>
 <body>
-    <div class="body__container">
+    <div class="body-container">
 		<!-- HEADER -->
         <header class="section">
             <div class="inner clearfix">
@@ -26,7 +27,7 @@
                 </div>
                 <button class="float--right toggle">네오임플란트 사용치과</button>
             </div>
-        </header>
+        </header>        
         <section class="section section--visual">
             <div class="inner">
                 <ul>
@@ -64,41 +65,78 @@
                             </div>
                             <div class="dentist__address">서울 강남구 영동대로 701 (청담동) 5층</div>
                         </div>
-                        <button class="btn__view-map">지도보기</button>
+                        <button class="btn btn--pink">지도보기</button>
                     </div>
                 </div>
-                <div class="pagination">
-                    <a href="#" class="">맨앞</a>
-                    <a href="#" class="">앞</a>
-                    <a href="#" class="">1</a>
-                    <a href="#" class="">2</a>
-                    <a href="#" class="">3</a>
-                    <a href="#" class="">4</a>
-                    <a href="#" class="">뒤</a>
-                    <a href="#" class="">맨뒤</a>
+                <!-- 페이지네이션 -->
+                <div class="pag-cover">
+                    <div class="pg-links">
+                    <div class="td arr-cover">
+                        <div class="arrow" id="l-arrow"><img src="../images/common/ico_list-view.png" alt></div>
+                    </div>
+                    <div class="td arr-cover">
+                        <div class="arrow" id="l-arrow"><img src="../images/common/ico_list-view.png" alt></div>
+                    </div>
+                    <div class="td">
+                        <div>
+                        <div class="pg-link"><span>1</span></div>
+                        <div class="pg-link"><span>2</span></div>
+                        <div class="pg-link"><span>3</span></div>
+                        </div>
+                    </div>
+                    <div class="td arr-cover">
+                        <div class="arrow" id="r-arrow"><img src="../images/common/ico_list-view.png" alt></div>
+                    </div>
+                    <div class="td arr-cover">
+                        <div class="arrow" id="l-arrow"><img src="../images/common/ico_list-view.png" alt></div>
+                    </div>
+                    </div>
                 </div>
             </div>
         </section>
         <footer class="section">
-                <div>네오바이오텍의 국내 판매 전문 회사 <em>"네오임플란트"</em></div>
-                <div class="ft_info">
-                    <div class="inner clearfix">
-                        <div class="float--left">고객지원 : 02-1577-2885 (평일 09:00 ~ 18:00 주말 및 공휴일 제외)</div>
-                        <div class="site_link float--right">패밀리사이트</div>
+            <div>네오바이오텍의 국내 판매 전문 회사 <em>"네오임플란트"</em></div>
+            <div class="customer-info">
+                <div class="inner clearfix">
+                    <div class="float--left">고객지원 : 02-1577-2885 (평일 09:00 ~ 18:00 주말 및 공휴일 제외)</div>
+                    <!-- 패밀리사이트 -->
+                    <div class="family-select float--right">
+                        <button type="button" class="select-btn">
+                            <span>패밀리사이트</span>
+                            <i class="ico-plus"></i>
+                        </button>
+                        <div class="family-list-box">
+                            <ul>
+                                <li><a href="#" target="_blank"><span>컴컴</span></a></li>
+                                <li><a href="#" target="_blank"><span>컴컴</span></a></li>
+                                <li><a href="#" target="_blank"><span>컴컴</span></a></li>
+                                <li><a href="#" target="_blank"><span>컴컴</span></a></li>
+                            </ul>
+                        </div>
                     </div>
+                    <!--// 패밀리사이트 -->
                 </div>
-                <div class="ft_info">
-                    <div class="inner">
-                        <ul class="company">
-                            <li>본사 (주)네오바이오텍 / 서울시 구로구 디지털로 27길 36 이스페이스빌딩 10층</li>
-                            <li>영업본부 (주)네오임플란트 / 경기도 안양시 만안구 석수동 860 6층</li>
-                            <li>대표 : 본사 허영구 / 영업본부 김인호</li>
-                            <li>사업자등록번호 : 본사 124-81-75688 / 영업본부 807-86-00744</li>
-                        </ul>
-                        <p class="copy">COPYRIGHT &copy; NEOIMPLANTS.CO.LTD ALL RIGHT RESERVED.</p>
-                    </div>
+            </div>
+            <div class="company_info">
+                <div class="inner">
+                    <ul class="company">
+                        <li>본사 (주)네오바이오텍 / 서울시 구로구 디지털로 27길 36 이스페이스빌딩 10층</li>
+                        <li>영업본부 (주)네오임플란트 / 경기도 안양시 만안구 석수동 860 6층</li>
+                        <li>대표 : 본사 허영구 / 영업본부 김인호</li>
+                        <li>사업자등록번호 : 본사 124-81-75688 / 영업본부 807-86-00744</li>
+                    </ul>
+                    <p class="copyright">COPYRIGHT &copy; NEOIMPLANTS.CO.LTD ALL RIGHT RESERVED.</p>
                 </div>
+            </div>
 		</footer>
     </div>
+    <script>
+        $(document).ready(function(){
+            $('.family-select .select-btn').on('click', function(){
+                $('.family-list-box').toggleClass('on')
+                $(this).toggleClass('on')
+            })
+        })
+    </script>
 </body>
 </html>
