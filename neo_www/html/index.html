@@ -11,132 +11,190 @@
     <script src="../js/jquery.js"></script>
 </head>
 <body>
-    <div class="body-container">
-		<!-- HEADER -->
-        <header class="section">
-            <div class="inner clearfix">
-                <div class="menu-group float--left">
-                    <h1 class="logo">
-                        <a href="#">네오임플란트</a>
-                    </h1>
-                    <ul class="main-menu toggle">
-                        <li><a href="#">임플란트</a></li>
-                        <li><a href="#">바로가이드</a></li>
-                        <li><a href="#">홍보센터</a></li>
-                    </ul>
-                </div>
-                <button class="float--right toggle">네오임플란트 사용치과</button>
-            </div>
-        </header>        
+    <div class="body-container">      
         <section class="section section--visual">
             <div class="inner">
-                <ul>
-                    <li><a href="#"><em>안정성</em>이 검증된 <span>네오</span></a></li>
-                    <li><a href="#">많은 <em>치과의사</em>들이 선택한 <span>네오</span></a></li>
-                    <li><a href="#"><em>빠</em>르고 <em>정</em>확한 <span>바로가이드</span></a></li>
-                </ul>
+                <div class="neo-points">
+                    <ul class="clearfix">
+                        <li class="point">
+                            <a href="#" class="point-txt"><em>안정성</em>이 검증된 <span class="txt-pink">네오</span></a>
+                            <div class="point-icon">
+                                <img src="../images/ico-visual-point.png" alt>
+                            </div>
+                        </li>
+                        <li class="point">
+                            <a href="#" class="point-txt">많은 <em>치과의사</em>들이 선택한 <span class="txt-pink">네오</span></a>
+                            <div class="point-icon">
+                                <img src="../images/ico-visual-point.png" alt>
+                            </div>
+                        </li>
+                        <li class="point">
+                            <a href="#" class="point-txt"><em>빠</em>르고 <em>정</em>확한 <span class="txt-pink">바로가이드</span></a>
+                            <div class="point-icon">
+                                <img src="../images/ico-visual-point.png" alt>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section class="section section--search">
-            <div>네오임플란트X바로가이드 치과를 찾아보세요</div>
-            <div>
-                <div>네오임플란트 사용치과</div>
-                <div>바로가이드 사용치과</div>
+            <div class="inner">
+                <h2>
+                    <img src="../images/search-tit.png" alt="네오임플란트X바로가이드 치과를 찾아보세요">
+                </h2>
+                <form id="searchForm" action="#" method="POST">
+                    <div class="dentist-type clearfix">
+                        <label>
+                            <input type="radio" name="dentistType" checked/>
+                            <span><em class="txt">네오임플란트 사용치과</em></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="dentistType" />
+                            <span><em class="txt">바로가이드 사용치과</em></span>
+                        </label>
+                    </div>
+                    <div class="saerch-wrap">
+                        <div class="input-search-wrap">
+                          <input type="search" class="input-search" name="" value="" placeholder="치과명, 주소로 검색해 주세요">
+                        </div>
+                        <button type="button" class="btn-search" title="" onclick="">
+                           <span class="blind">검색</span>
+                         </button>
+                      </div>
+                </form>
             </div>
-            <form id="searchForm" action="#" method="POST">
-                <input id="searchInput" type="text" class="input--text" placeholder="치과명, 주소로 검색해 주세요">
-                <input type="submit" value="submit">
-            </form>
-            <div>아래화살표</div>
         </section>
+
         <section class="section section--searchResult">
             <div class="inner">
-                <div id="map"></div>
-                <div>목록보기<i><img src="../images/common/ico_list-view.png" alt></i></div>
-
-                <div class="dentist__list">
-                    <div class="item">
-                        <div class="icon__map">A</div>
-                        <div class="item__desc">
-                            <div class="dentist__info">
-                                <p class="dentist__name">닥터 허치과의원</p>
-                                <button>바로가이드</button>
-                                <span class="dentist__tel">Tel. 02-000-0000</span>
-                            </div>
-                            <div class="dentist__address">서울 강남구 영동대로 701 (청담동) 5층</div>
-                        </div>
-                        <button class="btn btn--pink">지도보기</button>
-                    </div>
+                <div id="map">
+                    <button class="btn btn-position">내 위치 중심으로 지도 보기</button>
+                    <button class="icon-map"><span class="list-order">A</span></button>
                 </div>
-                <!-- 페이지네이션 -->
-                <div class="pag-cover">
-                    <div class="pg-links">
-                    <div class="td arr-cover">
-                        <div class="arrow" id="l-arrow"><img src="../images/common/ico_list-view.png" alt></div>
-                    </div>
-                    <div class="td arr-cover">
-                        <div class="arrow" id="l-arrow"><img src="../images/common/ico_list-view.png" alt></div>
-                    </div>
-                    <div class="td">
-                        <div>
-                        <div class="pg-link"><span>1</span></div>
-                        <div class="pg-link"><span>2</span></div>
-                        <div class="pg-link"><span>3</span></div>
+                <div class="view-list"><span>목록보기</span></div>
+
+                <div class="dentist-list">
+                    <ul>
+                        <li class="item">
+                            <div class="icon-map">
+                                <span class="list-order">A</span>
+                            </div>
+                            <div class="item-desc">
+                                <div class="dentist-info">
+                                    <p class="dentist-name">닥터 허치과의원</p>
+                                    <button class="btn btn-guide">바로가이드</button>
+                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-address">서울 강남구 영동대로 701 (청담동) 5층</div>
+                                </div>
+                            </div>
+                            <div class="item-btn">
+                                <button class="btn btn-veiw-map">지도보기</button>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="icon-map">
+                                <span class="list-order">B</span>
+                            </div>
+                            <div class="item-desc">
+                                <div class="dentist-info">
+                                    <p class="dentist-name">서울아르케치과의원</p>
+                                    <button class="btn btn-guide">바로가이드</button>
+                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-address">서울 강남구 청담동 43-9 원일빌딩 607</div>
+                                </div>
+                            </div>
+                            <div class="item-btn">
+                                <button class="btn btn-veiw-map">지도보기</button>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="icon-map">
+                                <span class="list-order">C</span>
+                            </div>
+                            <div class="item-desc">
+                                <div class="dentist-info">
+                                    <p class="dentist-name">청담성모치과</p>
+                                    <button class="btn btn-guide">바로가이드</button>
+                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-address">서울 강남구 청담동 7-19 3층</div>
+                                </div>
+                            </div>
+                            <div class="item-btn">
+                                <button class="btn btn-veiw-map">지도보기</button>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="icon-map">
+                                <span class="list-order">D</span>
+                            </div>
+                            <div class="item-desc">
+                                <div class="dentist-info">
+                                    <p class="dentist-name">착한 청담 네오플란트치과</p>
+                                    <button class="btn btn-guide">바로가이드</button>
+                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-address">경기 부천시 원미구 부흥로303번길 6 ,3층(중동, 상록빌딩)</div>
+                                </div>
+                            </div>
+                            <div class="item-btn">
+                                <button class="btn btn-veiw-map">지도보기</button>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="icon-map">
+                                <span class="list-order">E</span>
+                            </div>
+                            <div class="item-desc">
+                                <div class="dentist-info">
+                                    <p class="dentist-name">한치과의원</p>
+                                    <button class="btn btn-guide">바로가이드</button>
+                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-address">서울특별시 강남구 도산대로55길 29 (청담동,대창빌딩4층B호)</div>
+                                </div>
+                            </div>
+                            <div class="item-btn">
+                                <button class="btn btn-veiw-map">지도보기</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pagination-wrap">
+                    <div class="pagination">
+                        <div class="col arr-wrap">
+                            <div class="arrow arr-left">
+                                <img src="../images/arrs-left.png" alt>
+                            </div>
                         </div>
-                    </div>
-                    <div class="td arr-cover">
-                        <div class="arrow" id="r-arrow"><img src="../images/common/ico_list-view.png" alt></div>
-                    </div>
-                    <div class="td arr-cover">
-                        <div class="arrow" id="l-arrow"><img src="../images/common/ico_list-view.png" alt></div>
-                    </div>
+                        <div class="col arr-wrap">
+                            <div class="arrow arr-left">
+                                <img src="../images/arr-left.png" alt>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="pag-num">
+                                <div class="num current"><span>1</span></div>
+                                <div class="num"><span>2</span></div>
+                                <div class="num"><span>3</span></div>
+                                <div class="num"><span>4</span></div>
+                                <div class="num"><span>5</span></div>
+                                <div class="num"><span>6</span></div>
+                                <div class="num"><span>7</span></div>
+                                <div class="num"><span>8</span></div>
+                                <div class="num"><span>9</span></div>
+                                <div class="num"><span>10</span></div>
+                            </div>
+                        </div>
+                        <div class="col arr-wrap">
+                            <div class="arrow arr-right"><img src="../images/arr-left.png" alt></div>
+                        </div>
+                        <div class="col arr-wrap">
+                            <div class="arrow arr-right"><img src="../images/arrs-left.png" alt></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="section">
-            <div>네오바이오텍의 국내 판매 전문 회사 <em>"네오임플란트"</em></div>
-            <div class="customer-info">
-                <div class="inner clearfix">
-                    <div class="float--left">고객지원 : 02-1577-2885 (평일 09:00 ~ 18:00 주말 및 공휴일 제외)</div>
-                    <!-- 패밀리사이트 -->
-                    <div class="family-select float--right">
-                        <button type="button" class="select-btn">
-                            <span>패밀리사이트</span>
-                            <i class="ico-plus"></i>
-                        </button>
-                        <div class="family-list-box">
-                            <ul>
-                                <li><a href="#" target="_blank"><span>컴컴</span></a></li>
-                                <li><a href="#" target="_blank"><span>컴컴</span></a></li>
-                                <li><a href="#" target="_blank"><span>컴컴</span></a></li>
-                                <li><a href="#" target="_blank"><span>컴컴</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--// 패밀리사이트 -->
-                </div>
-            </div>
-            <div class="company_info">
-                <div class="inner">
-                    <ul class="company">
-                        <li>본사 (주)네오바이오텍 / 서울시 구로구 디지털로 27길 36 이스페이스빌딩 10층</li>
-                        <li>영업본부 (주)네오임플란트 / 경기도 안양시 만안구 석수동 860 6층</li>
-                        <li>대표 : 본사 허영구 / 영업본부 김인호</li>
-                        <li>사업자등록번호 : 본사 124-81-75688 / 영업본부 807-86-00744</li>
-                    </ul>
-                    <p class="copyright">COPYRIGHT &copy; NEOIMPLANTS.CO.LTD ALL RIGHT RESERVED.</p>
-                </div>
-            </div>
-		</footer>
     </div>
-    <script>
-        $(document).ready(function(){
-            $('.family-select .select-btn').on('click', function(){
-                $('.family-list-box').toggleClass('on')
-                $(this).toggleClass('on')
-            })
-        })
-    </script>
+    
 </body>
 </html>

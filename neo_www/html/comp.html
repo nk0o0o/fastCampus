@@ -140,10 +140,10 @@
       background-color: pink;
     }
     /* 검색 */
-    .top-search{position:relative;display:inline-block;width:380px;height:38px;border:1px solid #ddd;border-radius:21px;background:#fafafa;padding: 0 0 0 20px;}
-    .top-search .input-search{width:100%; height:36px; border:0; padding:0; font-size:15px; color:#555; text-align:left; background:transparent;}
-    .top-search .btn-top-search{position:absolute; top:0; right:10px; width:35px; height:35px;}
-    .btn-top-search:after{display:inline-block; content:''; width:18px; height:18px; background:url("../images/icon/ico_btns.png") 0 0; vertical-align:top;}
+    .input-search-wrap{position:relative;display:inline-block;width:380px;height:38px;border:1px solid #ddd;border-radius:21px;background:#fafafa;padding: 0 0 0 20px;}
+    .input-search-wrap .input-search{width:100%; height:36px; border:0; padding:0; font-size:15px; color:#555; text-align:left; background:transparent;}
+    .input-search-wrap .btn-search{position:absolute; top:0; right:10px; width:35px; height:35px;}
+    .btn-search:after{display:inline-block; content:''; width:18px; height:18px; background:url("../images/icon/ico_btns.png") 0 0; vertical-align:top;}
     button {
       background: none;
       font-family: 'Pretendard', sans-serif;
@@ -218,10 +218,10 @@
 
   <!-- 검색 -->
   <div class="saerch-wrap">
-    <div class="top-search">
-      <input type="search" class="input-search" id="rankKeyword" name="rankKeyword" value="" placeholder="">
+    <div class="input-search-wrap">
+      <input type="search" class="input-search" name="" value="" placeholder="치과명, 주소로 검색해 주세요">
     </div>
-    <button type="button" class="btn-top-search" title="" onclick="">
+    <button type="button" class="btn-search" title="" onclick="">
        <span class="blind">검색</span>
        <i class="fa fa-search"></i>
      </button>
