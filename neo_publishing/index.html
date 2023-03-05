@@ -6,6 +6,7 @@
 	<title>네오 임플란트</title>
 	<meta name="description" contents="환자의 편안함을 생각하는 요즘 임플란트, 네오임플란트"/>
 	<meta name="keywords" contents="임플란트, 네오임플란트, 치과, 치과치료, 편안함" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./resources/css/reset.css">
     <link rel="stylesheet" href="./resources/css/main.css">
 </head>
@@ -29,27 +30,29 @@
         </section>
         <section class="section section--search">
             <div class="inner">
-                <h2><em class="txt-bold">네오임플란트</em><span>&nbsp;X&nbsp;</span><em class="txt-bold">바로가이드&nbsp;</em><em class="txt-Exbold">치과</em><span>를&nbsp;</span><em class="txt-Exbold">찾아보세요</em></h2>
-                <form id="searchForm" action="#" method="POST">
-                    <div class="dentist-type clearfix">
-                        <label>
-                            <input type="radio" name="dentistType" checked/>
-                            <span><em class="txt">네오임플란트 사용치과</em></span>
-                        </label>
-                        <label>
-                            <input type="radio" name="dentistType" />
-                            <span><em class="txt">바로가이드 사용치과</em></span>
-                        </label>
-                    </div>
-                    <div class="saerch-wrap">
-                        <div class="input-search-wrap">
-                          <input type="search" class="input-search" name="" placeholder="치과명, 주소로 검색해 주세요">
+                <div class="search-container"> <!-- 220323 추가-->
+                    <h2><em class="txt-bold">네오임플란트</em><span>&nbsp;X&nbsp;</span><em class="txt-bold">바로가이드&nbsp;</em><em class="txt-Exbold">치과</em><span>를&nbsp;</span><em class="txt-Exbold">찾아보세요</em></h2>
+                    <form id="searchForm" action="#" method="POST">
+                        <div class="dentist-type clearfix">
+                            <label>
+                                <input type="radio" name="dentistType" checked/>
+                                <span><em class="txt">네오임플란트 사용치과</em></span>
+                            </label>
+                            <label>
+                                <input type="radio" name="dentistType" />
+                                <span><em class="txt">바로가이드 사용치과</em></span>
+                            </label>
                         </div>
-                        <button type="button" class="btn-search" title="검색" onclick="">
-                           <span class="blind">검색</span>
-                         </button>
-                      </div>
-                </form>
+                        <div class="saerch-wrap">
+                            <div class="input-search-wrap">
+                              <input type="search" class="input-search" name="" placeholder="치과명, 주소로 검색해 주세요">
+                            </div>
+                            <button type="button" class="btn-search" title="검색" onclick="">
+                               <span class="blind">검색</span>
+                             </button>
+                          </div>
+                    </form>
+                </div><!--// div.search-container --><!-- 220323 추가-->
             </div>
         </section>
 
@@ -68,7 +71,7 @@
                 <div class="view-list"><span>목록보기</span></div>
                 <!-- 검색결과 -->
                 <div class="dentist-list">
-                    <ul>
+                    <ul> 
                         <!-- 리스트 1 -->
                         <li class="item">
                             <div class="icon-map">
@@ -77,8 +80,10 @@
                             <div class="item-desc">
                                 <div class="dentist-info">
                                     <p class="dentist-name">닥터 허치과의원</p>
-                                    <button class="btn btn-guide">바로가이드</button>
-                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-ect"><!-- 220323 추가-->
+                                        <button class="btn btn-guide">바로가이드</button>
+                                        <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    </div><!--// div.dentist-ect --><!-- 220323 추가-->
                                     <div class="dentist-address">서울 강남구 영동대로 701 (청담동) 5층</div>
                                 </div>
                             </div>
@@ -94,8 +99,10 @@
                             <div class="item-desc">
                                 <div class="dentist-info">
                                     <p class="dentist-name">서울아르케치과의원</p>
-                                    <button class="btn btn-guide">바로가이드</button>
-                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-ect"><!-- 220323 추가-->
+                                        <!-- <button class="btn btn-guide">바로가이드</button> -->
+                                        <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    </div><!--// div.dentist-ect --><!-- 220323 추가-->
                                     <div class="dentist-address">서울 강남구 청담동 43-9 원일빌딩 607</div>
                                 </div>
                             </div>
@@ -110,8 +117,10 @@
                             <div class="item-desc">
                                 <div class="dentist-info">
                                     <p class="dentist-name">청담성모치과</p>
-                                    <button class="btn btn-guide">바로가이드</button>
-                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-ect"><!-- 220323 추가-->
+                                        <button class="btn btn-guide">바로가이드</button>
+                                        <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    </div><!--// div.dentist-ect --><!-- 220323 추가-->
                                     <div class="dentist-address">서울 강남구 청담동 7-19 3층</div>
                                 </div>
                             </div>
@@ -126,8 +135,10 @@
                             <div class="item-desc">
                                 <div class="dentist-info">
                                     <p class="dentist-name">착한 청담 네오플란트치과</p>
-                                    <button class="btn btn-guide">바로가이드</button>
-                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-ect"><!-- 220323 추가-->
+                                        <button class="btn btn-guide">바로가이드</button>
+                                        <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    </div><!--// div.dentist-ect --><!-- 220323 추가-->
                                     <div class="dentist-address">경기 부천시 원미구 부흥로303번길 6 ,3층(중동, 상록빌딩)</div>
                                 </div>
                             </div>
@@ -142,8 +153,10 @@
                             <div class="item-desc">
                                 <div class="dentist-info">
                                     <p class="dentist-name">한치과의원</p>
-                                    <button class="btn btn-guide">바로가이드</button>
-                                    <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    <div class="dentist-ect"><!-- 220323 추가-->
+                                        <button class="btn btn-guide">바로가이드</button>
+                                        <span class="dentist-tel">Tel. 02-000-0000</span>
+                                    </div><!--// div.dentist-ect --><!-- 220323 추가-->
                                     <div class="dentist-address">서울특별시 강남구 도산대로55길 29 (청담동,대창빌딩4층B호)</div>
                                 </div>
                             </div>
@@ -171,14 +184,6 @@
                             <div class="pag-num">
                                 <div class="num current"><span>1</span></div>
                                 <div class="num"><span>2</span></div>
-                                <div class="num"><span>3</span></div>
-                                <div class="num"><span>4</span></div>
-                                <div class="num"><span>5</span></div>
-                                <div class="num"><span>6</span></div>
-                                <div class="num"><span>7</span></div>
-                                <div class="num"><span>8</span></div>
-                                <div class="num"><span>9</span></div>
-                                <div class="num"><span>10</span></div>
                             </div>
                         </div>
                         <div class="col arr-wrap">
