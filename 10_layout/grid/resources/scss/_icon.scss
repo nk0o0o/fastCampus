@@ -1,0 +1,654 @@
+/* Icon */
+*[class*="ico_"] {
+   display: inline-block;
+   position: relative;
+   vertical-align: middle;
+   &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+}
+/* svg아이콘 backgroundColor로 색상 변경(!important로 덮기) */
+*[class*="ico_"]{
+   &.white{
+      &::before{
+         background-color: $color-white !important;
+      }
+   }
+   &.primary, &.blue{
+      &::before{
+         background-color: $color-primary !important;
+      }
+   }
+}
+/* 아이콘 사이즈 클래스 */
+*[class*="ico_48"] {
+   width: 48px;
+   height: 48px;
+}
+*[class*="ico_44"] {
+   width: 44px;
+   height: 44px;
+}
+*[class*="ico_24"] {
+   width: 24px;
+   height: 24px;
+}
+*[class*="ico_16"] {
+   width: 16px;
+   height: 16px;
+}
+
+/********* 아이콘 svg 추가 *********/
+/* user아이콘 */
+.ico {
+   &_user {
+      &::before {
+         @include iconImgPath("ico_user.svg");
+      }
+      &_square {
+         &::before {
+            @include iconImgPath("ico_user_square.svg");
+         }
+      }
+      &_circle {
+         &::before {
+            @include iconImgPath("ico_user_circle.svg");
+         }
+      }
+      &_octagon {
+         &::before {
+            @include iconImgPath("ico_user_octagon.svg");
+         }
+      }
+      &_tag {
+         &::before {
+            @include iconImgPath("ico_user_tag.svg");
+         }
+      }
+   }
+}
+/* arrow 아이콘 */
+.ico {
+   &_arr {
+      &_left {
+         &::before {
+            @include iconImgPath("ico_arr_left.svg");
+         }
+      }
+      &_right {
+         &::before {
+            @include iconImgPath("ico_arr_right.svg");
+         }
+      }
+      &_up {
+         &::before {
+            @include iconImgPath("ico_arr_up.svg");
+         }
+      }
+      &_down {
+         &::before {
+            @include iconImgPath("ico_arr_down.svg");
+         }
+      }
+      &_circle {
+         &_left {
+            &::before {
+               @include iconImgPath("ico_arr_circle_left.svg");
+            }
+         }
+         &_right {
+            &::before {
+               @include iconImgPath("ico_arr_circle_right.svg");
+            }
+         }
+         &_up {
+            &::before {
+               @include iconImgPath("ico_arr_circle_up.svg");
+            }
+         }
+         &_down {
+            &::before {
+               @include iconImgPath("ico_arr_circle_down.svg");
+            }
+         }
+      }
+      &_sort {
+         &::before {
+            @include iconImgPath("ico_arr_sort.svg");
+         }
+      }
+      &_replace {
+         &::before {
+            @include iconImgPath("ico_arr_replace.svg");
+         }
+      }
+   }
+   &_chev {
+      &_left {
+         &::before {
+            @include iconImgPath("ico_chev_left.svg");
+         }
+      }
+      &_right {
+         &::before {
+            @include iconImgPath("ico_chev_right.svg");
+         }
+      }
+      &_up {
+         &::before {
+            @include iconImgPath("ico_chev_up.svg");
+         }
+      }
+      &_down {
+         &::before {
+            @include iconImgPath("ico_chev_down.svg");
+         }
+      }
+      &_circle {
+         &_left {
+            &::before {
+               @include iconImgPath("ico_chev_circle_left.svg");
+            }
+         }
+         &_right {
+            &::before {
+               @include iconImgPath("ico_chev_circle_right.svg");
+            }
+         }
+         &_up {
+            &::before {
+               @include iconImgPath("ico_chev_circle_up.svg");
+            }
+         }
+         &_down {
+            &::before {
+               @include iconImgPath("ico_chev_circle_down.svg");
+            }
+         }
+      }
+   }
+   &_rotate {
+      &_left {
+         &::before {
+            @include iconImgPath("ico_rotate_left.svg");
+         }
+      }
+      &_right {
+         &::before {
+            @include iconImgPath("ico_rotate_right.svg");
+         }
+      }
+   }
+   &_undo {
+      &::before {
+         @include iconImgPath("ico_undo.svg");
+      }
+   }
+   &_redo {
+      &::before {
+         @include iconImgPath("ico_redo.svg");
+      }
+   }
+   &_refresh {
+      &_01 {
+         &::before {
+            @include iconImgPath("ico_refresh_01.svg");
+         }
+      }
+      &_02 {
+         &::before {
+            @include iconImgPath("ico_refresh_02.svg");
+         }
+      }
+   }
+}
+/* Commerce */
+.ico {
+   &_cart {
+      &::before {
+         @include iconImgPath("ico_cart.svg");
+      }
+   }
+   &_store {
+      &::before {
+         @include iconImgPath("ico_store.svg");
+      }
+   }
+   &_delivery {
+      &::before {
+         @include iconImgPath("ico_delivery.svg");
+      }
+   }
+   &_money_01 {
+      &::before {
+         @include iconImgPath("ico_money_01.svg");
+      }
+   }
+   &_money_02 {
+      &::before {
+         @include iconImgPath("ico_money_02.svg");
+      }
+   }
+   &_card {
+      &::before {
+         @include iconImgPath("ico_card.svg");
+      }
+   }
+   &_box_01 {
+      &::before {
+         @include iconImgPath("ico_box_01.svg");
+      }
+   }
+   &_box_02 {
+      &::before {
+         @include iconImgPath("ico_box_02.svg");
+      }
+   }
+   &_barcode {
+      &::before {
+         @include iconImgPath("ico_barcode.svg");
+      }
+   }
+   &_discount {
+      &::before {
+         @include iconImgPath("ico_discount.svg");
+      }
+   }
+   &_wallet {
+      &::before {
+         @include iconImgPath("ico_wallet.svg");
+      }
+   }
+}
+/* Device */
+.ico {
+   &_monitor {
+      &::before {
+         @include iconImgPath("ico_monitor.svg");
+      }
+   }
+   &_mobile {
+      &::before {
+         @include iconImgPath("ico_mobile.svg");
+      }
+   }
+   &_responsive {
+      &::before {
+         @include iconImgPath("ico_responsive.svg");
+      }
+   }
+   &_printer {
+      &::before {
+         @include iconImgPath("ico_printer.svg");
+      }
+   }
+   &_mouse {
+      &::before {
+         @include iconImgPath("ico_mouse.svg");
+      }
+   }
+   &_airpods {
+      &::before {
+         @include iconImgPath("ico_airpods.svg");
+      }
+   }
+   &_airdrop {
+      &::before {
+         @include iconImgPath("ico_airdrop.svg");
+      }
+   }
+   &_watch {
+      &::before {
+         @include iconImgPath("ico_watch.svg");
+      }
+   }
+}
+/* Multimedia */
+.ico {
+   &_mike {
+      &::before {
+         @include iconImgPath("ico_mike.svg");
+      }
+      &_slash {
+         &::before {
+            @include iconImgPath("ico_mike_slash.svg");
+         }
+      }
+   }
+   &_gallery {
+      &::before {
+         @include iconImgPath("ico_gallery.svg");
+      }
+   }
+   &_image {
+      &::before {
+         @include iconImgPath("ico_image.svg");
+      }
+   }
+   &_video {
+      &_01 {
+         &::before {
+            @include iconImgPath("ico_video_01.svg");
+         }
+      }
+      &_02 {
+         &::before {
+            @include iconImgPath("ico_video_02.svg");
+         }
+      }
+      &_03 {
+         &::before {
+            @include iconImgPath("ico_video_03.svg");
+         }
+      }
+   }
+   &_camera {
+      &::before {
+         @include iconImgPath("ico_camera.svg");
+      }
+   }
+   &_music {
+      &::before {
+         @include iconImgPath("ico_music.svg");
+      }
+      &_list {
+         &::before {
+            @include iconImgPath("ico_music_list.svg");
+         }
+      }
+   }
+   &_play {
+      &::before {
+         @include iconImgPath("ico_play.svg");
+      }
+      &_previous {
+         &::before {
+            @include iconImgPath("ico_play_previous.svg");
+         }
+      }
+      &_next {
+         &::before {
+            @include iconImgPath("ico_play_next.svg");
+         }
+      }
+      &_circle {
+         &::before {
+            @include iconImgPath("ico_play_circle.svg");
+         }
+      }
+   }
+   &_pause {
+      &::before {
+         @include iconImgPath("ico_pause.svg");
+      }
+      &_circle {
+         &::before {
+            @include iconImgPath("ico_pause_circle.svg");
+         }
+      }
+   }
+   &_backward {
+      &::before {
+         @include iconImgPath("ico_backward.svg");
+      }
+   }
+   &_forward {
+      &::before {
+         @include iconImgPath("ico_forward.svg");
+      }
+   }
+   &_stop_circle {
+      &::before {
+         @include iconImgPath("ico_stop_circle.svg");
+      }
+   }
+   &_volume {
+      &::before {
+         @include iconImgPath("ico_volume.svg");
+      }
+      &_mute {
+         &::before {
+            @include iconImgPath("ico_volume_mute.svg");
+         }
+      }
+      &_cross {
+         &::before {
+            @include iconImgPath("ico_volume_cross.svg");
+         }
+      }
+   }
+}
+/* UI actions */
+.ico {
+   &_home {
+      &::before {
+         @include iconImgPath("ico_home.svg");
+      }
+   }
+   &_search {
+      &::before {
+         @include iconImgPath("ico_search.svg");
+      }
+   }
+   &_menu {
+      &::before {
+         @include iconImgPath("ico_menu.svg");
+      }
+   }
+   &_switcher {
+      &::before {
+         @include iconImgPath("ico_switcher.svg");
+      }
+   }
+   &_edit {
+      &::before {
+         @include iconImgPath("ico_edit.svg");
+      }
+   }
+   &_del {
+      &::before {
+         @include iconImgPath("ico_del.svg");
+      }
+   }
+   &_add {
+      &::before {
+         @include iconImgPath("ico_add.svg");
+      }
+   }
+   &_minus {
+      &::before {
+         @include iconImgPath("ico_minus.svg");
+      }
+   }
+   &_close {
+      &::before {
+         @include iconImgPath("ico_close.svg");
+      }
+      &_square {
+         &::before {
+            @include iconImgPath("ico_close_square.svg");
+         }
+      }
+   }
+   &_info_circle {
+      &::before {
+         @include iconImgPath("ico_info_circle.svg");
+      }
+   }
+   &_danger {
+      &::before {
+         @include iconImgPath("ico_danger.svg");
+      }
+   }
+   &_setting {
+      &::before {
+         @include iconImgPath("ico_setting.svg");
+      }
+   }
+   &_bookmark {
+      &::before {
+         @include iconImgPath("ico_bookmark.svg");
+      }
+   }
+   &_heart {
+      &::before {
+         @include iconImgPath("ico_heart.svg");
+      }
+   }
+   &_star {
+      &::before {
+         @include iconImgPath("ico_star.svg");
+      }
+   }
+   &_location {
+      &::before {
+         @include iconImgPath("ico_location.svg");
+      }
+   }
+   &_gps {
+      &::before {
+         @include iconImgPath("ico_gps.svg");
+      }
+   }
+   &_map {
+      &::before {
+         @include iconImgPath("ico_map.svg");
+      }
+   }
+   &_global {
+      &::before {
+         @include iconImgPath("ico_global.svg");
+      }
+   }
+   &_email {
+      &::before {
+         @include iconImgPath("ico_email.svg");
+      }
+   }
+   &_reply {
+      &::before {
+         @include iconImgPath("ico_reply.svg");
+      }
+   }
+   &_lock {
+      &::before {
+         @include iconImgPath("ico_lock.svg");
+      }
+   }
+   &_unlock {
+      &::before {
+         @include iconImgPath("ico_unlock.svg");
+      }
+   }
+   &_filter {
+      &::before {
+         @include iconImgPath("ico_filter.svg");
+      }
+      &_square {
+         &::before {
+            @include iconImgPath("ico_filter_square.svg");
+         }
+      }
+   }
+   &_file {
+      &::before {
+         @include iconImgPath("ico_file.svg");
+      }
+   }
+   &_share {
+      &::before {
+         @include iconImgPath("ico_share.svg");
+      }
+   }
+   &_calendar {
+      &::before {
+         @include iconImgPath("ico_calendar.svg");
+      }
+   }
+   &_flag {
+      &::before {
+         @include iconImgPath("ico_flag.svg");
+      }
+   }
+   &_send {
+      &_01 {
+         &::before {
+            @include iconImgPath("ico_send_01.svg");
+         }
+      }
+      &_02 {
+         &::before {
+            @include iconImgPath("ico_send_02.svg");
+         }
+      }
+   }
+   &_memo {
+      &_01 {
+         &::before {
+            @include iconImgPath("ico_memo_01.svg");
+         }
+      }
+      &_02 {
+         &::before {
+            @include iconImgPath("ico_memo_02.svg");
+         }
+      }
+   }
+   &_noti {
+      &_01 {
+         &::before {
+            @include iconImgPath("ico_noti_01.svg");
+         }
+      }
+      &_02 {
+         &::before {
+            @include iconImgPath("ico_noti_02.svg");
+         }
+      }
+   }
+   &_call {
+      &::before {
+         @include iconImgPath("ico_call.svg");
+      }
+   }
+   &_calling {
+      &::before {
+         @include iconImgPath("ico_calling.svg");
+      }
+   }
+   &_clock {
+      &::before {
+         @include iconImgPath("ico_clock.svg");
+      }
+   }
+   &_timer {
+      &::before {
+         @include iconImgPath("ico_timer.svg");
+      }
+   }
+   &_over_menu {
+      &::before {
+         @include iconImgPath("ico_over_menu.svg");
+      }
+   }
+   &_write {
+      &::before {         
+         @include iconImgPath("ico_write.svg");
+      }
+   }
+   &_zoom {
+      &::before {         
+         @include iconImgPath("ico_zoom.svg");
+      }
+   }
+}

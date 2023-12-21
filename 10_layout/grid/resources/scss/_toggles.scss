@@ -1,0 +1,80 @@
+/* Toggle Button*/
+.btn_toggle {
+   display: inline-block;
+   position: relative;
+   height: 26px;
+   label {
+      display: inline-block;
+      position: relative;
+      width: 46px;
+      height: 26px;
+      border-radius: 13px;
+      background: $gray-100;
+      @include trans($prop: all, $duration: 0.4s, $type: ease-out, $delay: 0s);
+
+      &:after {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 2px;
+         left: 2px;
+         width: 22px;
+         height: 22px;
+         border-radius: 100%;
+         background: $color-white;
+         z-index: 2;
+         @include trans($prop: all, $duration: 0.3s, $type: ease-out, $delay: 0s);
+      }
+   }
+   input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 5;
+      cursor: pointer;
+      //토글 활성화
+      &:checked + label {
+         background: $color-primary;
+         &:after {
+            left: 22px;
+         }
+      }
+      &:disabled + label {
+         background-color: $gray-100 !important;
+      }
+   }
+   &_group {
+      @include flexStart;
+      > * + * {
+         margin-left: $sp02;
+      }
+   }
+   &_txt {
+      font-size: $fs-xs;
+   }
+   &.disabled {
+      label {
+         background-color: $gray-50 !important;
+      }
+   }
+   &_sm {
+      height: 16px;
+      label {
+         height: 16px;
+         width: 32px;
+         font-size: $fs-xxs;
+         &::after {
+            width: 12px;
+            height: 12px;
+         }
+      }
+      input {
+         &:checked + label:after {
+            left: 18px;
+         }
+      }
+   }
+}

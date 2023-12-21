@@ -1,0 +1,136 @@
+/* Badge */
+.badge {
+   @mixin badge {
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+      height: 22px;
+      padding: 0 $sp03;
+      font-size: $fs-xxs;
+      color: $color-white;
+      text-align: center;
+      border-radius: 4px;
+   }
+   @include badge;
+   &.bg_light {
+      color: $gray-700;
+   }
+   &.line {
+      &_primary {
+         color: $color-primary;
+      }
+      &_secondary {
+         color: $gray-700;
+      }
+      &_success,
+      &_green {
+         color: $color-green;
+      }
+      &_red,
+      &_danger {
+         color: $color-red;
+      }
+      &_warning,
+      &_yellow {
+         color: $color-yellow;
+      }
+      &_info {
+         color: $color-blue;
+      }
+      &_light {
+         color: $gray-50;
+      }
+      &_orange {
+         color: $color-orange;
+      }
+      &_olive {
+         color: $color-olive;
+      }
+      &_teal {
+         color: $color-teal;
+      }
+      &_blue {
+         color: $color-blue;
+      }
+      &_violet {
+         color: $color-violet;
+      }
+      &_purple {
+         color: $color-purple;
+      }
+      &_pink {
+         color: $color-pink;
+      }
+      &_brown {
+         color: $color-brown;
+      }
+      &_gray {
+         color: $gray-300;
+      }
+      &_dark,
+      &_black {
+         color: $gray-950;
+      }
+   }
+   &_round {
+      @include badge;
+      border-radius: 100px;
+   }
+   &_dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+   }
+}
+
+//Usage
+button > .badge {
+   margin-left: $sp03;
+}
+button > .badge_round {
+   position: absolute;
+   top: -20px;
+   right: 0;
+   transform: translate(50%, 50%);
+}
+
+button > .badge_dot,
+i > .badge_dot {
+   position: absolute;
+   top: -5px;
+   right: 0;
+   transform: translate(50%, 50%);
+}
+button > .badge_round,
+i > .badge_round {
+   position: absolute;
+   top: -20px;
+   right: 0;
+   transform: translate(50%, 50%);
+}
+.avatar {
+   display: inline-block;
+   position: relative;
+   width: 48px;
+   height: 48px;
+   > img {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 100%;
+      & + .badge_dot {
+         position: absolute;
+         top: -3px;
+         right: 7px;
+         transform: translate(50%, 50%);
+         border: 1px solid $color-white;
+      }
+      & + .badge_round {
+         position: absolute;
+         top: -20px;
+         right: 2px;
+         transform: translate(50%, 50%);
+      }
+   }
+}

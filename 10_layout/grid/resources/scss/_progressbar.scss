@@ -1,0 +1,96 @@
+/* Progress bar */
+.progress {
+   &_wrap {
+      align-self: auto;
+      width: 500px;
+   }
+   &_ratio {
+      min-width: 25px !important;
+      font-family: $font-SUIT;
+   }
+   &_back {
+      position: relative;
+      transform: translateZ(0);
+      overflow: hidden;
+      width: 500px;
+      height: 8px;
+      border-radius: 100px;
+      background-color: $gray-50;
+      user-select: none;
+      &_sm {
+         height: 4px;
+      }
+      &_md {
+         height: 8px;
+      }
+      &_lg {
+         height: 16px;
+      }
+      &_xlg {
+         height: 24px;
+      }
+      & + .progress_back {
+         margin-top: $sp05;
+      }
+   }
+   &_bar {
+      @include flexStart;
+      justify-content: flex-end;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0%;
+      height: 100%;
+      padding-right: $sp03;
+      color: $color-white;
+      border-radius: 100px;
+      background-color: $color-primary;
+      //@include trans($prop:all, $duration:0.3s, $type:ease-out, $delay:0s);
+      //스크립트 없을때 너비 증가 속도
+      .hidden {
+         visibility: hidden;
+         opacity: 0;
+      }
+      &_red {
+         background-color: $color-red;
+      }
+      &_yellow {
+         background-color: $color-yellow;
+      }
+      &_green {
+         background-color: $color-green;
+      }
+      &_blue {
+         background-color: $color-blue;
+      }
+   }
+   &_label {
+      margin-top: $sp02;
+      text-align: center;
+      p {
+         display: inline-block;
+         font-size: $fs-xxs;
+         color: $gray-700;
+         line-height: 26px;
+         vertical-align: middle;
+         & + p {
+            position: relative;
+            padding-left: $sp03;
+            margin-left: $sp03;
+            &::after {
+               content: "";
+               display: block;
+               position: absolute;
+               top: 50%;
+               left: 0;
+               transform: translateY(-50%);
+               width: 1px;
+               height: 12px;
+               background-color: white;
+            }
+         }
+      }
+   }
+}

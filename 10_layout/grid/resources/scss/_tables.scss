@@ -1,0 +1,149 @@
+/* Table */
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+   border-color: inherit;
+   border-style: solid;
+   border-width: 0;
+   button {
+      background-color: transparent;
+   }
+}
+th,
+td {   
+   padding: 0 $sp05 0;
+   font-size: $fs-xs;
+   font-weight: $fw-n;
+   color: $gray-950;
+   line-height: 19px;
+   vertical-align: middle;
+   white-space: nowrap;
+   > * {
+      font-size: $fs-xs;
+      color: $gray-950;
+   }
+}
+th {
+   background-color: $gray-10;
+}
+
+.tbl {
+   //테이블 감싸는 테두리
+   border: 1px solid $gray-100;
+   thead {
+      vertical-align: bottom;
+      th,
+      td {
+         padding-top: 10px;
+         padding-bottom: 10px;
+         font-weight: $fw-m;
+         color: $gray-400;
+         line-height: 15.5px;
+         border-bottom-width: 0;
+         background-color: $gray-10;
+      }
+      th {
+         position: relative;
+         font-weight: $fw-m;
+         text-align: left;
+      }
+      .bg_primary {
+         th,
+         td {
+            color: $color-white;
+         }
+      }
+   }
+   tbody {
+      vertical-align: inherit;
+      border-top: 1px solid $gray-100;
+   }
+   & > :not(caption) > * > * {
+      padding: $sp04 $sp05;
+      //th td의 테두리
+      border-bottom-width: 1px;
+      border-right-width: 1px;
+      border-color: $gray-100;
+   }
+   //tbody 구분선
+   &_divider {
+      border-color: $gray-950 !important;
+   }
+   //Vertical 테이블
+   &_vert {
+      &_th {
+         width: 203px;
+      }
+   }
+   //Single line 테이블
+   &_line {
+      border: 0;
+      thead th {
+         background-color: transparent;
+      }
+      & > :not(caption) > * > * {
+         border-right-width: 0;
+      }
+   }
+   //스트라이프 row 테이블
+   &_striped {
+      border: none;
+      thead {
+         th {
+            background-color: $color-white;
+         }
+      }
+      tbody {
+         tr {
+            &:nth-child(odd) {
+               td {
+                  background-color: $gray-10;
+               }
+            }
+            &:nth-child(even) {
+               td {
+                  background-color: $color-white;
+               }
+            }
+         }
+      }
+      & > :not(caption) > * > * {
+         border-right-width: 0;
+      }
+   }
+   //문단 셀 td
+   .td_cont {
+      width: 578px;
+      min-width: 578px;
+      white-space: normal;
+   }
+   tr.merged_row {
+      th,
+      td {
+         border-top: 1px solid $gray-100;
+      }
+   }
+   //색상
+   &_primary {
+      background-color: $color-primary;
+      th,
+      td {
+         color: $color-white !important;
+      }
+   }
+   &_col {
+      &_check {
+         width: 56px;
+      }
+   }
+   &_btn_area {
+      width: 100%;
+      @include flexStart;
+      .right {
+         margin-left: auto;
+      }
+   }
+}

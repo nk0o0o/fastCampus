@@ -1,0 +1,90 @@
+
+/*****  FONT *****/
+// Font Family
+$font-SUIT: "SUIT", sans-serif;
+
+// Font Size
+$fs-xxxs: 1.0rem;
+$fs-xxs: 1.2rem;
+$fs-xs: 1.4rem;
+$fs-s: 1.6rem;
+$fs-sm: 1.8rem;
+$fs-m: 2rem;
+$fs-md: 2.4rem;
+$fs-ml: 2.8rem;
+$fs-l: 3.2rem;
+$fs-lg: 3.6rem;
+$fs-xlg: 4.2rem;
+$fs-xxlg: 4.8rem;
+$fs-xxxlg: 5.4rem;
+
+// Font Weight
+$fw-t: 100; // thin
+$fw-l: 300; // light
+$fw-n: 400; // regular
+$fw-m: 500; // medium
+$fw-sb: 600; // semibold
+$fw-b: 700; // bold
+$fw-bb: 900; // extrabold
+
+
+/*****  Color *****/
+// 주요 색상
+$color-primary: #686bfa;
+$color-primary-lighten4: #D0E2FF;
+$color-primary-lighten40:lighten(#D0E2FF, 40%);
+$color-primary-lighten3: #A6C8FF;
+$color-primary-lighten2: #78A9FF;
+$color-primary-lighten1: #4589FF;
+$color-primary-darken1: #0043CE;
+$color-primary-darken2: #002D9C;
+$color-primary-darken3: #001D6C;
+$color-primary-darken4: #001141;
+.btn_border{background-color: $color-primary-lighten40 !important;}
+$color-secondary: #FF5151;
+
+// 시스템 색상
+$color-red: #D72222; 
+$color-orange: #F2711C; 
+$color-yellow: #FFC107; 
+$color-olive: #B5CC18; 
+$color-green: #26A769; 
+$color-teal: #00B5AD; 
+$color-blue: #0036B1;
+$color-violet: #6435C9;
+$color-purple: #A333C8;
+$color-pink: #E03997;
+$color-brown: #A5673F;
+
+// Grayscale
+$gray-950: #1F1F1F; 
+$gray-900: #303030; 
+$gray-800: #404040; 
+$gray-700: #525252; 
+$gray-600: #5E5E5E; 
+$gray-500: #666666; 
+$gray-400: #868686; 
+$gray-300: #999999; 
+$gray-200: #BFBFBF; 
+$gray-100: #DBDBDB; 
+$gray-50: #F0F0F0; 
+$gray-10: #FAFAFA;
+
+$color-white: #fff;
+$color-disabled: #F7F7F7;
+$color-box: #F7F7F7;
+$color-border: #e2e8f0;
+
+/***** SPACING *****/
+$sp01: 2px;
+$sp02: 4px;
+$sp03: 8px;
+$sp04: 12px;
+$sp05: 16px;
+$sp06: 24px;
+$sp07: 32px;
+$sp08: 44px;
+$sp09: 48px;
+$sp10: 64px;
+$sp11: 80px;
+$sp12: 96px;

@@ -1,0 +1,86 @@
+/* File Uploader */
+.file_uploader {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   flex-direction: column;
+   label {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      & ~ .file_name {
+         margin-top: 8px;
+      }
+   }
+   .input_file {
+      display: none;
+   }
+   .file_name {
+      position: relative;
+      input {
+         @include text-ellipsis;
+         min-width: 256px;
+         min-height: 38px;
+         padding: 9px $sp08 9px $sp05;
+         font-size: $fs-xs;
+         font-weight: $fw-m;
+         color: $gray-600;
+         border-radius: 4px;
+         background-color: $gray-50;
+         & + .input_delete {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            z-index: 10;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            cursor: pointer;
+            &::after {
+               width: 12px;
+            }
+            &::before {
+               width: 12px;
+            }
+            &:hover {
+               &::after,
+               &::before {
+                  background-color: $gray-950;
+               }
+            }
+         }
+      }
+   }
+   &_desc {
+      font-size: $fs-xxs;
+      color: $gray-500;
+      line-height: 18px;
+      & + .file_uploader {
+         margin-top: 8px;
+      }
+   }
+   & + .txt_alert {
+      margin-top: 8px;
+   }
+}
+
+.input_delete {
+   &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      height: 1px;
+      background-color: $gray-300;
+   }
+   &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      height: 1px;
+      background-color: $gray-300;
+   }
+}

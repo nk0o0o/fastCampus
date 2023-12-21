@@ -1,0 +1,138 @@
+// font
+@mixin ko {
+  font-family: $font-SUIT;
+}
+@mixin en {
+  font-family: $font-SUIT;
+}
+@mixin flexCenter {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+@mixin flexStart {
+	display: -webkit-box;
+	display: flex;
+	justify-content:flex-start;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+@mixin pos_center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+@mixin trans($prop:all, $duration:0.3s, $type:ease-out, $delay:0s) {   
+   @each $prefix in -moz, -o-, -webkit-, ''{
+      #{$prefix}transition: $prop $duration $type $delay;
+   }
+}
+
+@mixin word-wrap {
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+// 말줄임 설정
+@mixin text-ellipsis {
+   display: block;
+	overflow: hidden;
+	word-break: break-all;
+	word-wrap: normal;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@mixin text-ellipsis-2 {
+	display: -webkit-box;
+	overflow: hidden;
+	word-break: break-all;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+@mixin text-ellipsis-3 {
+	display: -webkit-box;
+	overflow: hidden;
+	word-break: break-all;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+@mixin clearfix {
+	&::after {
+		clear: both;
+		content: ' ';
+		display: block;
+	}
+}
+
+@mixin framework-desc {
+  font-size: $fs-s;
+  line-height: 2.6rem;
+  color: $gray-500;
+  letter-spacing: -0.56px;
+}
+
+@mixin inner-desc {
+  font-size: $fs-s;
+  line-height: 2.6rem;
+  color: $gray-500;
+  letter-spacing: -0.56px;
+}
+
+@mixin selectArrow{
+	content: '';
+	display: block;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+   @include iconImgPath("ico_select_down.svg");
+}
+
+@mixin blind {
+	position:absolute;
+	overflow:hidden;
+	width:1px;
+	height:1px;
+	margin:-1px;
+	padding:0;
+	text-indent:-9999px;
+	border:0;
+	clip:rect(0,0,0,0);
+}
+
+@mixin iconImgPath($iconName) {
+   // 지원안되는 브라우저 (색상변경은 안됨)
+   background-image: url("../images/icon/#{$iconName}");
+   background-size: cover;
+   // 지원되는 브라우저
+   @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+     background-color: $gray-600;
+     -webkit-mask-image: url("../images/icon/#{$iconName}");
+     mask-image: url("../images/icon/#{$iconName}");
+     -webkit-mask-size: cover;
+     mask-size: cover;
+     background-image: none;
+     -webkit-mask-repeat: no-repeat;
+     mask-repeat: no-repeat;
+   }
+}

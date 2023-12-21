@@ -1,0 +1,197 @@
+/* Tab Menu */
+.tab_cont {
+   padding: $sp05;
+   border-radius: 4px;
+   background-color: $color-box;
+   &_item {
+      display: none;
+      font-size: $fs-xs;
+      line-height: 24px;
+      letter-spacing: -0.49px;
+      &:first-child {
+         display: block;
+      }
+   }
+}
+.tab_menu {
+   display: inline-block;
+   vertical-align: top;
+   width: 100%;
+   @mixin tabMenu {
+      ul {
+         display: flex;
+         //넘쳐 스크롤시
+         overflow-x: auto;
+         -webkit-overflow-scrolling: touch;
+         scroll-snap-type: x mandatory;
+         .tab_list {
+            position: relative;
+            box-sizing: border-box;
+            //넘쳐 스크롤시
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            &:first-child > button {
+               border-top-left-radius: 4px;
+               border-bottom-left-radius: 4px;
+            }
+            &:last-child > button {
+               border-top-right-radius: 4px;
+               border-bottom-right-radius: 4px;
+            }
+            & + .tab_list {
+               margin-left: -1px;
+            }
+            & > button {
+               display: block;
+               position: relative;
+               height: 38px;
+               padding: 0 $sp05;
+               text-align: center;
+               white-space: nowrap;               
+               cursor: pointer;
+               @include trans($prop: all, $duration: 0.3s, $type: ease-out, $delay: 0s);
+               span {
+                  font-size: $fs-xs;
+                  color: $gray-300;
+                  line-height: 36px;
+               }
+            }
+            &.current {
+               > button {
+                  border-color: $color-primary;
+                  z-index: 1;
+                  span {
+                     font-weight: $fw-m;
+                     color: $color-primary;
+                  }
+               }
+            }
+         }
+      }
+      @content;
+   }
+   @include tabMenu;
+   &.text_tab {
+      position: relative;
+      li:not(:last-child) {
+         &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            height: calc(100% - 22px);
+            background-color: $gray-100;
+            z-index: 2;
+         }
+      }
+   }
+   &.contain_tab {
+      li {
+         & > button {
+            border: 1px solid #d6dae1;
+         }
+      }
+      & + .tab_cont {
+         margin-top: 8px;
+      }
+   }
+   &.line_tab {
+      position: relative;
+      &::after {
+         content: "";
+         display: block;
+         position: absolute;
+         left: 0;
+         bottom: 0px;
+         width: 100%;
+         height: 2px;
+         background-color: $gray-100;
+      }
+      & + .tab_cont {
+         margin-top: -2px;
+      }
+      .tab_bar {
+         position: absolute;
+         bottom: 0px;
+         left: 0;
+         width: 100%;
+         height: 2px;
+         background: $color-primary;
+         z-index: 1;
+         @include trans($prop: all, $duration: 0.3s, $type: cubic-bezier(0.25, 1, 0.5, 1), $delay: 0s);
+      }
+   }
+   &.vertical_tab {
+      position: relative;
+      width: auto;
+      .tab_bar {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 2px;
+         height: 100%;
+         background: $color-primary;
+         z-index: 2;
+         @include trans($prop: all, $duration: 0.3s, $type: cubic-bezier(0.25, 1, 0.5, 1), $delay: 0s);
+      }
+      &::after {
+         content: "";
+         display: block;
+         position: absolute;
+         left: 0;
+         top: 0px;
+         width: 2px;
+         height: 100%;
+         background-color: $gray-100;
+         z-index: 1;
+      }
+      & > ul {
+         display: flex;
+         flex-direction: column;
+         li {
+            display: block;
+            min-width: 180px;
+            button {
+               width: 100%;
+               text-align: left;
+            }
+            &.current {
+               button {
+                  background-color: lighten($color: $color-primary, $amount: 44.9);
+               }
+            }
+         }
+      }
+   }
+}
+.fix_tab_wrap {
+   .tab_menu {
+      width: 100%;
+      & > ul {
+         @include flexStart;
+         justify-content: space-between;
+         li{
+            flex: auto;
+         }
+         li,
+         li > button {
+            width: 100%;
+         }
+      }
+   }
+   .tab_cont {
+      width: 100%;
+   }
+}
+.vertical_tab_wrap {
+   @include flexStart;
+   align-items: flex-start;
+   width: 100%;
+   .tab_cont {
+      width: calc(100% - 188px);
+      margin-left: 8px;
+   }
+}

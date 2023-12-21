@@ -1,0 +1,92 @@
+/* Checkbox Button */
+.input_check {
+   display: none;
+   &_wrap {
+      display: inline-block;
+      position: relative;
+   }
+   & + label {
+      display: inline-block;
+      position: relative;
+      min-height: 24px;
+      padding-left: 30px;
+      user-select: none;
+      font-size: $fs-xs;
+      line-height: 24px;
+      cursor: pointer;
+      &::before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 24px;
+         height: 24px;
+         text-align: center;
+         background: #fff;
+         background-image: url("../images/icon/ico_check_unchecked.svg");
+      }
+   }
+   &:checked + label {
+      &::before {
+         background-image: url("../images/icon/ico_check_checked.svg");
+      }
+   }
+   &:disabled + label {
+      cursor: default;
+      &::before {
+         background-image: url("../images/icon/ico_check_disabled_unchecked.svg");
+      }
+   }
+   &[disabled][checked] + label {
+      &::before {
+         background-image: url("../images/icon/ico_check_disabled_checked.svg");
+      }
+   }
+}
+
+/* Radio Button */
+.input_radio {
+   display: none;
+   &_wrap {
+      display: inline-block;
+      position: relative;
+   }
+   & + label {
+      display: inline-block;
+      position: relative;
+      min-height: 24px;
+      padding-left: 27px;
+      font-size: $fs-xs;
+      line-height: 24px;
+      user-select: none;
+      cursor: pointer;
+      &::before {
+         content: "";
+         display: block;
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 24px;
+         height: 24px;
+         text-align: center;
+         background-image: url("../images/icon/ico_radio_unchecked.svg");
+      }
+   }
+   &:checked + label {
+      &::before {
+         background-image: url("../images/icon/ico_radio_checked.svg");
+      }
+   }
+   &:disabled + label {
+      cursor: default;
+      &::before {
+         background-image: url("../images/icon/ico_radio_disabled_unchecked.svg");
+      }
+   }
+   &[disabled][checked] + label {
+      &::before {
+         background-image: url("../images/icon/ico_radio_disabled_checked.svg");
+      }
+   }
+}

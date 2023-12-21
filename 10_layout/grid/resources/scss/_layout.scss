@@ -1,0 +1,81 @@
+/**** root ****/
+$minColWidth:6.1875rem;
+$gridGap: 0.5rem;
+/********/
+body, html {
+  width: 100%;
+  height: 100%;
+}
+#wrap{
+ 
+  display: grid;
+  grid-template-areas: 'header'
+                        'main'
+                        'footer';
+  grid-template-rows: 100px auto minmax(100px, auto);
+  grid-auto-flow: row;
+}
+header,#container,footer{
+  display: grid;
+}
+header{
+  grid-area: header;
+}
+#container{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+}
+section, footer, header{
+  & >.inner{
+    width: 90%;
+    height: 100%;
+    max-width: 1280px;
+    margin:0 auto;
+  }
+}
+.flex{
+  &_box{
+    display: flex;
+  }
+}
+.grid{
+  &_box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($minColWidth, 1fr));
+    grid-gap: $gridGap;
+    //grid-template-columns: repeat(12, 1fr);
+    //col_1 ~ col_12
+    // @for $i from 1 through 12 {
+    //   &.col_#{$i} {
+    //     grid-column: auto / span #{$i};
+    //   }
+    // }
+   /*  @media (max-width:768px) {
+      grid-template-columns: repeat(12, 1fr);    
+    } */
+  }
+  // &_item{
+  //   grid-column: auto / span 1;
+  //   //col_1 ~ col_12
+  //   @for $i from 1 through 12 {
+  //     &.col_#{$i} {
+  //       grid-column: auto / span #{$i};
+  //     }
+  //   }
+  // }
+}
+// .grid_gap{
+//   //2px 4px 8px 12px 16px 24px 32px 44px 48px 64px 80px 96px
+//   @for $i from 1 through 9 {
+//     &_#{$i} {
+//       gap: #{'$sp0 + i'};
+//     }
+//   }
+//   @for $i from 10 through 12 {
+//     &_#{$i} {
+//       gap: #{'$sp + i'};
+//     }
+//   }
+// }

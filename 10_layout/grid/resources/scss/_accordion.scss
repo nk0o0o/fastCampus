@@ -1,0 +1,96 @@
+/* Accordion */
+.accord {
+   &_tit {
+      position: relative;
+      padding: $sp05 $sp05 $sp05 $sp08;
+      font-size: $fs-xs;
+      &::before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 50%;
+         left: 16px;
+         transform: translateY(-50%);
+         width: 16px;
+         height: 16px;
+         @include iconImgPath("ico_chev_down.svg");
+         background-size: contain;
+         @include trans($prop: all, $duration: 0.3s, $type: ease-out, $delay: 0s);
+      }
+   }
+   &_head {
+      position: relative;
+      font-size: $fs-sm;
+      line-height: 26px;
+      border-top: 1px solid #e2e5ea;
+      cursor: pointer;
+      &:last-child {
+         border-bottom: 1px solid #e2e5ea;
+      }
+      &.on {
+         font-weight: $fw-m;
+         color: $color-primary; 
+         .accord_tit {
+            &::before {
+               -webkit-transform: rotate(-180deg) translateY(50%);
+               transform: rotate(-180deg) translateY(50%);
+               background-color: $color-primary !important;
+            }
+         }
+      }
+   }
+   &_cont {
+      display: none;
+      position: relative;
+      line-height: 24px;
+      background-color: $color-box;
+      p{
+         padding: $sp05;
+         font-size: $fs-s;
+         font-weight: $fw-n;
+         color: $gray-700;
+      }
+   }
+   &_list {
+      &.arr_right_list {
+         .accord_tit {
+            padding-left: $sp05;
+            padding-right: $sp08;
+            &::before {
+               left: auto;
+               right: 16px;
+            }
+         }
+      }
+      &.faq_list {
+         .accord_tit {
+            &::before {
+               @include iconImgPath("ico_faq_Q_16.svg");
+            }
+         }
+         .accord_head {
+            &.on {
+               .accord_tit {
+                  &::before {
+                     transform: translateY(-50%);
+                     background-color: $color-primary !important;
+                  }
+               }
+            }
+         }
+         .accord_cont {
+            padding-left: $sp08;
+            &::before {
+               content: "";
+               display: block;
+               position: absolute;
+               top: 16px;
+               left: 16px;
+               width: 16px;
+               height: 16px;
+               @include iconImgPath("ico_faq_A_16.svg");
+            }
+         }
+      }
+   }
+}

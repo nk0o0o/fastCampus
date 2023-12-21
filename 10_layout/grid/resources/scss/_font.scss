@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* SUIT */
+@font-face {
+   font-family: "SUIT"; 
+   font-style: normal;
+   font-weight: 700;
+   src: url("../fonts/Suit/SUIT-Bold.woff2") format("woff2"),
+   url("../fonts/Suit/SUIT-Bold.otf") format("opentype"),
+   url("../fonts/Suit/SUIT-Bold.ttf") format("truetype"); 
+}
+
+@font-face {
+   font-family: "SUIT"; 
+   font-style: normal;
+   font-weight: 600;
+   src: url("../fonts/Suit/SUIT-SemiBold.woff2") format("woff2"),
+   url("../fonts/Suit/SUIT-SemiBold.otf") format("opentype"),
+   url("../fonts/Suit/SUIT-SemiBold.ttf") format("truetype"); 
+}
+
+@font-face {
+   font-family: "SUIT"; 
+   font-style: normal;
+   font-weight: 500;
+   src: url("../fonts/Suit/SUIT-Medium.woff2") format("woff2"),
+   url("../fonts/Suit/SUIT-Medium.otf") format("opentype"),
+   url("../fonts/Suit/SUIT-Medium.ttf") format("truetype"); 
+}
+
+@font-face {
+   font-family: "SUIT"; 
+   font-style: normal;
+   font-weight: 400;
+   src: url("../fonts/Suit/SUIT-Regular.woff2") format("woff2"),
+   url("../fonts/Suit/SUIT-Regular.woff2") format("opentype"),
+   url("../fonts/Suit/SUIT-Regular.ttf") format("truetype"); 
+}

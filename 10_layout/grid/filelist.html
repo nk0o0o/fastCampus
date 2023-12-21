@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <title>프로젝트 파일리스트</title>
+   <meta charset="utf-8">
+   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+   <style type="text/css">
+      *{margin: 0; padding: 0;box-sizing: border-box;}
+		body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, table, caption, tr, th, td, thead, tbody, tfoot, form, fieldset, p, hr, blockquote, address{margin: 0; padding: 0;}
+		ul, ol{list-style: none;}
+		a{color: #000; text-decoration: underline;}
+		img{border:0;}
+		address, em{ font-style: normal; }
+		label, input{vertical-align: middle;}
+		input{outline: none}
+		table, tr, th, td{border-collapse: collapse; border-spacing:0;}
+		caption{width: 100%; height: 30px;}
+		body{padding: 0 20px;font-size: 16px;font-family: 'Noto Sans KR', sans-serif;}
+		h1, h2, h3, h4, h5, h6{font-weight: bold;}
+		p{line-height: 1.5;}
+		.clearfix:after{content:'';display: block;clear: both;}
+		.wrapper{width:100%; margin:auto; }
+		table{width:100%; border-bottom:1px solid #f4f4f4; margin-bottom:50px;border-top:3px solid #d2d6de;}
+		h1{font-size:2rem; font-weight: normal; margin:40px 0;}
+		h2{font-size:1rem; font-weight: normal; margin-bottom:20px;}
+		hr{margin-bottom:50px;}
+		table tr th{font-weight: normal; border-right:1px solid #f4f4f4; border-bottom:1px solid #f4f4f4;background-color:#fff;}
+		table tr td:first-child{width:20%;padding-left: 20px;text-align: left;}
+		table tr td:nth-of-type(2){width:20%;}
+		table tr td:nth-of-type(3){width:10%;}
+		table tr td:nth-of-type(4){width:5%;}
+		table tr td:nth-of-type(5){width:5%;}
+		table tr td:nth-of-type(6){width:40%;text-align: left;}
+		table tr th, table tr td{padding:10px;font-size: 16px;text-align: center;}
+		table tr th:last-child{border-right:none;}
+		table tr td{padding: 5px;font-size: 14px;border-bottom:1px solid #f4f4f4; border-right:1px solid #f4f4f4;color: #666;}
+		table tr td:last-child{border-right:none;}
+		table tr td a{display: block;width: 100%;height: 100%;}
+		table tr td.category{position: relative;padding: 10px;text-align: left;font-size: 15px;background-color: #f9f9f9;color: #1d1e25;}
+		table tr td.category:before{position: absolute;top: 0;left: 0;display: inline-block;width: 3px;height: 100%;background-color: #d2d6de;content: '';}
+		table tr:last-child td{border-bottom:none;}
+		.top{padding-bottom: 30px;display: flex;justify-content: space-between;}
+		.top ul{float: left;margin-bottom:20px;}
+		.top ul li{float: left; margin-right:10px; line-height:25px;}
+		.top ul li:first-child,.top ul li:nth-of-type(8){font-size:1rem;}
+		.top ul li:nth-of-type(2) span,.top ul li:nth-of-type(4),.top ul li:nth-of-type(6),.top ul li:nth-of-type(9),.top ul li:nth-of-type(11){ text-align: center; border-radius: 50%;}
+		.top ul{margin-bottom:50px;}
+		.r{background-color: #a55eea; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px;}
+		.r:before{content: 'R';}
+		.w{background-color: #20bf6b; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px;}
+		.w:before{content: 'W';}
+		.m{background-color: #f7b731; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px;}
+		.m:before{content: 'M';}
+		.end{background-color: #eb3b5a; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px; font-weight: bold;}
+		.end:before{content: '완';}
+		.ing{background-color: #2d98da; color:#fff; display:inline-block; width:25px; height:25px; border-radius: 50%; line-height: 25px; font-weight: bold;}
+		.ing:before{content: '진';}
+		.modify{color:#fff; display:inline-block; width:auto; height:25px; padding: 0 5px;border-radius: 30px; line-height: 25px; font-weight: bold; background-color:#39c4cd; text-align: center;}
+		.modify:before{content: '수정';}
+		.t_em{color: #e10e0e;}
+        .t_re{color: #046ac9;}
+        .t_pu{color: #17ae03;}
+        .t_lg{color: #c904b4;}
+		.status{float:right;width:300px}
+		.status span{font-size: 16px;color: #666;}
+		.status #progress{overflow: hidden;float: left;display:block; width:100%; height:20px;margin-bottom: 5px;background:#eee;border-radius:30px;}
+		.status #progress em{display:block; height:100%; background:#eb3b5a;border-radius:30px;}
+		.status #finish{color:#1352a2}
+		.status #total{display: block;}
+		.status .percent{display: block;float: right;}
+        .list.none a{text-decoration:line-through;color:#aeaeae;cursor:not-allowed;}
+   </style>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <h1>프로젝트 이름</h1>
+         <div class="top">
+            <ul>
+               <li>구분 : </li>
+               <li><span class="r"></span></li>
+               <li>반응형</li>
+               <li><span class="w"></span></li>
+               <li>WEB</li>
+               <li><span class="m"></span></li>
+               <li>모바일&nbsp;&nbsp;&nbsp;/ </li>
+               <li>상태 : </li>
+               <li><span class="end"></span></li>
+               <li>완료</li>
+               <li><span class="ing"></span></li>
+               <li>진행중&nbsp;&nbsp;&nbsp;/ </li>
+               <li><span class="modify"></span></li>
+               <li>수정</li>
+            </ul>
+            <div class="status"><span id="progress"><em></em></span> <span id="total"></span></div>
+         </div>
+      </header>
+      <div class="content">
+         <table>
+            <tr>
+               <th>페이지</th> 
+               <th>파일명</th>
+               <th>날짜</th>
+               <th>구분</th>
+               <th>상태</th>
+               <th>참고사항</th>
+            </tr>
+            <tr class="list">
+               <td>Main</td><!-- 페이지 -->
+               <td><a href="./html/main.html" target="_blank">main.html</a></td>
+               <td>2023.00.00</td><!-- 날짜 -->
+               <td><span class="w"></span></td><!-- 구분 -->
+               <td><span class="ing"></span></td><!-- 상태 -->
+               <td>
+                  <p class="t_em"></p><!-- 참고사항 -->
+               </td>
+            </tr>
+            <!-- Guidelines : start  -->
+            <tr>
+               <td class="category" colspan="6">카테고리 이름</th>
+            </tr>
+            <tr class="list">
+               <td>페이지</td><!-- 페이지 -->
+               <td><a href="./html/" target="_blank"></a></td>
+               <td>2023.00.00</td><!-- 날짜 -->
+               <td><span class="w"></span></td><!-- 구분 -->
+               <td><span class="ing"></span></td> <!-- 상태 -->
+               <td>
+                  <p class="t_em"></p> <!-- 참고사항 -->
+               </td>
+            </tr>
+            <!-- Guidelines : end  -->
+         </table>
+      </div>
+   </div>
+   <script type="text/javascript" src="./resources/js/jquery-3.6.0.min.js"></script>
+   <script>
+      $(function () {
+         var $content = $(".content table"),
+            total = $content.find(".list").length,
+            finish = $content.find(".list .end").length,
+            progress = Math.floor((finish) / total * 100);
+
+         $("#progress em").css("width", progress + "%");
+         $("#total").html(finish + " / " + total + "page" + "<span class='percent'>진행률 " + progress + "%</span>");
+      });
+   </script>
+</body>
+
+</html>
