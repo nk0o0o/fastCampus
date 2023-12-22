@@ -183,7 +183,7 @@ h3 {
 
 h4 {
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 34px;
 }
 
@@ -4928,6 +4928,7 @@ section > .inner, footer > .inner, header > .inner {
 }
 
 .grid_box {
+  border: 1px solid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(6.1875rem, 1fr));
   grid-gap: 0.5rem;
@@ -5097,15 +5098,73 @@ section {
   text-align: left;
 }
 .sec_potential_cont .grid_box {
-  grid-template-columns: minmax(auto, 500px) autofill, minmax(300px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-flow: row;
-  padding: 5rem 0 0 5rem;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px inset;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px inset;
+  padding: 5rem 5rem 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 7px 0px inset;
+          box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 7px 0px inset;
   border-radius: 3rem;
+  grid-gap: 10rem;
 }
-.sec_potential_cont .text_wrap {
-  margin-right: 10rem;
+.sec_potential_cont .grid_box + .grid_box {
+  margin-top: 6rem;
+}
+.sec_potential_cont .text_wrap h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.sec_potential_cont .text_wrap h4 em {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  color: #686bfa;
+  opacity: 0.7;
+}
+.sec_potential_cont .text_wrap h4 em::after {
+  content: "///";
+  display: inline-block;
+  padding: 0 2rem;
+  opacity: 0.7;
+}
+.sec_potential_cont .text_wrap h4 span {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+.sec_potential_cont .text_wrap p {
+  margin-top: 1rem;
+}
+.sec_potential_cont .img_wrap {
+  position: relative;
+}
+.sec_potential_cont .img_wrap .img_ani {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: imgAni01 3s forwards;
+          animation: imgAni01 3s forwards;
+}
+@-webkit-keyframes imgAni01 {
+  from {
+    left: 0;
+  }
+  to {
+    left: 48%;
+  }
+}
+@keyframes imgAni01 {
+  from {
+    left: 0;
+  }
+  to {
+    left: 48%;
+  }
 }
 .sec_work {
   width: 100%;
@@ -5142,7 +5201,8 @@ section {
 }
 .sec_faq .inner {
   padding: 5rem 0;
-  grid-template-columns: 1fr 2fr;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
 }
 .sec_faq_list {
   grid-template-columns: 1fr 1fr;

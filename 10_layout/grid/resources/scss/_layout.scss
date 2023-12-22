@@ -42,6 +42,7 @@ section, footer, header{
 }
 .grid{
   &_box {
+    border: 1px solid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($minColWidth, 1fr));
     grid-gap: $gridGap;
