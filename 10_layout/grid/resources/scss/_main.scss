@@ -1,4 +1,5 @@
 /*** common ***/
+$sectionGap: 9rem 0 4rem;
 em{
   font-weight: $fw-b;
 }
@@ -24,17 +25,12 @@ img{
   }
 }
 .marquee {
-  &_wrapper {
-    position: relative;
-  }
-  position: absolute;
-  top: 0;
-  left: 0;
+  $marqueeGap: $sp10;
   max-width: 100%;
   display: flex;
   overflow: hidden;
   user-select: none;
-  gap: 12px;
+  gap: $marqueeGap;
   mask-image: linear-gradient(
     to right,
     hsl(0 0% 0% / 0),
@@ -47,17 +43,21 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 12px;
+    gap: $marqueeGap;
     min-width: 100%;
     //animation: marquee-x 20s linear infinite;
     @media (prefers-reduced-motion: reduce) {//유저 OS의 동작 줄이기 설정으로 애니메이션을 컨트롤
       animation-play-state: paused;
     }
     & > div{
-      height: 32px;
+      height: auto;
       font-size:$fs-l;
     }
   }
+}
+.round_box{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 7px 0px inset;
+  border-radius: 3rem;
 }
 @keyframes marquee-x {
   from {
@@ -68,76 +68,134 @@ img{
   }
 }
 
-nav{
-  position: fixed;
-  display: flex;
-  align-items: center;
-  height: 46px;
-  padding: 0 10px;
-  background-color: rgba($color: $gray-400, $alpha: 0.5);
-  border-radius: 9999px;
-  font-size:$fs-s;
-  &.grid_item.col_6{
-    grid-column: 7 / 13;
-    justify-self: end;
-    align-self: center;
-  } 
-  a{
-    flex:1;
-    padding: 0 20px;
+/*** 메인 공통 ui ***/
+.page_main {
+  h2{
     text-align: center;
-  }
-  .fixed{
-    position: fixed;
-  }
-}
-footer{
-  padding: 2.25rem 0 4rem;
-  border: 1px solid $color-border;
-  .flex_box{
-    justify-content: space-between;
-  }
-  .f_copy{
-    flex-direction: column;
-    >div{
-      margin-top: auto;
+    @include res--mobile{
+      text-align: left;
     }
   }
-  .f_menu{
-    ul{
-      margin-right: 1rem;
-      &+ul{
-        margin-left: 1rem;
+  .btn_radius{
+    @include res--mobile{
+      align-self: start;
+    }
+  }
+  .speaker{
+    display: flex;
+    align-items: center;
+    gap: $defaultGap;
+    grid-row: auto;
+    .avatar{
+      width: 6rem;
+      height: 6rem;    
+    }
+    .info{
+      display: flex;
+      flex-direction: column;
+      gap:$sp02;
+      svg{
+        width: 1.6rem; 
+        height: 1.6rem; 
+        fill: #333;
       }
     }
   }
 }
-.page_main{
-  h2{
-    text-align: center;
+
+/*** section ***/
+section {
+  //border: 1px solid red;  
+  .inner{
+    padding: $sectionGap;
+    //border: 1px solid green;
+  }
+  .sec_tit{
+    margin-bottom: $defaultGap;
+  }
+  .sec_desc{
+    margin-bottom: $defaultGap;
   }
 }
-/*** section ***/
-section{
-  border: 1px solid red;
-}
-.sec{
+
+.sec {
+  //sec_marquee
+  &_marquee {
+    .inner{
+      position: relative;
+      padding-top: 6.25rem;
+    }
+    .marquee{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
   //sec_visual
   &_visual{
     h2{
       text-align: left;
+    }
+    .avatar{
+      margin-left: -1.2rem;
+      &:first-child{
+        margin-left: 0;
+      }
+      &_cnt{
+        font-weight: $fw-b;
+        font-size: $fs-xxs;
+      }
+    }
+    .slide_name{
+      max-height: 2rem;
+      overflow: hidden;
+      li{
+        position: relative;
+        top: -20px;
+      }
+    }
+  }
+  //sec_suggestion
+  &_suggestion{
+    .inner{
+      height: auto;
+    }
+    
+    .suggestion{
+      &_desc{
+        gap: $sp10;
+        .img_area{
+          margin-top: auto;
+        }
+        
+      }
+      &_list{
+        border-top: 1px solid $color-border;
+        .icon_square{
+          border-color:$color-border;
+          flex: none;
+        }
+        .flex_box{
+          gap: $defaultGap;
+          margin-bottom: $defaultGap;
+          .tit{
+            line-height: 1.3;
+            letter-spacing:-0.5px;
+          }
+        }
+      }
     }
   }
   //sec_potential
   &_potential{
     &_cont{
       .grid_box{
+        overflow: hidden;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         //grid-template-columns: minmax(300px, 500px) minmax(300px, 1fr);
         grid-auto-flow: row;
-        padding: 5rem 5rem 0;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 7px 0px inset;
-        border-radius: 3rem;
+        padding: 5rem 5rem 0;      
         grid-gap: 10rem;
         & + .grid_box{
           margin-top: 6rem;
@@ -189,54 +247,154 @@ section{
   //sec_work
   &_work{
     width: 100%;
-    padding: 6rem 0 4rem;
+    .grid_box{
+      grid-template-columns: repeat(3, 4fr);
+      grid-template-rows: 1fr;
+      @include res--mobile{
+        grid-template-columns: 12fr;
+        row-gap: $sp10;
+      }
+    }
     .inner{
       position: relative;
     }
     &_tit{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      padding-top: 3rem;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      p{
-        text-align: center;
-      }      
+      text-align: center;
+      &.grid_item{
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }   
+      @include res--mobile{
+        text-align: left;
+        &.grid_item{
+          grid-column: span 1;
+          grid-row: auto;
+      }
+      }
     }
     &_imgs{
+      display: flex;
       justify-content: space-between;
+      &.grid_item{
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+      }      
       img{
         width: 33.3333%;
+      }
+      @include res--mobile{
+        &.grid_item{
+          grid-column: span 1;
+          grid-row: auto;
+        }
+        img{
+          width: 100%;
+          &:first-child{
+            display: none;
+          }
+        }
+      }
+    }
+    &_msg{
+      flex-direction: column;
+      align-items: center;
+      margin-top: $sp10;
+      .msg{
+        color:$color-primary;
+        font: {
+          size: $fs-xlg;
+          weight: $fw-b;
+        };
+      }
+      @include res--tablet {
+        align-items: flex-start;
       }
     }
   }
   //sec_fit
-  &_fit{
+  &_needs{
+    .needs_list{
+      & > li{
+        padding: $sp09;
+        .tit, .desc{
+          margin-bottom: $defaultGap;
+        } 
+        .price, .merit{
+          margin-bottom: $sp07;
+        }
+        .flex_box{
+          gap: $defaultGap;
+        }
+      }
+      .price{
+        display: flex;
+        align-items: center;
+        em{
+          font-size: $fs-lg;
+        }
+      }
+      .badge_dot{
+        margin-right: 4px;
+      }
+    }
+    .merit{
+      li{
+        display: flex;
+        align-items: center;
+        gap: $defaultGap;
+        margin-bottom: $sp06;
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 1.4rem;
+          height: 1.4rem;
+          border-radius: 999px;
+          background: $gray-600 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg id='ico_24_chevron_down' transform='translate(-236 -252)'%3E%3Cpath id='base' d='M0,0H24V24H0Z' transform='translate(260 276) rotate(180)' fill='none' opacity='0'/%3E%3Cpath id='path' d='M15.84,0,9.32,6.52a1.986,1.986,0,0,1-2.8,0L0,0' transform='translate(240.08 260.95)' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E") center/70% no-repeat;
+        }        
+      }
+      &.is_color{
+        li{
+          &:before {
+            background-color: $color-primary;
+          }
+        }
+      }
+    }
   }
   //sec_faq
-  &_faq{
+  &_faq {
     .inner{
       padding: 5rem 0;
       grid-auto-flow: row;
-      //grid-template-columns: 1fr 2fr;
-      //grid-template-columns: 1fr repeat(auto-fit, minmax(1fr, 300px));
-      grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      grid-gap: $gridGap-3;
+      @media all and (max-width:768px){
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
     }
     &_list{
-      grid-template-columns: 1fr 1fr;
+      grid-column: span 2 / span 2;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-gap: $gridGap-3;
+      @media all and (max-width:768px){
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
     }
   }
   //sec_level
   &_level{
-    border: 1px solid $color-border;
     .inner{
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
-      padding: 3rem 0 9rem;
+      padding: $sectionGap;
+      padding-bottom: 12rem;
       text-align: center;
+      @include res--tablet {
+        align-items: flex-start;
+        text-align: left;
+      }
     }
   }
 }

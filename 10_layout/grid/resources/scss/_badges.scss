@@ -1,4 +1,62 @@
 /* Badge */
+%is_border{
+  border:1px solid;
+  &.bg_primary {
+    border-color: lighten($color-primary, 20);
+  }
+  &.bg_secondary {
+    border-color: lighten($gray-700, 20);
+  }
+  &.bg_success,
+  &.bg_green {
+    border-color: lighten($color-green, 20);
+  }
+  &.bg_red,
+  &.bg_danger {
+    border-color: lighten($color-red, 20);
+  }
+  &.bg_warning,
+  &.bg_yellow {
+    border-color: lighten($color-yellow, 20);
+  }
+  &.bg_info {
+    border-color: lighten($color-blue, 20);
+  }
+  &.bg_light {
+    border-color: lighten($gray-50, 20);
+  }
+  &.bg_orange {
+    border-color: lighten($color-orange, 20);
+  }
+  &.bg_olive {
+    border-color: lighten($color-olive, 20);
+  }
+  &.bg_teal {
+    border-color: lighten($color-teal, 20);
+  }
+  &.bg_blue {
+    border-color: lighten($color-blue, 20);
+  }
+  &.bg_violet {
+    border-color: lighten($color-violet, 20);
+  }
+  &.bg_purple {
+    border-color: lighten($color-purple, 20);
+  }
+  &.bg_pink {
+    border-color: lighten($color-pink, 20);
+  }
+  &.bg_brown {
+    border-color: lighten($color-brown, 20);
+  }
+  &.bg_gray {
+    border-color: lighten($gray-300, 20);
+  }
+  &.bg_dark,
+  &.bg_black {
+    border-color: lighten($gray-950, 20);
+  }
+}
 .badge {
    @mixin badge {
       display: inline-flex;
@@ -72,14 +130,22 @@
          color: $gray-950;
       }
    }
+  &.is_border{
+    @extend %is_border;
+  }
    &_round {
       @include badge;
       border-radius: 100px;
    }
    &_dot {
+      display: inline-block;
       width: 10px;
       height: 10px;
       border-radius: 100%;
+      &.is_border{
+        @extend %is_border;
+        border-width: 2px;
+      }
    }
 }
 
@@ -111,8 +177,13 @@ i > .badge_round {
 .avatar {
    display: inline-block;
    position: relative;
-   width: 48px;
-   height: 48px;
+   border:3px solid $gray-950;
+   border-radius: 9999px;
+   width: 3.2rem;
+   height: 3.2rem;
+   &.border_white{
+    border:3px solid $color-white;
+   }
    > img {
       overflow: hidden;
       width: 100%;

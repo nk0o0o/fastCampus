@@ -652,3 +652,13 @@
       }
    }
 }
+
+.icon_square{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.4rem;  
+  height: 5.4rem;
+  border: 1px solid;
+  border-radius: 0.8rem;
+}
