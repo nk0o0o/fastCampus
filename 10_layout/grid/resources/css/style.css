@@ -59,6 +59,7 @@ html, body {
   color: #303030;
   word-break: keep-all;
   word-wrap: break-word;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
 
@@ -422,7 +423,7 @@ caption {
   background-size: cover;
   background-color: #D72222 !important;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .txt_alert.error::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_error.svg");
@@ -442,7 +443,7 @@ caption {
   background-size: cover;
   background-color: #26A769 !important;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .txt_alert.success::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_success.svg");
@@ -1197,7 +1198,7 @@ caption {
   background-image: url("../images/icon/ico_user.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_user::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_user.svg");
@@ -1213,7 +1214,7 @@ caption {
   background-image: url("../images/icon/ico_user_square.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_user_square::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_user_square.svg");
@@ -1229,7 +1230,7 @@ caption {
   background-image: url("../images/icon/ico_user_circle.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_user_circle::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_user_circle.svg");
@@ -1245,7 +1246,7 @@ caption {
   background-image: url("../images/icon/ico_user_octagon.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_user_octagon::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_user_octagon.svg");
@@ -1261,7 +1262,7 @@ caption {
   background-image: url("../images/icon/ico_user_tag.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_user_tag::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_user_tag.svg");
@@ -1279,7 +1280,7 @@ caption {
   background-image: url("../images/icon/ico_arr_left.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_left::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_left.svg");
@@ -1295,7 +1296,7 @@ caption {
   background-image: url("../images/icon/ico_arr_right.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_right::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_right.svg");
@@ -1311,7 +1312,7 @@ caption {
   background-image: url("../images/icon/ico_arr_up.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_up::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_up.svg");
@@ -1327,7 +1328,7 @@ caption {
   background-image: url("../images/icon/ico_arr_down.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_down::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_down.svg");
@@ -1343,7 +1344,7 @@ caption {
   background-image: url("../images/icon/ico_arr_circle_left.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_circle_left::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_circle_left.svg");
@@ -1359,7 +1360,7 @@ caption {
   background-image: url("../images/icon/ico_arr_circle_right.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_circle_right::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_circle_right.svg");
@@ -1375,7 +1376,7 @@ caption {
   background-image: url("../images/icon/ico_arr_circle_up.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_circle_up::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_circle_up.svg");
@@ -1391,7 +1392,7 @@ caption {
   background-image: url("../images/icon/ico_arr_circle_down.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_circle_down::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_circle_down.svg");
@@ -1407,7 +1408,7 @@ caption {
   background-image: url("../images/icon/ico_arr_sort.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_sort::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_sort.svg");
@@ -1423,7 +1424,7 @@ caption {
   background-image: url("../images/icon/ico_arr_replace.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_arr_replace::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_arr_replace.svg");
@@ -1439,7 +1440,7 @@ caption {
   background-image: url("../images/icon/ico_chev_left.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_chev_left::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_left.svg");
@@ -1455,7 +1456,7 @@ caption {
   background-image: url("../images/icon/ico_chev_right.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_chev_right::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_right.svg");
@@ -1471,7 +1472,7 @@ caption {
   background-image: url("../images/icon/ico_chev_up.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_chev_up::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_up.svg");
@@ -1487,7 +1488,7 @@ caption {
   background-image: url("../images/icon/ico_chev_down.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_chev_down::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_down.svg");
@@ -1503,7 +1504,7 @@ caption {
   background-image: url("../images/icon/ico_chev_circle_left.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_chev_circle_left::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_circle_left.svg");
@@ -1519,7 +1520,7 @@ caption {
   background-image: url("../images/icon/ico_chev_circle_right.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_chev_circle_right::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_circle_right.svg");
@@ -1535,7 +1536,7 @@ caption {
   background-image: url("../images/icon/ico_chev_circle_up.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_chev_circle_up::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_circle_up.svg");
@@ -1551,7 +1552,7 @@ caption {
   background-image: url("../images/icon/ico_chev_circle_down.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_chev_circle_down::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_circle_down.svg");
@@ -1567,7 +1568,7 @@ caption {
   background-image: url("../images/icon/ico_rotate_left.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_rotate_left::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_rotate_left.svg");
@@ -1583,7 +1584,7 @@ caption {
   background-image: url("../images/icon/ico_rotate_right.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_rotate_right::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_rotate_right.svg");
@@ -1599,7 +1600,7 @@ caption {
   background-image: url("../images/icon/ico_undo.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_undo::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_undo.svg");
@@ -1615,7 +1616,7 @@ caption {
   background-image: url("../images/icon/ico_redo.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_redo::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_redo.svg");
@@ -1631,7 +1632,7 @@ caption {
   background-image: url("../images/icon/ico_refresh_01.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_refresh_01::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_refresh_01.svg");
@@ -1647,7 +1648,7 @@ caption {
   background-image: url("../images/icon/ico_refresh_02.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_refresh_02::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_refresh_02.svg");
@@ -1665,7 +1666,7 @@ caption {
   background-image: url("../images/icon/ico_cart.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_cart::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_cart.svg");
@@ -1681,7 +1682,7 @@ caption {
   background-image: url("../images/icon/ico_store.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_store::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_store.svg");
@@ -1697,7 +1698,7 @@ caption {
   background-image: url("../images/icon/ico_delivery.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_delivery::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_delivery.svg");
@@ -1713,7 +1714,7 @@ caption {
   background-image: url("../images/icon/ico_money_01.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_money_01::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_money_01.svg");
@@ -1729,7 +1730,7 @@ caption {
   background-image: url("../images/icon/ico_money_02.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_money_02::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_money_02.svg");
@@ -1745,7 +1746,7 @@ caption {
   background-image: url("../images/icon/ico_card.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_card::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_card.svg");
@@ -1761,7 +1762,7 @@ caption {
   background-image: url("../images/icon/ico_box_01.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_box_01::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_box_01.svg");
@@ -1777,7 +1778,7 @@ caption {
   background-image: url("../images/icon/ico_box_02.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_box_02::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_box_02.svg");
@@ -1793,7 +1794,7 @@ caption {
   background-image: url("../images/icon/ico_barcode.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_barcode::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_barcode.svg");
@@ -1809,7 +1810,7 @@ caption {
   background-image: url("../images/icon/ico_discount.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_discount::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_discount.svg");
@@ -1825,7 +1826,7 @@ caption {
   background-image: url("../images/icon/ico_wallet.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_wallet::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_wallet.svg");
@@ -1843,7 +1844,7 @@ caption {
   background-image: url("../images/icon/ico_monitor.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_monitor::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_monitor.svg");
@@ -1859,7 +1860,7 @@ caption {
   background-image: url("../images/icon/ico_mobile.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_mobile::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_mobile.svg");
@@ -1875,7 +1876,7 @@ caption {
   background-image: url("../images/icon/ico_responsive.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_responsive::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_responsive.svg");
@@ -1891,7 +1892,7 @@ caption {
   background-image: url("../images/icon/ico_printer.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_printer::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_printer.svg");
@@ -1907,7 +1908,7 @@ caption {
   background-image: url("../images/icon/ico_mouse.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_mouse::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_mouse.svg");
@@ -1923,7 +1924,7 @@ caption {
   background-image: url("../images/icon/ico_airpods.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_airpods::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_airpods.svg");
@@ -1939,7 +1940,7 @@ caption {
   background-image: url("../images/icon/ico_airdrop.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_airdrop::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_airdrop.svg");
@@ -1955,7 +1956,7 @@ caption {
   background-image: url("../images/icon/ico_watch.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_watch::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_watch.svg");
@@ -1973,7 +1974,7 @@ caption {
   background-image: url("../images/icon/ico_mike.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_mike::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_mike.svg");
@@ -1989,7 +1990,7 @@ caption {
   background-image: url("../images/icon/ico_mike_slash.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_mike_slash::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_mike_slash.svg");
@@ -2005,7 +2006,7 @@ caption {
   background-image: url("../images/icon/ico_gallery.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_gallery::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_gallery.svg");
@@ -2021,7 +2022,7 @@ caption {
   background-image: url("../images/icon/ico_image.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_image::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_image.svg");
@@ -2037,7 +2038,7 @@ caption {
   background-image: url("../images/icon/ico_video_01.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_video_01::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_video_01.svg");
@@ -2053,7 +2054,7 @@ caption {
   background-image: url("../images/icon/ico_video_02.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_video_02::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_video_02.svg");
@@ -2069,7 +2070,7 @@ caption {
   background-image: url("../images/icon/ico_video_03.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_video_03::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_video_03.svg");
@@ -2085,7 +2086,7 @@ caption {
   background-image: url("../images/icon/ico_camera.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_camera::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_camera.svg");
@@ -2101,7 +2102,7 @@ caption {
   background-image: url("../images/icon/ico_music.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_music::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_music.svg");
@@ -2117,7 +2118,7 @@ caption {
   background-image: url("../images/icon/ico_music_list.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_music_list::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_music_list.svg");
@@ -2133,7 +2134,7 @@ caption {
   background-image: url("../images/icon/ico_play.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_play::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_play.svg");
@@ -2149,7 +2150,7 @@ caption {
   background-image: url("../images/icon/ico_play_previous.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_play_previous::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_play_previous.svg");
@@ -2165,7 +2166,7 @@ caption {
   background-image: url("../images/icon/ico_play_next.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_play_next::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_play_next.svg");
@@ -2181,7 +2182,7 @@ caption {
   background-image: url("../images/icon/ico_play_circle.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_play_circle::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_play_circle.svg");
@@ -2197,7 +2198,7 @@ caption {
   background-image: url("../images/icon/ico_pause.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_pause::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_pause.svg");
@@ -2213,7 +2214,7 @@ caption {
   background-image: url("../images/icon/ico_pause_circle.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_pause_circle::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_pause_circle.svg");
@@ -2229,7 +2230,7 @@ caption {
   background-image: url("../images/icon/ico_backward.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_backward::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_backward.svg");
@@ -2245,7 +2246,7 @@ caption {
   background-image: url("../images/icon/ico_forward.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_forward::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_forward.svg");
@@ -2261,7 +2262,7 @@ caption {
   background-image: url("../images/icon/ico_stop_circle.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_stop_circle::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_stop_circle.svg");
@@ -2277,7 +2278,7 @@ caption {
   background-image: url("../images/icon/ico_volume.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_volume::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_volume.svg");
@@ -2293,7 +2294,7 @@ caption {
   background-image: url("../images/icon/ico_volume_mute.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_volume_mute::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_volume_mute.svg");
@@ -2309,7 +2310,7 @@ caption {
   background-image: url("../images/icon/ico_volume_cross.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_volume_cross::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_volume_cross.svg");
@@ -2327,7 +2328,7 @@ caption {
   background-image: url("../images/icon/ico_home.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_home::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_home.svg");
@@ -2343,7 +2344,7 @@ caption {
   background-image: url("../images/icon/ico_search.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_search::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_search.svg");
@@ -2359,7 +2360,7 @@ caption {
   background-image: url("../images/icon/ico_menu.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_menu::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_menu.svg");
@@ -2375,7 +2376,7 @@ caption {
   background-image: url("../images/icon/ico_switcher.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_switcher::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_switcher.svg");
@@ -2391,7 +2392,7 @@ caption {
   background-image: url("../images/icon/ico_edit.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_edit::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_edit.svg");
@@ -2407,7 +2408,7 @@ caption {
   background-image: url("../images/icon/ico_del.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_del::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_del.svg");
@@ -2423,7 +2424,7 @@ caption {
   background-image: url("../images/icon/ico_add.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_add::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_add.svg");
@@ -2439,7 +2440,7 @@ caption {
   background-image: url("../images/icon/ico_minus.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_minus::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_minus.svg");
@@ -2455,7 +2456,7 @@ caption {
   background-image: url("../images/icon/ico_close.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_close::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_close.svg");
@@ -2471,7 +2472,7 @@ caption {
   background-image: url("../images/icon/ico_close_square.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_close_square::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_close_square.svg");
@@ -2487,7 +2488,7 @@ caption {
   background-image: url("../images/icon/ico_info_circle.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_info_circle::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_info_circle.svg");
@@ -2503,7 +2504,7 @@ caption {
   background-image: url("../images/icon/ico_danger.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_danger::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_danger.svg");
@@ -2519,7 +2520,7 @@ caption {
   background-image: url("../images/icon/ico_setting.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_setting::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_setting.svg");
@@ -2535,7 +2536,7 @@ caption {
   background-image: url("../images/icon/ico_bookmark.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_bookmark::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_bookmark.svg");
@@ -2551,7 +2552,7 @@ caption {
   background-image: url("../images/icon/ico_heart.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_heart::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_heart.svg");
@@ -2567,7 +2568,7 @@ caption {
   background-image: url("../images/icon/ico_star.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_star::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_star.svg");
@@ -2583,7 +2584,7 @@ caption {
   background-image: url("../images/icon/ico_location.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_location::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_location.svg");
@@ -2599,7 +2600,7 @@ caption {
   background-image: url("../images/icon/ico_gps.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_gps::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_gps.svg");
@@ -2615,7 +2616,7 @@ caption {
   background-image: url("../images/icon/ico_map.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_map::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_map.svg");
@@ -2631,7 +2632,7 @@ caption {
   background-image: url("../images/icon/ico_global.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_global::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_global.svg");
@@ -2647,7 +2648,7 @@ caption {
   background-image: url("../images/icon/ico_email.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_email::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_email.svg");
@@ -2663,7 +2664,7 @@ caption {
   background-image: url("../images/icon/ico_reply.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_reply::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_reply.svg");
@@ -2679,7 +2680,7 @@ caption {
   background-image: url("../images/icon/ico_lock.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_lock::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_lock.svg");
@@ -2695,7 +2696,7 @@ caption {
   background-image: url("../images/icon/ico_unlock.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_unlock::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_unlock.svg");
@@ -2711,7 +2712,7 @@ caption {
   background-image: url("../images/icon/ico_filter.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_filter::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_filter.svg");
@@ -2727,7 +2728,7 @@ caption {
   background-image: url("../images/icon/ico_filter_square.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_filter_square::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_filter_square.svg");
@@ -2743,7 +2744,7 @@ caption {
   background-image: url("../images/icon/ico_file.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_file::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_file.svg");
@@ -2759,7 +2760,7 @@ caption {
   background-image: url("../images/icon/ico_share.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_share::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_share.svg");
@@ -2775,7 +2776,7 @@ caption {
   background-image: url("../images/icon/ico_calendar.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_calendar::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_calendar.svg");
@@ -2791,7 +2792,7 @@ caption {
   background-image: url("../images/icon/ico_flag.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_flag::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_flag.svg");
@@ -2807,7 +2808,7 @@ caption {
   background-image: url("../images/icon/ico_send_01.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_send_01::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_send_01.svg");
@@ -2823,7 +2824,7 @@ caption {
   background-image: url("../images/icon/ico_send_02.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_send_02::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_send_02.svg");
@@ -2839,7 +2840,7 @@ caption {
   background-image: url("../images/icon/ico_memo_01.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_memo_01::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_memo_01.svg");
@@ -2855,7 +2856,7 @@ caption {
   background-image: url("../images/icon/ico_memo_02.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_memo_02::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_memo_02.svg");
@@ -2871,7 +2872,7 @@ caption {
   background-image: url("../images/icon/ico_noti_01.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_noti_01::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_noti_01.svg");
@@ -2887,7 +2888,7 @@ caption {
   background-image: url("../images/icon/ico_noti_02.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_noti_02::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_noti_02.svg");
@@ -2903,7 +2904,7 @@ caption {
   background-image: url("../images/icon/ico_call.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_call::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_call.svg");
@@ -2919,7 +2920,7 @@ caption {
   background-image: url("../images/icon/ico_calling.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_calling::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_calling.svg");
@@ -2935,7 +2936,7 @@ caption {
   background-image: url("../images/icon/ico_clock.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_clock::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_clock.svg");
@@ -2951,7 +2952,7 @@ caption {
   background-image: url("../images/icon/ico_timer.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_timer::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_timer.svg");
@@ -2967,7 +2968,7 @@ caption {
   background-image: url("../images/icon/ico_over_menu.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_over_menu::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_over_menu.svg");
@@ -2983,7 +2984,7 @@ caption {
   background-image: url("../images/icon/ico_write.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_write::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_write.svg");
@@ -2999,7 +3000,7 @@ caption {
   background-image: url("../images/icon/ico_zoom.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .ico_zoom::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_zoom.svg");
@@ -3193,8 +3194,10 @@ button {
   margin: 0.25rem;
 }
 .btn_group {
+  display: -webkit-box;
   display: flex;
   justify-content: flex-start;
+  -webkit-box-align: center;
   align-items: center;
 }
 .btn_group button + button {
@@ -3215,6 +3218,8 @@ button {
   border-radius: 13px;
   background: #DBDBDB;
   -moztransition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  -webkit-transition: all 0.4s ease-out 0s;
   transition: all 0.4s ease-out 0s;
 }
 .btn_toggle label:after {
@@ -3229,6 +3234,8 @@ button {
   background: #fff;
   z-index: 2;
   -moztransition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
 .btn_toggle input {
@@ -3251,8 +3258,10 @@ button {
   background-color: #DBDBDB !important;
 }
 .btn_toggle_group {
+  display: -webkit-box;
   display: flex;
   justify-content: flex-start;
+  -webkit-box-align: center;
   align-items: center;
 }
 .btn_toggle_group > * + * {
@@ -3352,6 +3361,7 @@ button {
   content: "";
   position: absolute;
   top: 50%;
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   height: 1px;
   background-color: #999999;
@@ -3360,6 +3370,7 @@ button {
   content: "";
   position: absolute;
   top: 50%;
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   height: 1px;
   background-color: #999999;
@@ -3378,9 +3389,7 @@ button {
   position: relative;
   min-height: 24px;
   padding-left: 30px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   font-size: 1.4rem;
   line-height: 24px;
   cursor: pointer;
@@ -3425,9 +3434,7 @@ button {
   padding-left: 27px;
   font-size: 1.4rem;
   line-height: 24px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   cursor: pointer;
 }
 .input_radio + label::before {
@@ -3468,13 +3475,13 @@ button {
   max-width: 100%;
   min-width: 360px;
   vertical-align: top;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .select_box_value {
   position: relative;
   -moztransition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
   height: 38px;
   padding: 8px 0.75rem;
@@ -3508,7 +3515,7 @@ button {
   background-image: url("../images/icon/ico_select_down.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .select_box_value::after {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_select_down.svg");
@@ -3550,6 +3557,8 @@ button {
   line-height: 38px;
   border: none;
   -moztransition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
   outline: none;
   cursor: pointer;
@@ -3587,6 +3596,8 @@ button {
   line-height: 38px;
   border: none;
   -moztransition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
   outline: none;
 }
@@ -3634,7 +3645,7 @@ button {
   background-image: url("../images/icon/ico_over_menu.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .select_box.overflow_menu .select_box_value::after {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_over_menu.svg");
@@ -3686,7 +3697,7 @@ button {
   background-image: url("../images/icon/ico_select_down.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .tbl_select_box .select_box_arr::after {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_select_down.svg");
@@ -3780,6 +3791,8 @@ select {
   border: 1px solid #DBDBDB;
   border-radius: 4px;
   -moztransition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
 }
 .input_text[type=text]:focus {
@@ -3830,9 +3843,7 @@ select {
   position: absolute;
   bottom: 12px;
   right: 16px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .input_writing_group .txt_count > * {
   font-size: 1.4rem;
@@ -3903,6 +3914,8 @@ select {
   white-space: nowrap;
   cursor: pointer;
   -moztransition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
 .tab_menu ul .tab_list > button span {
@@ -3964,6 +3977,8 @@ select {
   background: #686bfa;
   z-index: 1;
   -moztransition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0s;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0s;
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0s;
 }
 .tab_menu.vertical_tab {
@@ -3979,6 +3994,8 @@ select {
   background: #686bfa;
   z-index: 2;
   -moztransition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0s;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0s;
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) 0s;
 }
 .tab_menu.vertical_tab::after {
@@ -4012,8 +4029,10 @@ select {
   width: 100%;
 }
 .fix_tab_wrap .tab_menu > ul {
+  display: -webkit-box;
   display: flex;
   justify-content: flex-start;
+  -webkit-box-align: center;
   align-items: center;
   justify-content: space-between;
 }
@@ -4029,8 +4048,10 @@ select {
 }
 
 .vertical_tab_wrap {
+  display: -webkit-box;
   display: flex;
   justify-content: flex-start;
+  -webkit-box-align: center;
   align-items: center;
   align-items: flex-start;
   width: 100%;
@@ -4368,8 +4389,10 @@ th {
 }
 .tbl_btn_area {
   width: 100%;
+  display: -webkit-box;
   display: flex;
   justify-content: flex-start;
+  -webkit-box-align: center;
   align-items: center;
 }
 .tbl_btn_area .right {
@@ -4395,9 +4418,11 @@ th {
   background-size: cover;
   background-size: contain;
   -moztransition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .accord_tit::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_chev_down.svg");
@@ -4424,6 +4449,7 @@ th {
   color: #686bfa;
 }
 .accord_head.on .accord_tit::before {
+  -webkit-transform: rotate(-180deg) translateY(50%);
   transform: rotate(-180deg) translateY(50%);
   background-color: #686bfa !important;
 }
@@ -4451,7 +4477,7 @@ th {
   background-image: url("../images/icon/ico_faq_Q_16.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .accord_list.faq_list .accord_tit::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_faq_Q_16.svg");
@@ -4481,7 +4507,7 @@ th {
   background-image: url("../images/icon/ico_faq_A_16.svg");
   background-size: cover;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .accord_list.faq_list .accord_cont::before {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_faq_A_16.svg");
@@ -4508,6 +4534,8 @@ th {
   margin: 0 0.25rem 0 0;
   padding: 0 0.5rem;
   border: 1px solid #DBDBDB;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -4524,6 +4552,8 @@ th {
 .pagination a:hover {
   background-color: #F0F0F0;
   -moztransition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
 }
 .pagination a:last-child {
@@ -4569,7 +4599,7 @@ th {
   -webkit-mask-position: center;
   mask-position: center;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .pagination a.arr.prev::after {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_page_prev.svg");
@@ -4593,7 +4623,7 @@ th {
   -webkit-mask-position: center;
   mask-position: center;
 }
-@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
   .pagination a.arr.next::after {
     background-color: #5E5E5E;
     -webkit-mask-image: url("../images/icon/ico_page_next.svg");
@@ -4625,6 +4655,8 @@ th {
   border-radius: 8px;
   background-color: #686bfa;
   -moztransition: width 0.3s ease-out 0s;
+  -o-transition: width 0.3s ease-out 0s;
+  -webkit-transition: width 0.3s ease-out 0s;
   transition: width 0.3s ease-out 0s;
 }
 
@@ -4634,8 +4666,11 @@ th {
   line-height: 24px;
   border-radius: 4px;
   background-color: #666666;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
 }
 .pagination_number > * {
@@ -4687,9 +4722,7 @@ th {
   height: 8px;
   border-radius: 100px;
   background-color: #F0F0F0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .progress_back_sm {
   height: 4px;
@@ -4707,8 +4740,10 @@ th {
   margin-top: 1rem;
 }
 .progress_bar {
+  display: -webkit-box;
   display: flex;
   justify-content: flex-start;
+  -webkit-box-align: center;
   align-items: center;
   justify-content: flex-end;
   position: absolute;
@@ -4790,6 +4825,16 @@ section > .inner, .section > .inner, footer > .inner, header > .inner {
 .flex_box {
   display: flex;
   align-items: center;
+}
+
+.ui_sticky_title {
+  position: sticky;
+  top: 0;
+}
+.ui_sticky_item {
+  border: 1px solid;
+  position: sticky;
+  top: 0;
 }
 
 /**** Grid ***/
@@ -4939,12 +4984,9 @@ img {
   max-width: 100%;
   display: flex;
   overflow: hidden;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   gap: 4rem;
-  -webkit-mask-image: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 20%, hsl(0, 0%, 0%) 80%, hsla(0, 0%, 0%, 0));
-          mask-image: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 20%, hsl(0, 0%, 0%) 80%, hsla(0, 0%, 0%, 0));
+  mask-image: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 20%, hsl(0, 0%, 0%) 80%, hsla(0, 0%, 0%, 0));
 }
 .marquee_group {
   flex-shrink: 0;
@@ -5078,46 +5120,100 @@ section .sec_desc {
   line-height: 1.3;
   letter-spacing: -0.5px;
 }
-.sec_potential_cont .grid_box {
-  overflow: hidden;
+.sec_potential {
+  border: 1px solid yellow;
+  /* &_cont{
+    padding: 50px 0 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 2000px;
+    border: 1px solid red;
+    @include posRelative;
+    .grid_box{
+      @include posAbs;
+      position: sticky;
+      left: 0;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      //grid-template-columns: minmax(300px, 500px) minmax(300px, 1fr);
+      grid-auto-flow: row;
+      padding: 5rem 5rem 0;      
+      grid-gap: 10rem;
+      background-color: #fff;
+      border: 2px solid #333;
+      & + .grid_box{
+        margin-top: 6rem;
+      }        
+      &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        //top: -30px;
+        width: 100%;
+        height: 60px;
+        border: 1px solid;
+        background-image: linear-gradient(
+          180deg,
+          hsla(0deg, 0%, 100%, 0.2) 0%,
+          hsl(0deg, 0%, 100%) 37%,
+          hsl(0deg, 0%, 100%) 100%
+        );
+      }
+    }
+    .text_wrap{
+      h4{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        em{
+          flex:none;
+          color: $color-primary;
+          opacity: .7;
+          &::after{
+            content: '///';
+            display: inline-block;
+            padding: 0 2rem;
+            opacity: .7;
+          }
+        }
+        span{
+          flex:auto;
+        } 
+      }
+      p{
+        margin-top: 1rem;
+      }
+    }
+    .img_wrap{
+      position: relative;
+      .img_ani{
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: imgAni01 3s forwards;
+      }       
+    }
+  } */
+}
+.sec_potential .inner {
+  position: relative;
+  padding: 0 0 4rem;
+}
+.sec_potential .sec_tit {
+  padding: 9rem 0 0 1.5rem;
+}
+.sec_potential_cont .ui_sticky_item {
+  top: 270px;
+}
+.sec_potential_cont .round_box {
+  background-color: #fff;
+  border: 2px solid #333;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-flow: row;
   padding: 5rem 5rem 0;
   grid-gap: 10rem;
-}
-.sec_potential_cont .grid_box + .grid_box {
-  margin-top: 6rem;
-}
-.sec_potential_cont .text_wrap h4 {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.sec_potential_cont .text_wrap h4 em {
-  flex: none;
-  color: #686bfa;
-  opacity: 0.7;
-}
-.sec_potential_cont .text_wrap h4 em::after {
-  content: "///";
-  display: inline-block;
-  padding: 0 2rem;
-  opacity: 0.7;
-}
-.sec_potential_cont .text_wrap h4 span {
-  flex: auto;
-}
-.sec_potential_cont .text_wrap p {
-  margin-top: 1rem;
-}
-.sec_potential_cont .img_wrap {
-  position: relative;
-}
-.sec_potential_cont .img_wrap .img_ani {
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: imgAni01 3s forwards;
 }
 @keyframes imgAni01 {
   from {
@@ -5272,4 +5368,4 @@ section .sec_desc {
     align-items: flex-start;
     text-align: left;
   }
-}
+}/*# sourceMappingURL=style.css.map */

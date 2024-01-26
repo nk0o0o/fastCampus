@@ -134,51 +134,133 @@
         </div><!-- .//vision_list -->
       </section>
       <section class="sec_potential">
-        <div class="inner">
-          <h2 class="sec_tit">Unlock your products potential</h2>
-          <div class="sec_potential_cont">
-            <div class="grid_box round_box">
-              <div class="text_wrap">
-                <h4><em>001</em><span>Subscribe & Request</span></h4>
-                <p>Subscribe in just a minute and get access to your own request board with instructions
-                  on how to get the most out of your subscription. When you're ready for a top-tier website,
-                  <em>add as many requests as you like</em> – we'll tackle them one by one.
-                </p>
-              </div>
-              <div class="img_wrap">
-                <img src="../resources/images/request-background.png" alt="">
-                <img class="img_ani" src="../resources/images/request-card.png" alt="">
-              </div>
-            </div>
-            <div class="grid_box round_box">
-              <div class="text_wrap">
-                <h4><em>001</em><span>Subscribe & Request</span></h4>
-                <p>Subscribe in just a minute and get access to your own request board with instructions
-                  on how to get the most out of your subscription. When you're ready for a top-tier website,
-                  <em>add as many requests as you like</em> – we'll tackle them one by one.
-                </p>
-              </div>
-              <div class="img_wrap">
-                <img src="../resources/images/design-dev-background.png" alt="">
-                <img class="img_ani" src="../resources/images/evolution-figma.png" alt="">
+        <div class="inner ui_sticky">
+          <h2 class="sec_tit ui_sticky_title">Unlock your products potential</h2>
+          <div class="sec_potential_cont ui_sticky_body ui_sticky_area">
+            <div class="grid_box ui_sticky_item">
+              <div class="round_box">
+                <div class="text_wrap">
+                  <h4><em>001</em><span>Subscribe & Request</span></h4>
+                  <p>Subscribe in just a minute and get access to your own request board with instructions
+                    on how to get the most out of your subscription. When you're ready for a top-tier website,
+                    <em>add as many requests as you like</em> – we'll tackle them one by one.
+                  </p>
+                </div>
+                <div class="img_wrap">
+                  <img src="../resources/images/request-background.png" alt="">
+                  <img class="img_ani" src="../resources/images/request-card.png" alt="">
+                </div>
               </div>
             </div>
-            <div class="grid_box round_box">
-              <div class="text_wrap">
-                <h4><em>001</em><span>Subscribe & Request</span></h4>
-                <p>Subscribe in just a minute and get access to your own request board with instructions
-                  on how to get the most out of your subscription. When you're ready for a top-tier website,
-                  <em>add as many requests as you like</em> – we'll tackle them one by one.
-                </p>
-              </div>
-              <div class="img_wrap">
-                <img src="../resources/images/evolution-background.png" alt="">
-                <img class="img_ani" src="../resources/images/evolution-card.png" alt="">
+            <div style="height: 20vh;"></div>
+        
+            <div class="grid_box ui_sticky_item">
+              <div class="round_box">
+                <div class="text_wrap">
+                  <h4><em>001</em><span>Subscribe & Request</span></h4>
+                  <p>Subscribe in just a minute and get access to your own request board with instructions
+                    on how to get the most out of your subscription. When you're ready for a top-tier website,
+                    <em>add as many requests as you like</em> – we'll tackle them one by one.
+                  </p>
+                </div>
+                <div class="img_wrap">
+                  <img src="../resources/images/design-dev-background.png" alt="">
+                  <img class="img_ani" src="../resources/images/evolution-figma.png" alt="">
+                </div>
               </div>
             </div>
+            <div style="height: 20vh;"></div>
+        
+            <div class="grid_box ui_sticky_item">
+              <div class="round_box">
+                <div class="text_wrap">
+                  <h4><em>001</em><span>Subscribe & Request</span></h4>
+                  <p>Subscribe in just a minute and get access to your own request board with instructions
+                    on how to get the most out of your subscription. When you're ready for a top-tier website,
+                    <em>add as many requests as you like</em> – we'll tackle them one by one.
+                  </p>
+                </div>
+                <div class="img_wrap">
+                  <img src="../resources/images/evolution-background.png" alt="">
+                  <img class="img_ani" src="../resources/images/evolution-card.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div style="height: 20vh;"></div>
+        
           </div>
         </div>
+        <!-- <script>
+          $(document).ready(function(){
+            $('.sec_potential').find('.inner').css('height',$('.sec_potential').outerHeight(true));
+            $(window).scroll(function(){
+              let st = $(document).scrollTop()//현재 스크롤 위치
+              const contentSection = $('.sec_potential');
+              const contentBox = $('.sec_potential').find('.grid_box');
+             // contentSection.find('.sec_potential_cont').css('height',contentBox.outerHeight(true))
+              let stickyOff= contentSection.find('.sec_tit').outerHeight(true);
+              //contentSection.find('.inner').css('height',stickyOff)
+            
+            
+
+              const boxGap = 90;
+              contentBox.eq(0).css('top',stickyOff);
+              contentBox.eq(1).css('top',stickyOff + boxGap);
+              contentBox.eq(2).css('top',stickyOff + boxGap * 2);
+              contentSection.find('.sec_potential_cont').css('top',stickyOff);
+              
+
+              let contBtm =  contentBox.eq(2).offset().top - (stickyOff + boxGap * 2);
+
+              if(st > contBtm){
+                console.log('gkgk')
+                contentBox.addClass('pos_abs');
+                contentSection.find('.sec_tit').addClass('pos_relative');
+              }else{
+                contentBox.removeClass('pos_abs')
+                contentSection.find('.sec_tit').removeClass('pos_relative');
+              }
+
+              console.log('outerHeight '+ contentBox.eq(2).outerHeight(true))
+              console.log('innerHeight '+ contentBox.eq(2).innerHeight() )
+              console.log('height '+ contentBox.eq(2).height() )
+              console.log('offset '+ contentBox.eq(2).offset().top )
+              console.log('position '+ contentBox.eq(2).position().top )
+              
+              if(st > $('.sec_potential').offset().top){
+              }
+            });
+          })
+        </script> -->
       </section><!-- //section -->
+
+      <!-- <section class="c-lead">
+        <div class="ui_sticky_body ui_sticky_area">
+          <p class="js-stacking__item">
+            sticky 1<br>
+            sticky 1<br>
+            sticky 1
+          </p>
+          <div style="height: 50vh;"></div>
+      
+          <p class="js-stacking__item">
+            sticky 2<br>
+            sticky 2<br>
+            sticky 2
+          </p>
+          <div style="height: 50vh;"></div>
+      
+          <p class="js-stacking__item">
+            sticky 3<br>
+            sticky 3<br>
+            sticky 3
+          </p>
+          <div style="height: 50vh;"></div>
+        </div>
+      </section> -->
+
+
+
       <section class="sec_work">
         <div class="inner">
           <div class="grid_box">
@@ -339,5 +421,104 @@
   <!-- //wrap -->
 
 
+
+  
+  <script>
+    let timer = null;
+    const areas = document.querySelectorAll('.ui_sticky_area');
+      if(areas.length === 0) {
+        return;
+      }
+    let stickyTitH = $('.ui_sticky').find('.ui_sticky_title').height();
+    $('.ui_sticky').find('.ui_sticky_item')
+    // sec_potential의 반응형 sticky 효과
+    
+    $(window).on('resize', function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        if ($(window).innerWidth <= 1024) {
+          $(".sec_potential").find('.grid_box').removeClass('ui_sticky_item');
+        }else{
+          $(".sec_potential").find('.grid_box').addClass('ui_sticky_item');
+        }
+
+      }, 200);
+    });
+    // stacking sticky div
+    const areaStacking = (size) => {
+      let overlapSize =1;
+      if(!size){
+        overlapSize = 1;
+      }else{
+        overlapSize =  size;        
+      }
+      const areas = document.querySelectorAll('.ui_sticky_area');
+      if(areas.length === 0) {
+        return;
+      }
+      
+      const checkPosition = (targets,  overlapSize) => { //변수는 아이템 배열
+        const height = []; //3개 스틱아이템 높이값 배열 [355, 355, 355]
+        targets.forEach(target => {
+          target.style.paddingTop = '';
+          target.style.paddingBottom = '';  // 초기화
+          height.push(target.offsetHeight);//offsetHeight border값 포함 높이 margin은 제외
+        });
+        const heightLen = height.length;//아이템 배열 갯수 3
+
+        targets.forEach((target, index) => {//index 0, 1, 2
+
+          let topHeight = 0;
+          if(index === 1) { // 인덱스가 1일때 == 두번째 아이템
+            topHeight = height[0];
+
+          } else if(index > 1) {// 인덱스가 1보다 클때 (2)  == 세번째 아이템
+            topHeight = height.slice(0,index); //아이템의 인덱스까지의 배열 (0~2)
+            topHeight = topHeight.reduce((a, x) => a + x); //배열의 모든 값 더하기 (a=누적, x=새값)
+          }
+          target.style.paddingTop = topHeight * overlapSize + 'px';
+          // == 첫번째 아이템은 topHeight = 0;을 페딩 top 값으로
+          // == 두번째 아이템은 첫번째 아이템의 높이값을 페딩 top 값으로 355px
+          // == 세번째 아이템은 첫번째 아이템 + 두번째 아이템의 높이값을 페딩 top 값으로 355px + 355px
+
+          let bottomHeight = 0;
+          if(index !== heightLen - 1) {// 아이템 갯수 -1(2)가 인덱스(0, 1, 2)랑 다를때 ===>  첫아이템(0), 두번째아이템(1)
+            bottomHeight = height.slice(index+1,heightLen); // index+1(1, 2),3 // height.slice(1, 3)= 두세번째 아이템의 높이합 height.slice(2, 3) = 세번째 아이템의 높이
+            bottomHeight = bottomHeight.reduce((a, x) => a + x);//누적 더하기
+            target.style.paddingBottom = bottomHeight * overlapSize + 'px';
+          }
+          // == 첫번째 아이템은 두번째 아이템의 높이값 + 세번째 아이템의 높이값을 페딩 bottom값으로  355px + 355px
+          // == 두번째 아이템은 세번째 아이템의 높이값을 페딩 bottom값으로 355px
+        });
+      }
+
+      areas.forEach(area => {
+        const targets = area.querySelectorAll('.ui_sticky_item');
+        if(targets.length > 0) { //아이템이 한개 이상일때
+          checkPosition(targets, overlapSize);
+
+          const resizeObserver = new ResizeObserver(() => {
+            checkPosition(targets, overlapSize);// 관찰 중인 배열 형식의 객체 리스트
+          });
+          resizeObserver.observe(area); //아이템 감싸는 영역 변할때 아이템들 위치 파악해라
+        }
+      });
+
+    };
+    areaStacking(0.25);
+  </script>
+  <!--
+    << ResizeObserver API>>
+    <script>
+    const $target = document.querySelector('div');
+
+    const observer = new ResizeObserver((entries) => { //요소의 크기변화 감지 정의
+    
+      entries.forEach((entry) => {});// 관찰 중인 배열 형식의 객체 리스트
+
+    });
+    // 크기변화를 관찰할 요소지정
+    observer.observe($target);
+  </script> -->
 </body>
 </html>

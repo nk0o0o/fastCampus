@@ -44,6 +44,19 @@ section, .section, footer, header{
     align-items: center;
   }
 }
+.ui_sticky{
+  @mixin stickyX($pos-top:0){
+    position: sticky;
+    top: $pos-top;
+  }
+  &_title{
+    @include stickyX();
+  }
+  &_item {
+    border: 1px solid;
+    @include stickyX();
+  }
+}
 /**** Grid ***/
 #wrap{
   
